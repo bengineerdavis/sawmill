@@ -58,6 +58,9 @@ update: check  # use to update venv's Python dependencies and auxiliary tools; a
 	@echo "using pipx to update poetry"
 	pipx upgrade poetry
 
+	@update pip
+	python -m pip install --upgrade pip
+
 	@echo "Updating requirements with poetry"
 	poetry update
 
@@ -73,21 +76,7 @@ venv:  # create a fresh, dedicated venv for the T3RAP local repo and t3report ap
 	@echo "Assigning the $(VENV_NAME) venv to the current directory"
 	pyenv local $(VENV_NAME)
 
-venv-update:  check # update pip and other dependency manage tools installed within the virtual environment
-	@echo "Making sure both pip and pip-tools are installed and up-to-date in the virtual environment"
-	pip install --upgrade pip pip-tools
 
-install: clean tools venv venv-update update  ## fresh developer installation of the t3reports app and Python dependencies
-
-
-.PHONY: compile upgrade
-compile:  # compile an updated requirements.txt from requirements.in; should only be used when updating dependencies in setup.cfg
-	@echo "Compiling a new requirements.txt based on requirements.in with pip-compile"
-	pip-compile --no-emit-index-url -v
-
-upgrade: tools compile update  ## use when updating dependencies (or their versions) in setup.cfg
-
-
-.PHONY: ssh
-ssh:  # install user's ssh key and save to system clipboard to put in GitHub
-
+install: clean venv  ## fresh developer installation of the t3reports app and Python dependencies
+	@echo installing Python dependencies with poetry
+	poetry install
