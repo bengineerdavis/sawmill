@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "sawmill"
+version = "0.3.0"
+description = "The smarter cousin of the classic unix 'touch' command!"
+authors = ["Ben Davis <bengineerdavis@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "sawmill", from = "src" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = { extras = ["all"], version = "^0.12.2" }
+pandas = "^2.2.1"
+datasette = "^0.64.6"
+sqlalchemy = "^2.0.29"
+
+[tool.poetry.group.dev.dependencies]
+hypothesis = "^6.100.1"
+pytest = "^8.1.1"
+ruff = "^0.3.5"
+pytest-ruff = "^0.3.1"
+hypothesis-crosshair = "^0.0.2"
+pytest-xdist = "^3.5.0"
+
+[tool.poetry.scripts]
+sawmill = 'sawmill.cli:app'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
