@@ -1,0 +1,517 @@
+2024-03-27 15:43:48 platform > Cloud storage job log path: /workspace/99/0/logs.log
+2024-03-27 15:43:48 platform > Executing worker wrapper. Airbyte version: 0.50.56
+2024-03-27 15:43:48 platform > Attempt 0 to save workflow id for cancellation
+2024-03-27 15:43:48 platform > 
+2024-03-27 15:43:48 platform > ----- START CHECK -----
+2024-03-27 15:43:48 platform > 
+2024-03-27 15:43:48 platform > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:43:48 platform > Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:43:48 platform > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:43:48 platform > Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:43:48 platform > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 15:43:48 platform > Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-27 15:43:48 platform > Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-27 15:43:48 platform > Attempting to start pod = source-declarative-manifest-check-99-0-atllj for airbyte/source-declarative-manifest:0.65.0 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@567f844[cpuRequest=2,cpuLimit=2,memoryRequest=16Gi,memoryLimit=16Gi,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@402dc8ed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@4f8944f4[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@716d36c0[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@716d36c0[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-27 15:43:48 platform > source-declarative-manifest-check-99-0-atllj stdoutLocalPort = 9038
+2024-03-27 15:43:48 platform > source-declarative-manifest-check-99-0-atllj stderrLocalPort = 9039
+2024-03-27 15:43:48 platform > Creating stdout socket server...
+2024-03-27 15:43:48 platform > Creating stderr socket server...
+2024-03-27 15:43:48 platform > Creating pod source-declarative-manifest-check-99-0-atllj...
+2024-03-27 15:43:48 platform > Waiting for init container to be ready before copying files...
+2024-03-27 15:44:36 platform > Init container ready..
+2024-03-27 15:44:36 platform > Copying files...
+2024-03-27 15:44:36 platform > Uploading file: source_config.json
+2024-03-27 15:44:36 platform > kubectl cp /tmp/a8bbad5f-a24e-4c23-a3dc-9de51a63c58a/source_config.json et-airbyte/source-declarative-manifest-check-99-0-atllj:/config/source_config.json -c init --retries=3
+2024-03-27 15:44:36 platform > Waiting for kubectl cp to complete
+2024-03-27 15:44:36 platform > kubectl cp complete, closing process
+2024-03-27 15:44:36 platform > Uploading file: FINISHED_UPLOADING
+2024-03-27 15:44:36 platform > kubectl cp /tmp/3f753120-b311-4378-925a-af2f89d7d400/FINISHED_UPLOADING et-airbyte/source-declarative-manifest-check-99-0-atllj:/config/FINISHED_UPLOADING -c init --retries=3
+2024-03-27 15:44:36 platform > Waiting for kubectl cp to complete
+2024-03-27 15:44:36 platform > kubectl cp complete, closing process
+2024-03-27 15:44:36 platform > Waiting until pod is ready...
+2024-03-27 15:44:40 platform > Setting stdout...
+2024-03-27 15:44:40 platform > Setting stderr...
+2024-03-27 15:44:40 platform > Reading pod IP...
+2024-03-27 15:44:40 platform > Pod IP: 10.11.249.193
+2024-03-27 15:44:40 platform > Using null stdin output stream...
+2024-03-27 15:44:40 platform > Reading messages from protocol version 0.2.0
+2024-03-27 15:44:43 platform > Check succeeded
+2024-03-27 15:44:43 platform > (pod: et-airbyte / source-declarative-manifest-check-99-0-atllj) - Closed all resources for pod
+2024-03-27 15:44:43 platform > Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@7300e1a4[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-27 15:44:43 platform > 
+2024-03-27 15:44:43 platform > ----- END CHECK -----
+2024-03-27 15:44:43 platform > 
+2024-03-27 15:44:44 platform > Cloud storage job log path: /workspace/99/0/logs.log
+2024-03-27 15:44:44 platform > Executing worker wrapper. Airbyte version: 0.50.56
+2024-03-27 15:44:44 platform > Attempt 0 to save workflow id for cancellation
+2024-03-27 15:44:44 platform > 
+2024-03-27 15:44:44 platform > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:44:44 platform > ----- START CHECK -----
+2024-03-27 15:44:44 platform > Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:44:44 platform > 
+2024-03-27 15:44:44 platform > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:44:44 platform > Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:44:44 platform > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 15:44:44 platform > Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-27 15:44:44 platform > Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-27 15:44:44 platform > Attempting to start pod = destination-redshift-check-99-0-xdgkq for airbyte/destination-redshift:2.1.8 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@5310078c[cpuRequest=2,cpuLimit=2,memoryRequest=16Gi,memoryLimit=16Gi,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@402dc8ed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@4f8944f4[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@716d36c0[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@716d36c0[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-27 15:44:44 platform > destination-redshift-check-99-0-xdgkq stdoutLocalPort = 9032
+2024-03-27 15:44:44 platform > destination-redshift-check-99-0-xdgkq stderrLocalPort = 9033
+2024-03-27 15:44:44 platform > Creating stdout socket server...
+2024-03-27 15:44:44 platform > Creating stderr socket server...
+2024-03-27 15:44:44 platform > Creating pod destination-redshift-check-99-0-xdgkq...
+2024-03-27 15:44:44 platform > Waiting for init container to be ready before copying files...
+2024-03-27 15:44:45 platform > Init container ready..
+2024-03-27 15:44:45 platform > Copying files...
+2024-03-27 15:44:45 platform > Uploading file: source_config.json
+2024-03-27 15:44:45 platform > kubectl cp /tmp/8913c1e7-5239-4d07-ac9d-f96d6282a91c/source_config.json et-airbyte/destination-redshift-check-99-0-xdgkq:/config/source_config.json -c init --retries=3
+2024-03-27 15:44:45 platform > Waiting for kubectl cp to complete
+2024-03-27 15:44:45 platform > kubectl cp complete, closing process
+2024-03-27 15:44:45 platform > Uploading file: FINISHED_UPLOADING
+2024-03-27 15:44:45 platform > kubectl cp /tmp/852a44ea-7d23-49ee-a594-cdf54718d2a6/FINISHED_UPLOADING et-airbyte/destination-redshift-check-99-0-xdgkq:/config/FINISHED_UPLOADING -c init --retries=3
+2024-03-27 15:44:45 platform > Waiting for kubectl cp to complete
+2024-03-27 15:44:45 platform > kubectl cp complete, closing process
+2024-03-27 15:44:45 platform > Waiting until pod is ready...
+2024-03-27 15:44:47 platform > Setting stdout...
+2024-03-27 15:44:47 platform > Setting stderr...
+2024-03-27 15:44:47 platform > Reading pod IP...
+2024-03-27 15:44:47 platform > Pod IP: 10.11.233.245
+2024-03-27 15:44:47 platform > Using null stdin output stream...
+2024-03-27 15:44:47 platform > Reading messages from protocol version 0.2.0
+2024-03-27 15:44:48 platform > INFO main i.a.i.d.r.RedshiftDestination(main):79 starting destination: class io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.b.IntegrationRunner(runInternal):132 Running integration: io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.b.IntegrationRunner(runInternal):133 Command: CHECK
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.b.IntegrationRunner(runInternal):134 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-27 15:44:48 platform > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword groups - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:44:48 platform > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword group - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:44:48 platform > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:44:48 platform > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:44:48 platform > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword display_type - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.d.j.c.SwitchingDestination(check):56 Using destination type: COPY_S3
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.b.s.SshTunnel(getInstance):252 Starting connection with method: NO_TUNNEL
+2024-03-27 15:44:48 platform > INFO main i.a.c.i.d.s.S3DestinationConfig(createS3Client):239 Creating S3 client...
+2024-03-27 15:45:06 INFO i.m.r.Micronaut(lambda$start$2):98 - Startup completed in 1326ms. Server Running: http://orchestrator-repl-job-99-attempt-0:9000
+2024-03-27 15:45:07 replication-orchestrator > Writing async status INITIALIZING for KubePodInfo[namespace=et-airbyte, name=orchestrator-repl-job-99-attempt-0, mainContainerInfo=KubeContainerInfo[image=106877218800.dkr.ecr.us-east-1.amazonaws.com/data-engineering/airbyte/container-orchestrator:0.50.56, pullPolicy=Always]]...
+2024-03-27 15:45:06 INFO i.a.f.ConfigFileClient(<init>):105 - path /flags does not exist, will return default flag values
+2024-03-27 15:45:06 INFO i.a.m.l.MetricClientFactory(initializeDatadogMetricClient):126 - Initializing DatadogMetricClient
+2024-03-27 15:45:06 INFO i.a.c.EnvConfigs(getEnvOrDefault):694 - Using default value for environment variable DD_CONSTANT_TAGS: ''
+2024-03-27 15:45:06 INFO i.a.m.l.DogStatsDMetricClient(initialize):52 - Starting DogStatsD client..
+2024-03-27 15:45:20 INFO i.a.a.SegmentAnalyticsClient(close):221 - Closing Segment analytics client...
+2024-03-27 15:45:20 INFO i.a.a.BlockingShutdownAnalyticsPlugin(waitForFlush):276 - Waiting for Segment analytic client to flush enqueued messages...
+2024-03-27 15:45:20 INFO i.a.a.BlockingShutdownAnalyticsPlugin(waitForFlush):288 - Segment analytic client flush complete.
+2024-03-27 15:45:20 INFO i.a.a.SegmentAnalyticsClient(close):225 - Segment analytics client closed.  No new events will be accepted.
+2024-03-27 15:45:07 replication-orchestrator > sourceLauncherConfig is: io.airbyte.persistence.job.models.IntegrationLauncherConfig@1f68e4e8[jobId=99,attemptId=0,connectionId=4b823c01-783e-4c16-94c7-9a50ef6574b1,workspaceId=a2b085b7-bb50-4d18-a1ce-6f712d0a8855,dockerImage=airbyte/source-declarative-manifest:0.65.0,normalizationDockerImage=<null>,supportsDbt=false,normalizationIntegrationType=<null>,protocolVersion=Version{version='0.2.0', major='0', minor='2', patch='0'},isCustomConnector=true,allowedHosts=<null>,additionalEnvironmentVariables=<null>,additionalLabels=<null>,additionalProperties={}]
+2024-03-27 15:45:07 replication-orchestrator > Attempt 0 to get the source definition for feature flag checks
+2024-03-27 15:45:07 replication-orchestrator > Attempt 0 to get the source definition
+2024-03-27 15:45:07 replication-orchestrator > Concurrent stream read enabled? false
+2024-03-27 15:45:07 replication-orchestrator > Setting up source...
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_MEMORY_LIMIT: '50Mi'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_MEMORY_REQUEST: '25Mi'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_MEMORY_LIMIT: '50Mi'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_MEMORY_REQUEST: '25Mi'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_MEMORY_LIMIT: '50Mi'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_MEMORY_REQUEST: '25Mi'
+2024-03-27 15:45:07 replication-orchestrator > Setting up destination...
+2024-03-27 15:45:07 replication-orchestrator > Setting up replication worker...
+2024-03-27 15:45:07 replication-orchestrator > Using BoundedConcurrentLinkedQueue
+2024-03-27 15:45:07 replication-orchestrator > Using BoundedConcurrentLinkedQueue
+2024-03-27 15:45:07 replication-orchestrator > Running replication worker...
+2024-03-27 15:45:07 replication-orchestrator > start sync worker. job id: 99 attempt id: 0
+2024-03-27 15:45:07 replication-orchestrator > 
+2024-03-27 15:45:07 replication-orchestrator > ----- START REPLICATION -----
+2024-03-27 15:45:07 replication-orchestrator > 
+2024-03-27 15:45:07 replication-orchestrator > Running destination...
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-27 15:45:07 replication-orchestrator > Attempting to start pod = destination-redshift-write-99-0-fxsra for airbyte/destination-redshift:2.1.8 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@5ab4c5f5[cpuRequest=2,cpuLimit=2,memoryRequest=1Gi,memoryLimit=1Gi,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@427378ac[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@729adddc[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@2fbd1ec1[cpuRequest=0.5,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@6fd10a5c[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-27 15:45:07 replication-orchestrator > Attempting to start pod = source-declarative-manifest-read-99-0-nrijh for airbyte/source-declarative-manifest:0.65.0 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@239c76c2[cpuRequest=2,cpuLimit=2,memoryRequest=16Gi,memoryLimit=16Gi,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@427378ac[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@6bf734d1[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=null, stdOut=io.airbyte.config.ResourceRequirements@40f5daae[cpuRequest=0.5,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-27 15:45:07 replication-orchestrator > destination-redshift-write-99-0-fxsra stdoutLocalPort = 9878
+2024-03-27 15:45:07 replication-orchestrator > source-declarative-manifest-read-99-0-nrijh stdoutLocalPort = 9879
+2024-03-27 15:45:07 replication-orchestrator > destination-redshift-write-99-0-fxsra stderrLocalPort = 9877
+2024-03-27 15:45:07 replication-orchestrator > source-declarative-manifest-read-99-0-nrijh stderrLocalPort = 9880
+2024-03-27 15:45:07 replication-orchestrator > Using default value for environment variable SYNC_JOB_INIT_RETRY_TIMEOUT_MINUTES: '5'
+2024-03-27 15:45:07 replication-orchestrator > Creating stdout socket server...
+2024-03-27 15:45:07 replication-orchestrator > Creating stdout socket server...
+2024-03-27 15:45:07 replication-orchestrator > Creating stderr socket server...
+2024-03-27 15:45:07 replication-orchestrator > Creating stderr socket server...
+2024-03-27 15:45:07 replication-orchestrator > Creating pod source-declarative-manifest-read-99-0-nrijh...
+2024-03-27 15:45:07 replication-orchestrator > Creating pod destination-redshift-write-99-0-fxsra...
+2024-03-27 15:45:08 replication-orchestrator > Waiting for init container to be ready before copying files...
+2024-03-27 15:45:08 replication-orchestrator > Waiting for init container to be ready before copying files...
+2024-03-27 15:45:08 replication-orchestrator > Init container ready..
+2024-03-27 15:45:08 replication-orchestrator > Copying files...
+2024-03-27 15:45:08 replication-orchestrator > Uploading file: destination_config.json
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp /tmp/864241bf-2b90-4588-80c2-4de126c22292/destination_config.json et-airbyte/destination-redshift-write-99-0-fxsra:/config/destination_config.json -c init --retries=3
+2024-03-27 15:45:08 replication-orchestrator > Init container ready..
+2024-03-27 15:45:08 replication-orchestrator > Copying files...
+2024-03-27 15:45:08 replication-orchestrator > Uploading file: source_config.json
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp /tmp/5a05adfa-f2ad-4f07-888f-252ce3c0a143/source_config.json et-airbyte/source-declarative-manifest-read-99-0-nrijh:/config/source_config.json -c init --retries=3
+2024-03-27 15:45:08 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:08 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:08 replication-orchestrator > Uploading file: source_catalog.json
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp /tmp/9ab5613d-e86a-4d30-9440-d7a673968f94/source_catalog.json et-airbyte/source-declarative-manifest-read-99-0-nrijh:/config/source_catalog.json -c init --retries=3
+2024-03-27 15:45:08 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:08 replication-orchestrator > Uploading file: destination_catalog.json
+2024-03-27 15:45:08 replication-orchestrator > kubectl cp /tmp/4f1699fb-e421-4d98-87a8-03dd744d11a2/destination_catalog.json et-airbyte/destination-redshift-write-99-0-fxsra:/config/destination_catalog.json -c init --retries=3
+2024-03-27 15:45:08 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:09 replication-orchestrator > Uploading file: FINISHED_UPLOADING
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp /tmp/a7fe6457-73a9-4722-8fe4-e6341b30228b/FINISHED_UPLOADING et-airbyte/destination-redshift-write-99-0-fxsra:/config/FINISHED_UPLOADING -c init --retries=3
+2024-03-27 15:45:09 replication-orchestrator > Uploading file: FINISHED_UPLOADING
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp /tmp/6d5d2667-1a5e-475c-b70c-d900276573ee/FINISHED_UPLOADING et-airbyte/source-declarative-manifest-read-99-0-nrijh:/config/FINISHED_UPLOADING -c init --retries=3
+2024-03-27 15:45:09 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:09 replication-orchestrator > Waiting for kubectl cp to complete
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:09 replication-orchestrator > Waiting until pod is ready...
+2024-03-27 15:45:09 replication-orchestrator > kubectl cp complete, closing process
+2024-03-27 15:45:09 replication-orchestrator > Waiting until pod is ready...
+2024-03-27 15:45:10 replication-orchestrator > Setting stdout...
+2024-03-27 15:45:10 replication-orchestrator > Setting stdout...
+2024-03-27 15:45:10 replication-orchestrator > Setting stderr...
+2024-03-27 15:45:10 replication-orchestrator > Reading pod IP...
+2024-03-27 15:45:10 replication-orchestrator > Pod IP: 10.11.247.248
+2024-03-27 15:45:10 replication-orchestrator > Using null stdin output stream...
+2024-03-27 15:45:10 replication-orchestrator > Reading messages from protocol version 0.2.0
+2024-03-27 15:45:10 replication-orchestrator > Setting stderr...
+2024-03-27 15:45:11 replication-orchestrator > Reading pod IP...
+2024-03-27 15:45:11 replication-orchestrator > Pod IP: 10.11.241.121
+2024-03-27 15:45:11 replication-orchestrator > Creating stdin socket...
+2024-03-27 15:45:11 replication-orchestrator > Writing messages to protocol version 0.2.0
+2024-03-27 15:45:11 replication-orchestrator > Reading messages from protocol version 0.2.0
+2024-03-27 15:45:11 replication-orchestrator > Writing async status RUNNING for KubePodInfo[namespace=et-airbyte, name=orchestrator-repl-job-99-attempt-0, mainContainerInfo=KubeContainerInfo[image=106877218800.dkr.ecr.us-east-1.amazonaws.com/data-engineering/airbyte/container-orchestrator:0.50.56, pullPolicy=Always]]...
+2024-03-27 15:45:11 replication-orchestrator > readFromSource: start
+2024-03-27 15:45:11 replication-orchestrator > Starting source heartbeat check. Will check every 1 minutes.
+2024-03-27 15:45:11 replication-orchestrator > processMessage: start
+2024-03-27 15:45:11 replication-orchestrator > writeToDestination: start
+2024-03-27 15:45:11 replication-orchestrator > readFromDestination: start
+2024-03-27 15:45:11 source > Starting syncing ManifestDeclarativeSource
+2024-03-27 15:45:11 destination > INFO main i.a.i.d.r.RedshiftDestination(main):79 starting destination: class io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:45:11 source > Marking stream summary as STARTED
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.IntegrationCliParser(parseOptions):126 integration args: {catalog=destination_catalog.json, write=null, config=destination_config.json}
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.IntegrationRunner(runInternal):132 Running integration: io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.IntegrationRunner(runInternal):133 Command: WRITE
+2024-03-27 15:45:11 source > Syncing stream: summary 
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.IntegrationRunner(runInternal):134 Integration config: IntegrationConfig{command=WRITE, configPath='destination_config.json', catalogPath='destination_catalog.json', statePath='null'}
+2024-03-27 15:45:11 destination > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword groups - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:45:11 destination > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword group - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:45:11 destination > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:45:11 destination > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:45:11 destination > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword display_type - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.d.j.c.SwitchingDestination(getSerializedMessageConsumer):76 Using destination type: COPY_S3
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.s.SshWrappedDestination(getSerializedMessageConsumer):113 No SSH connection options found, using defaults
+2024-03-27 15:45:11 destination > INFO main i.a.c.i.b.s.SshTunnel(getInstance):252 Starting connection with method: NO_TUNNEL
+2024-03-27 15:45:11 replication-orchestrator > Attempt 0 to stream status started null:summary
+2024-03-27 15:45:11 destination > INFO main c.z.h.HikariDataSource(<init>):79 HikariPool-1 - Starting...
+2024-03-27 15:45:11 destination > WARN main c.z.h.u.DriverDataSource(<init>):68 Registered driver with driverClassName=com.amazon.redshift.jdbc.Driver was not found, trying direct instantiation.
+2024-03-27 15:45:11 destination > INFO main c.z.h.HikariDataSource(<init>):81 HikariPool-1 - Start completed.
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.s.S3DestinationConfig(createS3Client):239 Creating S3 client...
+2024-03-27 15:45:12 source > Marking stream summary as RUNNING
+2024-03-27 15:45:12 replication-orchestrator > Attempt 0 to update stream status running null:summary
+2024-03-27 15:45:12 source > Read 8 records from summary stream
+2024-03-27 15:45:12 source > Marking stream summary as STOPPED
+2024-03-27 15:45:12 source > Finished syncing summary
+2024-03-27 15:45:12 source > ManifestDeclarativeSource runtimes:
+Syncing stream summary 0:00:00.505997
+2024-03-27 15:45:12 source > Finished syncing ManifestDeclarativeSource
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.s.StagingConsumerFactory(lambda$toWriteConfig$2):293 Write config: WriteConfig{streamName=us_ecomm_settlement_summary, namespace=user__tian, outputSchemaName=_airbyte_raw, tmpTableName=_airbyte_tmp_jcn_us_ecomm_settlement_summary, outputTableName=user__tian_raw___stream_us_ecomm_settlement_summary, syncMode=append_dedup}
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.b.BufferManager(<init>):53 Max 'memory' available for buffer allocation 519 MB
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.FlushWorkers(start):95 Start async buffer supervisor
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.AsyncStreamConsumer(start):138 class io.airbyte.cdk.integrations.destination_async.AsyncStreamConsumer started.
+2024-03-27 15:45:12 destination > INFO pool-5-thread-1 i.a.c.i.d.FlushWorkers(printWorkerInfo):143 [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-27 15:45:12 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):41 Preparing raw tables in destination started for 1 streams
+2024-03-27 15:45:12 destination > INFO main i.a.i.b.d.t.DefaultTyperDeduper(prepareTables):117 Preparing tables
+2024-03-27 15:45:12 destination > INFO pool-3-thread-1 i.a.c.i.d.b.BufferManager(printQueueInfo):118 [ASYNC QUEUE INFO] Global: max: 519.71 MB, allocated: 10 MB (10.0 MB), % used: 0.01924163893484099 | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-27 15:45:12 destination > INFO main o.j.t.JooqLogger(lambda$info$5):355 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.16.23 (Build date: 2023-12-20T14:13:48Z)
+                                      
+2024-03-27 15:45:12 destination > INFO main o.j.t.JooqLogger(lambda$info$5):355 
+
+jOOQ tip of the day: If you must be using OFFSET pagination (you probably shouldn't!), then do it right, and without extra round trips: https://blog.jooq.org/calculating-pagination-metadata-without-extra-roundtrips-in-sql/
+
+2024-03-27 15:45:12 destination > INFO main i.a.i.d.r.t.RedshiftDestinationHandler(execute):37 Executing sql 916d4b65-1ea6-4c3b-8636-3b0448661435-464f8beb-ed49-4688-ae31-51cb5100370a: create schema if not exists "_airbyte_raw";
+2024-03-27 15:45:12 replication-orchestrator > (pod: et-airbyte / source-declarative-manifest-read-99-0-nrijh) - Closed all resources for pod
+2024-03-27 15:45:12 replication-orchestrator > Total records read: 12 (1 KB)
+2024-03-27 15:45:12 replication-orchestrator > Schema validation was performed to a max of 10 records with errors per stream.
+2024-03-27 15:45:12 replication-orchestrator > readFromSource: done. (source.isFinished:true, fromSource.isClosed:false)
+2024-03-27 15:45:12 replication-orchestrator > processMessage: done. (fromSource.isDone:true, forDest.isClosed:false)
+2024-03-27 15:45:12 replication-orchestrator > thread status... heartbeat thread: false , replication thread: true
+2024-03-27 15:45:12 replication-orchestrator > writeToDestination: done. (forDest.isDone:true, isDestRunning:true)
+2024-03-27 15:45:12 replication-orchestrator > thread status... timeout thread: false , replication thread: true
+2024-03-27 15:45:13 destination > INFO main i.a.i.d.r.t.RedshiftDestinationHandler(execute):54 Sql 916d4b65-1ea6-4c3b-8636-3b0448661435-464f8beb-ed49-4688-ae31-51cb5100370a completed in 691 ms
+2024-03-27 15:45:13 destination > INFO main i.a.i.d.r.t.RedshiftDestinationHandler(execute):37 Executing sql 916d4b65-1ea6-4c3b-8636-3b0448661435-5c70de85-6a39-466f-b33a-1a88ce55a52a: create schema if not exists "user__tian";
+2024-03-27 15:45:13 destination > INFO main i.a.i.d.r.t.RedshiftDestinationHandler(execute):54 Sql 916d4b65-1ea6-4c3b-8636-3b0448661435-5c70de85-6a39-466f-b33a-1a88ce55a52a completed in 450 ms
+2024-03-27 15:45:13 destination > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):26 Assessing whether migration is necessary for stream us_ecomm_settlement_summary
+2024-03-27 15:45:13 destination > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):45 Checking whether v1 raw table _airbyte_raw_us_ecomm_settlement_summary in dataset user__tian exists
+2024-03-27 15:45:13 destination > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(lambda$findExistingTable$7):194 Retrieving existing columns for etl._airbyte_raw.user__tian_raw___stream_us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(lambda$findExistingTable$7):194 Retrieving existing columns for etl.user__tian._airbyte_raw_us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):49 Migration Info: Required for Sync mode: true, No existing v2 raw tables: false, A v1 raw table exists: false
+2024-03-27 15:45:14 destination > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):32 No Migration Required for stream: us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO Thread-1 i.a.c.i.d.j.t.JdbcDestinationHandler(lambda$findExistingTable$7):194 Retrieving existing columns for etl.user__tian.us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO Thread-1 i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):132 closing connection
+2024-03-27 15:45:14 destination > INFO Thread-1 i.a.c.i.d.j.t.JdbcDestinationHandler(lambda$getInitialRawTableState$0):83 Retrieving table from Db metadata: etl _airbyte_raw user__tian_raw___stream_us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO Thread-1 i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):132 closing connection
+2024-03-27 15:45:14 destination > INFO Thread-1 i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):132 closing connection
+2024-03-27 15:45:14 destination > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$1):154 Final Table exists for stream us_ecomm_settlement_summary
+2024-03-27 15:45:14 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):53 Preparing staging area in destination started for schema _airbyte_raw stream us_ecomm_settlement_summary: target table: user__tian_raw___stream_us_ecomm_settlement_summary, stage: datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_6f1061f3-9859-4e1d-8d3c-280381defab2/
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):70 Preparing staging area in destination completed for schema _airbyte_raw stream us_ecomm_settlement_summary
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):72 Executing finalization of tables.
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.s.GlobalAsyncStateManager(closeState):317 State with arrival number 0 received
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.FlushWorkers(close):188 Closing flush workers -- waiting for all buffers to flush
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.FlushWorkers(close):213 REMAINING_BUFFERS_INFO
+  Namespace: user__tian Stream: us_ecomm_settlement_summary -- remaining records: 8
+2024-03-27 15:45:15 destination > INFO main i.a.c.i.d.FlushWorkers(close):214 Waiting for all streams to flush.
+2024-03-27 15:45:16 destination > INFO pool-6-thread-1 i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 flushing: trigger info: user__tian - us_ecomm_settlement_summary, time trigger: false , size trigger: true current threshold b: 0 bytes, queue size b: 3.43 KB, penalty b: 0 bytes, after penalty b: 3.43 KB
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.FlushWorkers(lambda$flush$1):149 Flush Worker (fb74f) -- Worker picked up work.
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.FlushWorkers(lambda$flush$1):151 Flush Worker (fb74f) -- Attempting to read from queue namespace: user__tian, stream: us_ecomm_settlement_summary.
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.GlobalMemoryManager(free):88 Freeing 10482243 bytes..
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.FlushWorkers(lambda$flush$1):164 Flush Worker (fb74f) -- Batch contains: 8 records, 3.43 KB bytes.
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.r.BaseSerializedBuffer(flush):172 Finished writing data to dba650b3-d8e8-4e61-9041-38e5b7e93d195860884189337424115.csv.gz (893 bytes)
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.s.AsyncFlush(flush):88 Flushing CSV buffer for stream us_ecomm_settlement_summary (893 bytes) to staging
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 Initiated multipart upload to peloton-prod-data-engineering-et-airbyte-landing/datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/0.csv.gz with full ID Kb_WXlVtWwbQBzXQcOpwnCVFwnVXA_MUNOWCgVMK6Jsbr72Auk8GtzvsdfsQtn2SzyfNker.SwzsoL_EgvG52FmQU_yoJ5GMRc_lQeN4SpWLfmi384hWQ1CgtfJhRZML
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 a.m.s.StreamTransferManager(complete):367 [Manager uploading to peloton-prod-data-engineering-et-airbyte-landing/datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/0.csv.gz with id Kb_WXlVtW...gtfJhRZML]: Uploading leftover stream [Part number 1 containing 0.00 MB]
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 a.m.s.StreamTransferManager(uploadStreamPart):560 [Manager uploading to peloton-prod-data-engineering-et-airbyte-landing/datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/0.csv.gz with id Kb_WXlVtW...gtfJhRZML]: Finished uploading [Part number 1 containing 0.00 MB]
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 a.m.s.StreamTransferManager(complete):397 [Manager uploading to peloton-prod-data-engineering-et-airbyte-landing/datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/0.csv.gz with id Kb_WXlVtW...gtfJhRZML]: Completed
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.s.S3StorageOperations(loadDataIntoBucket):217 Uploaded buffer file to storage: dba650b3-d8e8-4e61-9041-38e5b7e93d195860884189337424115.csv.gz -> datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/0.csv.gz (filename: 0.csv.gz)
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.c.i.d.s.S3StorageOperations(uploadRecordsToBucket):134 Successfully loaded records to stage datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/ with 0 re-attempt(s)
+2024-03-27 15:45:16 destination > INFO pool-4-thread-1 i.a.i.d.r.o.RedshiftS3StagingSqlOperations(copyIntoTableFromStage):110 Starting copy to target table from stage: user__tian_raw___stream_us_ecomm_settlement_summary in destination from stage: datasets/json/user__tian_raw___stream_us_ecomm_settlement_summary/2024_03_27_15_e0a31995-73bb-4ea3-92d8-dbc9adf50378/, schema: _airbyte_raw, .
+2024-03-27 15:45:16 destination > INFO main i.a.c.i.d.FlushWorkers(close):217 Closing flush workers -- all buffers flushed
+2024-03-27 15:45:16 destination > INFO main i.a.c.i.d.GlobalMemoryManager(free):88 Freeing 0 bytes..
+2024-03-27 15:45:16 destination > INFO main i.a.c.i.d.FlushWorkers(close):225 Closing flush workers -- supervisor shut down
+2024-03-27 15:45:16 destination > INFO main i.a.c.i.d.FlushWorkers(close):227 Closing flush workers -- Starting worker pool shutdown..
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.i.d.r.o.RedshiftS3StagingSqlOperations(copyIntoTableFromStage):116 Copy to target table _airbyte_raw.user__tian_raw___stream_us_ecomm_settlement_summary in destination complete.
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 Skipping Incremental Typing and Deduping
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.c.i.d.r.FileBuffer(deleteFile):109 Deleting tempFile data dba650b3-d8e8-4e61-9041-38e5b7e93d195860884189337424115.csv.gz
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.c.i.d.s.GlobalAsyncStateManager(flushStates):196 State with arrival number 0 emitted from thread pool-4-thread-1 at 2024-03-27T15:45:17.761201615Z
+2024-03-27 15:45:17 replication-orchestrator > Exception while trying to emit state count metrics
+java.lang.NullPointerException: null value in entry: stream_namespace=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33) ~[guava-31.1-jre.jar:?]
+	at com.google.common.collect.RegularImmutableMap.fromEntryArrayCheckingBucketOverflow(RegularImmutableMap.java:128) ~[guava-31.1-jre.jar:?]
+	at com.google.common.collect.RegularImmutableMap.fromEntryArray(RegularImmutableMap.java:94) ~[guava-31.1-jre.jar:?]
+	at com.google.common.collect.RegularImmutableMap.fromEntries(RegularImmutableMap.java:77) ~[guava-31.1-jre.jar:?]
+	at com.google.common.collect.ImmutableMap.copyOf(ImmutableMap.java:714) ~[guava-31.1-jre.jar:?]
+	at com.google.common.collect.ImmutableMap.copyOf(ImmutableMap.java:686) ~[guava-31.1-jre.jar:?]
+	at com.segment.analytics.messages.ImmutableMap.copyOf(ImmutableMap.java:25) ~[analytics-core-2.1.1.jar:?]
+	at com.segment.analytics.messages.TrackMessage$Builder.properties(TrackMessage.java:67) ~[analytics-core-2.1.1.jar:?]
+	at io.airbyte.analytics.SegmentTrackingClient.track(TrackingClient.kt:179) ~[io.airbyte-airbyte-analytics-0.50.56.jar:?]
+	at io.airbyte.workers.internal.bookkeeping.ParallelStreamStatsTracker.trackStateCountMetrics(ParallelStreamStatsTracker.kt:322) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.internal.bookkeeping.ParallelStreamStatsTracker.validateStateChecksum(ParallelStreamStatsTracker.kt:265) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.internal.bookkeeping.ParallelStreamStatsTracker.validateStateChecksum$default(ParallelStreamStatsTracker.kt:190) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.internal.bookkeeping.ParallelStreamStatsTracker.updateDestinationStateStats(ParallelStreamStatsTracker.kt:139) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.internal.syncpersistence.SyncPersistenceImpl.updateDestinationStateStats(SyncPersistence.kt:411) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.internal.bookkeeping.AirbyteMessageTracker.acceptFromDestination(AirbyteMessageTracker.kt:65) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.general.ReplicationWorkerHelper.internalProcessMessageFromDestination(ReplicationWorkerHelper.kt:391) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.general.ReplicationWorkerHelper.processMessageFromDestination(ReplicationWorkerHelper.kt:283) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.general.BufferedReplicationWorker.readFromDestination(BufferedReplicationWorker.java:497) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at io.airbyte.workers.general.BufferedReplicationWorker.lambda$runAsync$2(BufferedReplicationWorker.java:252) ~[io.airbyte-airbyte-commons-worker-0.50.56.jar:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-03-27 15:45:17 replication-orchestrator > Hash of the state message received from the destination 1825402491
+2024-03-27 15:45:17 replication-orchestrator > removing 1825402491 from the stored stateHashes for the stream null:summary, state received time 2024-03-27T15:45:12.273287249stagedStatsList size after poll: 0, stateHashes size before removal 1
+2024-03-27 15:45:17 replication-orchestrator > starting state flush thread for connectionId 4b823c01-783e-4c16-94c7-9a50ef6574b1
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.c.i.d.GlobalMemoryManager(free):88 Freeing 295 bytes..
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.c.i.d.GlobalMemoryManager(free):88 Freeing 3517 bytes..
+2024-03-27 15:45:17 destination > INFO pool-4-thread-1 i.a.c.i.d.FlushWorkers(lambda$flush$1):173 Flush Worker (fb74f) -- Worker finished flushing. Current queue size: 0
+2024-03-27 15:45:17 destination > INFO main i.a.c.i.d.FlushWorkers(close):232 Closing flush workers  -- workers shut down
+2024-03-27 15:45:17 destination > INFO main i.a.c.i.d.b.BufferManager(close):92 Buffers cleared..
+2024-03-27 15:45:17 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):131 Cleaning up destination started for 1 streams
+2024-03-27 15:45:17 destination > INFO main i.a.i.b.d.t.DefaultTyperDeduper(typeAndDedupe):281 Typing and deduping all tables
+2024-03-27 15:45:17 destination > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$2):251 Waiting for raw table writes to pause for user__tian.us_ecomm_settlement_summary
+2024-03-27 15:45:17 destination > INFO type-and-dedupe i.a.i.b.d.t.TypeAndDedupeTransaction(executeTypeAndDedupe):36 Attempting typing and deduping for user__tian.us_ecomm_settlement_summary with suffix 
+2024-03-27 15:45:17 destination > INFO type-and-dedupe i.a.i.d.r.t.RedshiftDestinationHandler(execute):37 Executing sql da29f917-5fe7-4025-9b27-8665bb4cd070-ccc443e5-828e-47db-bde1-3957bd59a687: insert into "user__tian"."us_ecomm_settlement_summary" ("id", "date", "currency", "deposit_id", "total_fees", "total_sales", "total_refunds", "total_settled", "account_last_four", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_meta") with "intermediate_data" as (select CASE WHEN (JSON_TYPEOF("_airbyte_data"."id") <> 'string' and "_airbyte_data"."id" is not null) THEN JSON_SERIALIZE("_airbyte_data"."id") ELSE cast("_airbyte_data"."id" as varchar(65535)) END  as "id", CASE WHEN (JSON_TYPEOF("_airbyte_data"."date") <> 'string' and "_airbyte_data"."date" is not null) THEN JSON_SERIALIZE("_airbyte_data"."date") ELSE cast("_airbyte_data"."date" as varchar(65535)) END  as "date", CASE WHEN (JSON_TYPEOF("_airbyte_data"."currency") <> 'string' and "_airbyte_data"."currency" is not null) THEN JSON_SERIALIZE("_airbyte_data"."currency") ELSE cast("_airbyte_data"."currency" as varchar(65535)) END  as "currency", CASE WHEN (JSON_TYPEOF("_airbyte_data"."deposit_id") <> 'string' and "_airbyte_data"."deposit_id" is not null) THEN JSON_SERIALIZE("_airbyte_data"."deposit_id") ELSE cast("_airbyte_data"."deposit_id" as varchar(65535)) END  as "deposit_id", cast("_airbyte_data"."total_fees" as decimal(38, 9)) as "total_fees", cast("_airbyte_data"."total_sales" as decimal(38, 9)) as "total_sales", cast("_airbyte_data"."total_refunds" as decimal(38, 9)) as "total_refunds", cast("_airbyte_data"."total_settled" as decimal(38, 9)) as "total_settled", CASE WHEN (JSON_TYPEOF("_airbyte_data"."account_last_four") <> 'string' and "_airbyte_data"."account_last_four" is not null) THEN JSON_SERIALIZE("_airbyte_data"."account_last_four") ELSE cast("_airbyte_data"."account_last_four" as varchar(65535)) END  as "account_last_four", "_airbyte_raw_id", "_airbyte_extracted_at", OBJECT('errors', ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(ARRAY_CONCAT(CASE WHEN ("_airbyte_data"."id" is not null and "id" is null) THEN ARRAY('Problem with `id`') ELSE ARRAY() END , CASE WHEN ("_airbyte_data"."date" is not null and "date" is null) THEN ARRAY('Problem with `date`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."currency" is not null and "currency" is null) THEN ARRAY('Problem with `currency`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."deposit_id" is not null and "deposit_id" is null) THEN ARRAY('Problem with `deposit_id`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."total_fees" is not null and "total_fees" is null) THEN ARRAY('Problem with `total_fees`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."total_sales" is not null and "total_sales" is null) THEN ARRAY('Problem with `total_sales`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."total_refunds" is not null and "total_refunds" is null) THEN ARRAY('Problem with `total_refunds`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."total_settled" is not null and "total_settled" is null) THEN ARRAY('Problem with `total_settled`') ELSE ARRAY() END ), CASE WHEN ("_airbyte_data"."account_last_four" is not null and "account_last_four" is null) THEN ARRAY('Problem with `account_last_four`') ELSE ARRAY() END )) as "_airbyte_meta" from "_airbyte_raw"."user__tian_raw___stream_us_ecomm_settlement_summary" where "_airbyte_loaded_at" is null), "numbered_rows" as (select *, row_number() over (partition by "id" order by "date" desc NULLS LAST, "_airbyte_extracted_at" desc) as "row_number" from "intermediate_data") select "id", "date", "currency", "deposit_id", "total_fees", "total_sales", "total_refunds", "total_settled", "account_last_four", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_meta" from "numbered_rows" where "row_number" = 1;
+delete from "user__tian"."us_ecomm_settlement_summary" where "_airbyte_raw_id" in (select "_airbyte_raw_id" from (select "_airbyte_raw_id", row_number() over (partition by "id" order by "date" desc NULLS LAST, "_airbyte_extracted_at" desc) as "row_number" from "user__tian"."us_ecomm_settlement_summary") as "airbyte_ids" where "row_number" <> 1);
+update "_airbyte_raw"."user__tian_raw___stream_us_ecomm_settlement_summary" set "_airbyte_loaded_at" = GETDATE() where "_airbyte_loaded_at" is null;
+2024-03-27 15:45:18 destination > INFO type-and-dedupe i.a.i.d.r.t.RedshiftDestinationHandler(execute):54 Sql da29f917-5fe7-4025-9b27-8665bb4cd070-ccc443e5-828e-47db-bde1-3957bd59a687 completed in 1025 ms
+2024-03-27 15:45:18 destination > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$2):263 Allowing other threads to proceed for user__tian.us_ecomm_settlement_summary
+2024-03-27 15:45:18 destination > INFO main i.a.i.b.d.t.DefaultTyperDeduper(commitFinalTables):322 Committing final tables
+2024-03-27 15:45:18 destination > INFO main i.a.i.b.d.t.DefaultTyperDeduper(cleanup):363 Cleaning Up type-and-dedupe thread pool
+2024-03-27 15:45:18 destination > INFO main i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):152 Cleaning up destination completed.
+2024-03-27 15:45:18 destination > INFO main i.a.c.i.d.AsyncStreamConsumer(close):219 class io.airbyte.cdk.integrations.destination_async.AsyncStreamConsumer closed
+2024-03-27 15:45:18 destination > INFO main i.a.c.i.b.IntegrationRunner(runInternal):231 Completed integration: io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:45:18 destination > INFO main i.a.i.d.r.RedshiftDestination(main):81 completed destination: class io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:45:19 replication-orchestrator > (pod: et-airbyte / destination-redshift-write-99-0-fxsra) - Closed all resources for pod
+2024-03-27 15:45:19 replication-orchestrator > Attempt 0 to update stream status complete null:summary
+2024-03-27 15:45:19 replication-orchestrator > readFromDestination: done. (writeToDestFailed:false, dest.isFinished:true)
+2024-03-27 15:45:19 replication-orchestrator > thread status... timeout thread: false , replication thread: true
+2024-03-27 15:45:19 replication-orchestrator > sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 8,
+  "bytesSynced" : 1861,
+  "startTime" : 1711554307692,
+  "endTime" : 1711554319860,
+  "totalStats" : {
+    "bytesCommitted" : 1861,
+    "bytesEmitted" : 1861,
+    "destinationStateMessagesEmitted" : 1,
+    "destinationWriteEndTime" : 1711554319854,
+    "destinationWriteStartTime" : 1711554307697,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 1,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 5,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 5,
+    "recordsEmitted" : 8,
+    "recordsCommitted" : 8,
+    "replicationEndTime" : 1711554319859,
+    "replicationStartTime" : 1711554307692,
+    "sourceReadEndTime" : 1711554312864,
+    "sourceReadStartTime" : 1711554307698,
+    "sourceStateMessagesEmitted" : 1
+  },
+  "streamStats" : [ {
+    "streamName" : "summary",
+    "stats" : {
+      "bytesCommitted" : 1861,
+      "bytesEmitted" : 1861,
+      "recordsEmitted" : 8,
+      "recordsCommitted" : 8
+    }
+  } ],
+  "performanceMetrics" : {
+    "processFromSource" : {
+      "elapsedTimeInNanos" : 71352300,
+      "executionCount" : 12,
+      "avgExecTimeInNanos" : 5946025.0
+    },
+    "readFromSource" : {
+      "elapsedTimeInNanos" : 792819766,
+      "executionCount" : 55225,
+      "avgExecTimeInNanos" : 14356.17502942508
+    },
+    "processFromDest" : {
+      "elapsedTimeInNanos" : 47179847,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 4.7179847E7
+    },
+    "writeToDest" : {
+      "elapsedTimeInNanos" : 3030275,
+      "executionCount" : 9,
+      "avgExecTimeInNanos" : 336697.22222222225
+    },
+    "readFromDest" : {
+      "elapsedTimeInNanos" : 7847338766,
+      "executionCount" : 917825,
+      "avgExecTimeInNanos" : 8549.92919783183
+    }
+  }
+}
+2024-03-27 15:45:19 replication-orchestrator > failures: [ ]
+2024-03-27 15:45:19 replication-orchestrator > Returning output...
+2024-03-27 15:45:19 replication-orchestrator > 
+2024-03-27 15:45:19 replication-orchestrator > ----- END REPLICATION -----
+2024-03-27 15:45:19 replication-orchestrator > 
+2024-03-27 15:45:19 replication-orchestrator > Writing async status SUCCEEDED for KubePodInfo[namespace=et-airbyte, name=orchestrator-repl-job-99-attempt-0, mainContainerInfo=KubeContainerInfo[image=106877218800.dkr.ecr.us-east-1.amazonaws.com/data-engineering/airbyte/container-orchestrator:0.50.56, pullPolicy=Always]]...
+2024-03-27 15:44:49 platform > INFO main i.a.c.i.d.s.S3BaseChecks(testIAMUserHasListObjectPermission):131 Started testing if IAM user can call listObjects on the destination bucket
+2024-03-27 15:44:49 platform > INFO main i.a.c.i.d.s.S3BaseChecks(testIAMUserHasListObjectPermission):134 Finished checking for listObjects permission
+2024-03-27 15:44:49 platform > INFO main c.z.h.HikariDataSource(<init>):79 HikariPool-1 - Starting...
+2024-03-27 15:44:49 platform > WARN main c.z.h.u.DriverDataSource(<init>):68 Registered driver with driverClassName=com.amazon.redshift.jdbc.Driver was not found, trying direct instantiation.
+2024-03-27 15:44:49 platform > INFO main c.z.h.HikariDataSource(<init>):81 HikariPool-1 - Start completed.
+2024-03-27 15:44:50 platform > INFO main o.j.t.JooqLogger(lambda$info$5):355 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.16.23 (Build date: 2023-12-20T14:13:48Z)
+                                      
+2024-03-27 15:44:50 platform > INFO main o.j.t.JooqLogger(lambda$info$5):355 
+
+jOOQ tip of the day: You can quickly navigate between child and parent records using TableRecord::fetchParent or TableRecord::parent and UpdatableRecord::fetchChildren or UpdatableRecord::children. Beware of N+1 problems, though!
+
+2024-03-27 15:44:50 platform > INFO main i.a.i.d.r.u.RedshiftUtil(checkSvvTableAccess):43 checking SVV_TABLE_INFO permissions
+2024-03-27 15:44:52 platform > INFO main i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):132 closing connection
+2024-03-27 15:44:52 platform > INFO main c.z.h.HikariDataSource(close):349 HikariPool-1 - Shutdown initiated...
+2024-03-27 15:44:52 platform > INFO main c.z.h.HikariDataSource(close):351 HikariPool-1 - Shutdown completed.
+2024-03-27 15:44:52 platform > INFO main i.a.c.i.b.IntegrationRunner(runInternal):231 Completed integration: io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:44:52 platform > INFO main i.a.i.d.r.RedshiftDestination(main):81 completed destination: class io.airbyte.integrations.destination.redshift.RedshiftDestination
+2024-03-27 15:44:53 platform > (pod: et-airbyte / destination-redshift-check-99-0-xdgkq) - Closed all resources for pod
+2024-03-27 15:44:53 platform > Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@20ded41[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-27 15:44:53 platform > 
+2024-03-27 15:44:53 platform > ----- END CHECK -----
+2024-03-27 15:44:53 platform > 
+2024-03-27 15:45:00 platform > Cloud storage job log path: /workspace/99/0/logs.log
+2024-03-27 15:45:00 platform > Executing worker wrapper. Airbyte version: 0.50.56
+2024-03-27 15:45:00 platform > Attempt 0 to save workflow id for cancellation
+2024-03-27 15:45:01 platform > Creating orchestrator-repl-job-99-attempt-0 for attempt number: 0
+2024-03-27 15:45:01 platform > Successfully deleted all running pods for the connection!
+2024-03-27 15:45:01 platform > Waiting for pod to be running...
+2024-03-27 15:45:01 platform > Pod et-airbyte/orchestrator-repl-job-99-attempt-0 is running on 10.11.239.209
+2024-03-27 15:45:01 platform > Uploading file: envMap.json
+2024-03-27 15:45:01 platform > kubectl cp /tmp/cb3c8aaa-0c3f-44c5-852b-25feeda95516/envMap.json et-airbyte/orchestrator-repl-job-99-attempt-0:/config/envMap.json -c init --retries=3
+2024-03-27 15:45:01 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:01 platform > kubectl cp complete, closing process
+2024-03-27 15:45:01 platform > Uploading file: application.txt
+2024-03-27 15:45:01 platform > kubectl cp /tmp/4344f012-5c1b-440c-a997-27fa983ae194/application.txt et-airbyte/orchestrator-repl-job-99-attempt-0:/config/application.txt -c init --retries=3
+2024-03-27 15:45:01 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:01 platform > kubectl cp complete, closing process
+2024-03-27 15:45:01 platform > Uploading file: jobRunConfig.json
+2024-03-27 15:45:01 platform > kubectl cp /tmp/ae76c4f0-b320-4e47-bc15-5bf97c732698/jobRunConfig.json et-airbyte/orchestrator-repl-job-99-attempt-0:/config/jobRunConfig.json -c init --retries=3
+2024-03-27 15:45:01 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:02 platform > Uploading file: destinationLauncherConfig.json
+2024-03-27 15:45:02 platform > kubectl cp /tmp/2fb3f203-b6f2-40af-84fc-3fa9f6bee403/destinationLauncherConfig.json et-airbyte/orchestrator-repl-job-99-attempt-0:/config/destinationLauncherConfig.json -c init --retries=3
+2024-03-27 15:45:02 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:02 platform > Uploading file: sourceLauncherConfig.json
+2024-03-27 15:45:02 platform > kubectl cp /tmp/29b6165f-b77b-435b-ae28-f42ecf9e6ced/sourceLauncherConfig.json et-airbyte/orchestrator-repl-job-99-attempt-0:/config/sourceLauncherConfig.json -c init --retries=3
+2024-03-27 15:45:02 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:02 platform > Uploading file: input.json
+2024-03-27 15:45:02 platform > kubectl cp /tmp/68d7371c-242c-42e5-9f40-52422f8e044a/input.json et-airbyte/orchestrator-repl-job-99-attempt-0:/config/input.json -c init --retries=3
+2024-03-27 15:45:02 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:02 platform > Uploading file: KUBE_POD_INFO
+2024-03-27 15:45:02 platform > kubectl cp /tmp/a2c8e068-bf96-4df5-8609-4e6fa11e55e1/KUBE_POD_INFO et-airbyte/orchestrator-repl-job-99-attempt-0:/config/KUBE_POD_INFO -c init --retries=3
+2024-03-27 15:45:02 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:02 platform > Uploading file: FINISHED_UPLOADING
+2024-03-27 15:45:02 platform > kubectl cp /tmp/ec420d3b-63b7-4a97-8aed-e32a8a810c3b/FINISHED_UPLOADING et-airbyte/orchestrator-repl-job-99-attempt-0:/config/FINISHED_UPLOADING -c init --retries=3
+2024-03-27 15:45:02 platform > Waiting for kubectl cp to complete
+2024-03-27 15:45:02 platform > kubectl cp complete, closing process
+2024-03-27 15:45:22 platform > State Store reports orchestrator pod orchestrator-repl-job-99-attempt-0 succeeded

@@ -1,0 +1,777 @@
+2024-03-20 23:12:33 platform > Docker volume job log path: /tmp/workspace/4063/0/logs.log
+2024-03-20 23:12:33 platform > Executing worker wrapper. Airbyte version: 0.50.45
+2024-03-20 23:12:33 platform > Attempt 0 to save workflow id for cancellation
+2024-03-20 23:12:33 platform > start sync worker. job id: 4063 attempt id: 0
+2024-03-20 23:12:33 platform > 
+2024-03-20 23:12:33 platform > ----- START REPLICATION -----
+2024-03-20 23:12:33 platform > 
+2024-03-20 23:12:33 platform > Running destination...
+2024-03-20 23:12:33 platform > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-20 23:12:33 platform > Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-20 23:12:33 platform > Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-20 23:12:33 platform > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-20 23:12:33 platform > Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-20 23:12:33 platform > Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-20 23:12:33 platform > Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-20 23:12:33 platform > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-20 23:12:33 platform > Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-20 23:12:33 platform > Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-20 23:12:33 platform > Checking if airbyte/source-bing-ads:2.1.3 exists...
+2024-03-20 23:12:33 platform > Checking if airbyte/destination-snowflake:3.5.4 exists...
+2024-03-20 23:12:33 platform > airbyte/destination-snowflake:3.5.4 was found locally.
+2024-03-20 23:12:33 platform > airbyte/source-bing-ads:2.1.3 was found locally.
+2024-03-20 23:12:33 platform > Creating docker container = destination-snowflake-write-4063-0-upaxm with resources io.airbyte.config.ResourceRequirements@6f995c38[cpuRequest=0.2,cpuLimit=1,memoryRequest=24g,memoryLimit=28g,additionalProperties={}] and allowedHosts null
+2024-03-20 23:12:33 platform > Preparing command: docker run --rm --init -i -w /data/4063/0 --log-driver none --name destination-snowflake-write-4063-0-upaxm --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/destination-snowflake:3.5.4 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e WORKER_ENVIRONMENT=DOCKER -e AIRBYTE_ROLE=dev -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.45 -e WORKER_JOB_ID=4063 --cpus=1 --memory-reservation=24g --memory=28g airbyte/destination-snowflake:3.5.4 write --config destination_config.json --catalog destination_catalog.json
+2024-03-20 23:12:33 platform > Creating docker container = source-bing-ads-read-4063-0-nfflo with resources io.airbyte.config.ResourceRequirements@29a3843c[cpuRequest=0.2,cpuLimit=1,memoryRequest=24g,memoryLimit=28g,additionalProperties={}] and allowedHosts io.airbyte.config.AllowedHosts@6cf50e9f[hosts=[bingads.microsoft.com, login.microsoftonline.com, login.live.com, login.windows-ppe.net, ads.microsoft.com, api.ads.microsoft.com, clientcenter.api.bingads.microsoft.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-20 23:12:33 platform > Preparing command: docker run --rm --init -i -w /data/4063/0 --log-driver none --name source-bing-ads-read-4063-0-nfflo -e CONCURRENT_SOURCE_STREAM_READ=false --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/source-bing-ads:2.1.3 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e WORKER_ENVIRONMENT=DOCKER -e AIRBYTE_ROLE=dev -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.45 -e WORKER_JOB_ID=4063 --cpus=1 --memory-reservation=24g --memory=28g airbyte/source-bing-ads:2.1.3 read --config source_config.json --catalog source_catalog.json --state input_state.json
+2024-03-20 23:12:33 platform > Writing messages to protocol version 0.2.0
+2024-03-20 23:12:33 platform > Reading messages from protocol version 0.2.0
+2024-03-20 23:12:33 platform > Reading messages from protocol version 0.2.0
+2024-03-20 23:12:33 platform > readFromSource: start
+2024-03-20 23:12:33 platform > Starting source heartbeat check. Will check every 1 minutes.
+2024-03-20 23:12:33 platform > processMessage: start
+2024-03-20 23:12:33 platform > writeToDestination: start
+2024-03-20 23:12:33 platform > readFromDestination: start
+2024-03-20 23:12:35 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-20 23:12:35 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-20 23:12:35 source > Starting syncing SourceBingAds
+2024-03-20 23:12:35 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(getDestination):75 - Running destination under deployment mode: OSS
+2024-03-20 23:12:36 source > Fetching access token ...
+2024-03-20 23:12:36 source > Marking stream ad_groups as STARTED
+2024-03-20 23:12:36 source > Syncing stream: ad_groups 
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(run):87 - Starting destination: io.airbyte.integrations.destination.snowflake.SnowflakeDestination
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.IntegrationCliParser(parseOptions):126 - integration args: {catalog=destination_catalog.json, write=null, config=destination_config.json}
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.IntegrationRunner(runInternal):132 - Running integration: io.airbyte.integrations.destination.snowflake.SnowflakeDestination
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.IntegrationRunner(runInternal):133 - Command: WRITE
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.IntegrationRunner(runInternal):134 - Integration config: IntegrationConfig{command=WRITE, configPath='destination_config.json', catalogPath='destination_catalog.json', statePath='null'}
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 WARN c.n.s.JsonMetaSchema(newValidator):278 - Unknown keyword pattern_descriptor - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 WARN c.n.s.JsonMetaSchema(newValidator):278 - Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 WARN c.n.s.JsonMetaSchema(newValidator):278 - Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 INFO i.a.c.i.d.s.StagingConsumerFactory(lambda$toWriteConfig$2):195 - Write config: WriteConfig{streamName=ad_groups, namespace=RAW, outputSchemaName=airbyte_internal, tmpTableName=_airbyte_tmp_bib_ad_groups, outputTableName=RAW_raw__stream_ad_groups, syncMode=overwrite}
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 INFO i.a.c.i.d.s.StagingConsumerFactory(lambda$toWriteConfig$2):195 - Write config: WriteConfig{streamName=ads, namespace=RAW, outputSchemaName=airbyte_internal, tmpTableName=_airbyte_tmp_lph_ads, outputTableName=RAW_raw__stream_ads, syncMode=overwrite}
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 INFO i.a.c.i.d.s.StagingConsumerFactory(lambda$toWriteConfig$2):195 - Write config: WriteConfig{streamName=campaigns, namespace=RAW, outputSchemaName=airbyte_internal, tmpTableName=_airbyte_tmp_bji_campaigns, outputTableName=RAW_raw__stream_campaigns, syncMode=overwrite}
+2024-03-20 23:12:37 destination > 2024-03-20 23:12:37 INFO i.a.c.i.d.s.StagingConsumerFactory(lambda$toWriteConfig$2):195 - Write config: WriteConfig{streamName=ad_group_performance_report_daily, namespace=RAW, outputSchemaName=airbyte_internal, tmpTableName=_airbyte_tmp_ldh_ad_group_performance_report_daily, outputTableName=RAW_raw__stream_ad_group_performance_report_daily, syncMode=append_dedup}
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.b.BufferManager(<init>):53 - Max 'memory' available for buffer allocation 10 GB
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.FlushWorkers(start):98 - Start async buffer supervisor
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10 MB (10.0 MB), % used: 9.621282276395386E-4 | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.AsyncStreamConsumer(start):138 - class io.airbyte.cdk.integrations.destination_async.AsyncStreamConsumer started.
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):41 - Preparing raw tables in destination started for 4 streams
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO i.a.i.b.d.t.DefaultTyperDeduper(prepareTables):123 - Preparing tables
+2024-03-20 23:12:38 destination > 2024-03-20 23:12:38 INFO c.z.h.HikariDataSource(getConnection):110 - HikariPool-1 - Starting...
+2024-03-20 23:12:38 source > Marking stream ad_groups as RUNNING
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO c.z.h.p.HikariPool(checkFailFast):565 - HikariPool-1 - Added connection net.snowflake.client.jdbc.SnowflakeConnectionV1@3b4825f0
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO c.z.h.HikariDataSource(getConnection):123 - HikariPool-1 - Start completed.
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):26 - Assessing whether migration is necessary for stream AD_GROUPS
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):26 - Assessing whether migration is necessary for stream ADS
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):26 - Assessing whether migration is necessary for stream CAMPAIGNS
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):45 - Checking whether v1 raw table _airbyte_raw_campaigns in dataset RAW exists
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):45 - Checking whether v1 raw table _airbyte_raw_ads in dataset RAW exists
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):45 - Checking whether v1 raw table _airbyte_raw_ad_groups in dataset RAW exists
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):26 - Assessing whether migration is necessary for stream AD_GROUP_PERFORMANCE_REPORT_DAILY
+2024-03-20 23:12:40 destination > 2024-03-20 23:12:40 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):45 - Checking whether v1 raw table _airbyte_raw_ad_group_performance_report_daily in dataset RAW exists
+2024-03-20 23:13:20 destination > 2024-03-20 23:13:20 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:20 destination > 2024-03-20 23:13:20 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:20 destination > 2024-03-20 23:13:20 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:20 destination > 2024-03-20 23:13:20 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):49 - Migration Info: Required for Sync mode: false, No existing v2 raw tables: true, A v1 raw table exists: false
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):32 - No Migration Required for stream: CAMPAIGNS
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):49 - Migration Info: Required for Sync mode: false, No existing v2 raw tables: true, A v1 raw table exists: false
+2024-03-20 23:13:21 destination > 2024-03-20 23:13:21 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):32 - No Migration Required for stream: ADS
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):49 - Migration Info: Required for Sync mode: false, No existing v2 raw tables: true, A v1 raw table exists: false
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):32 - No Migration Required for stream: AD_GROUPS
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):49 - Migration Info: Required for Sync mode: true, No existing v2 raw tables: true, A v1 raw table exists: false
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):32 - No Migration Required for stream: AD_GROUP_PERFORMANCE_REPORT_DAILY
+2024-03-20 23:13:22 destination > 2024-03-20 23:13:22 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:23 destination > 2024-03-20 23:13:23 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:23 destination > 2024-03-20 23:13:23 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:24 destination > 2024-03-20 23:13:24 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:24 destination > 2024-03-20 23:13:24 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:24 destination > 2024-03-20 23:13:24 INFO i.a.i.d.s.t.SnowflakeV2TableMigrator(migrateIfNecessary):53 - Checking whether upcasing migration is necessary for RAW.campaigns. Sync mode requires migration: false; existing case-sensitive table exists: false; existing uppercased table does not exist: false
+2024-03-20 23:13:25 destination > 2024-03-20 23:13:25 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:25 destination > 2024-03-20 23:13:25 INFO i.a.i.d.s.t.SnowflakeV2TableMigrator(migrateIfNecessary):53 - Checking whether upcasing migration is necessary for RAW.ads. Sync mode requires migration: false; existing case-sensitive table exists: false; existing uppercased table does not exist: false
+2024-03-20 23:13:25 destination > 2024-03-20 23:13:25 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:25 destination > 2024-03-20 23:13:25 INFO i.a.i.d.s.t.SnowflakeV2TableMigrator(migrateIfNecessary):53 - Checking whether upcasing migration is necessary for RAW.ad_groups. Sync mode requires migration: false; existing case-sensitive table exists: false; existing uppercased table does not exist: false
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.i.d.s.t.SnowflakeV2TableMigrator(migrateIfNecessary):53 - Checking whether upcasing migration is necessary for RAW.ad_group_performance_report_daily. Sync mode requires migration: true; existing case-sensitive table exists: false; existing uppercased table does not exist: false
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):146 - Final Table exists for stream CAMPAIGNS
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:26 destination > 2024-03-20 23:13:26 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):146 - Final Table exists for stream ADS
+2024-03-20 23:13:27 destination > 2024-03-20 23:13:27 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:27 destination > 2024-03-20 23:13:27 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):146 - Final Table exists for stream AD_GROUPS
+2024-03-20 23:13:27 destination > 2024-03-20 23:13:27 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:27 destination > 2024-03-20 23:13:27 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):146 - Final Table exists for stream AD_GROUP_PERFORMANCE_REPORT_DAILY
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):155 - Using temp final table for stream CAMPAIGNS, will overwrite existing table at end of sync
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):155 - Using temp final table for stream ADS, will overwrite existing table at end of sync
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$prepareTablesFuture$3):155 - Using temp final table for stream AD_GROUPS, will overwrite existing table at end of sync
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):53 - Preparing staging area in destination started for schema airbyte_internal stream ad_groups: target table: RAW_raw__stream_ad_groups, stage: 2024/03/20/23/64E6403C-4617-4CA6-B56A-115A508F631A/
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):70 - Preparing staging area in destination completed for schema airbyte_internal stream ad_groups
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):53 - Preparing staging area in destination started for schema airbyte_internal stream ads: target table: RAW_raw__stream_ads, stage: 2024/03/20/23/64E6403C-4617-4CA6-B56A-115A508F631A/
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):70 - Preparing staging area in destination completed for schema airbyte_internal stream ads
+2024-03-20 23:13:28 destination > 2024-03-20 23:13:28 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):53 - Preparing staging area in destination started for schema airbyte_internal stream campaigns: target table: RAW_raw__stream_campaigns, stage: 2024/03/20/23/64E6403C-4617-4CA6-B56A-115A508F631A/
+2024-03-20 23:13:29 destination > 2024-03-20 23:13:29 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):70 - Preparing staging area in destination completed for schema airbyte_internal stream campaigns
+2024-03-20 23:13:29 destination > 2024-03-20 23:13:29 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):53 - Preparing staging area in destination started for schema airbyte_internal stream ad_group_performance_report_daily: target table: RAW_raw__stream_ad_group_performance_report_daily, stage: 2024/03/20/23/64E6403C-4617-4CA6-B56A-115A508F631A/
+2024-03-20 23:13:29 destination > 2024-03-20 23:13:29 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):70 - Preparing staging area in destination completed for schema airbyte_internal stream ad_group_performance_report_daily
+2024-03-20 23:13:29 destination > 2024-03-20 23:13:29 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onStartFunction$0):72 - Executing finalization of tables.
+2024-03-20 23:13:36 platform > Records read: 5000 (3 MB)
+2024-03-20 23:13:38 destination > 2024-03-20 23:13:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 5312, num bytes: 4.7 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:13:38 destination > 2024-03-20 23:13:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:13:40 source > Read 5457 records from ad_groups stream
+2024-03-20 23:13:40 source > Marking stream ad_groups as STOPPED
+2024-03-20 23:13:40 source > Finished syncing ad_groups
+2024-03-20 23:13:40 source > SourceBingAds runtimes:
+Syncing stream ad_groups 0:01:04.554234
+2024-03-20 23:13:40 source > Marking stream ads as STARTED
+2024-03-20 23:13:40 source > Syncing stream: ads 
+2024-03-20 23:13:42 source > Marking stream ads as RUNNING
+2024-03-20 23:14:38 destination > 2024-03-20 23:14:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 30 MB (30.0 MB), % used: 0.002886384682918616 | Queue `ad_groups`, num records: 5457, num bytes: 4.83 MB, allocated bytes: 10 MB | Queue `ads`, num records: 637, num bytes: 368.15 KB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:14:38 destination > 2024-03-20 23:14:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:15:38 destination > 2024-03-20 23:15:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 30 MB (30.0 MB), % used: 0.002886384682918616 | Queue `ad_groups`, num records: 5457, num bytes: 4.83 MB, allocated bytes: 10 MB | Queue `ads`, num records: 2319, num bytes: 1.61 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:15:38 destination > 2024-03-20 23:15:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:16:38 destination > 2024-03-20 23:16:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 30 MB (30.0 MB), % used: 0.002886384682918616 | Queue `ad_groups`, num records: 5457, num bytes: 4.83 MB, allocated bytes: 10 MB | Queue `ads`, num records: 4415, num bytes: 3.38 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:16:38 destination > 2024-03-20 23:16:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:16:41 platform > Records read: 10000 (6 MB)
+2024-03-20 23:17:38 destination > 2024-03-20 23:17:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 30 MB (30.0 MB), % used: 0.002886384682918616 | Queue `ad_groups`, num records: 5457, num bytes: 4.83 MB, allocated bytes: 10 MB | Queue `ads`, num records: 6295, num bytes: 4.89 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:17:38 destination > 2024-03-20 23:17:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_groups, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 4.83 MB, penalty b: 0 bytes, after penalty b: 4.83 MB
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (91581) -- Worker picked up work.
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (91581) -- Attempting to read from queue namespace: RAW, stream: ad_groups.
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 5425354 bytes..
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (91581) -- Batch contains: 5457 records, 4.83 MB bytes.
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to a438dc3d-6d08-4b1e-b065-1c071dd0f98f7033466773596941389.csv.gz (252 KB)
+2024-03-20 23:18:32 destination > 2024-03-20 23:18:32 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_groups (252 KB) to staging
+2024-03-20 23:18:34 destination > 2024-03-20 23:18:34 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:18:34 destination > 2024-03-20 23:18:34 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:18:36 destination > 2024-03-20 23:18:36 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:18:36 destination > 2024-03-20 23:18:36 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data a438dc3d-6d08-4b1e-b065-1c071dd0f98f7033466773596941389.csv.gz
+2024-03-20 23:18:36 destination > 2024-03-20 23:18:36 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:18:36 destination > 2024-03-20 23:18:36 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 5060406 bytes..
+2024-03-20 23:18:36 destination > 2024-03-20 23:18:36 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (91581) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:18:38 destination > 2024-03-20 23:18:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 6716, num bytes: 5.24 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:18:38 destination > 2024-03-20 23:18:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 5.31 MB, penalty b: 0 bytes, after penalty b: 5.31 MB
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (5e5cb) -- Worker picked up work.
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (5e5cb) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 4920352 bytes..
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (5e5cb) -- Batch contains: 6799 records, 5.31 MB bytes.
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 676b836d-c057-4b22-916a-1e151f183c0b6761332773982596287.csv.gz (320 KB)
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (320 KB) to staging
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:18:46 destination > 2024-03-20 23:18:46 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:18:48 destination > 2024-03-20 23:18:48 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:18:48 destination > 2024-03-20 23:18:48 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 676b836d-c057-4b22-916a-1e151f183c0b6761332773982596287.csv.gz
+2024-03-20 23:18:48 destination > 2024-03-20 23:18:48 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:18:48 destination > 2024-03-20 23:18:48 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 5565408 bytes..
+2024-03-20 23:18:48 destination > 2024-03-20 23:18:48 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (5e5cb) -- Worker finished flushing. Current queue size: 11
+2024-03-20 23:19:38 destination > 2024-03-20 23:19:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 1052, num bytes: 961.16 KB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:19:38 destination > 2024-03-20 23:19:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:20:38 destination > 2024-03-20 23:20:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 2188, num bytes: 3.05 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:20:38 destination > 2024-03-20 23:20:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:21:05 platform > Records read: 15000 (12 MB)
+2024-03-20 23:21:38 destination > 2024-03-20 23:21:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 3755, num bytes: 6.32 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:21:38 destination > 2024-03-20 23:21:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:22:38 destination > 2024-03-20 23:22:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 5211, num bytes: 9.2 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:22:38 destination > 2024-03-20 23:22:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: false , size trigger: true current threshold b: 10 MB, queue size b: 10.06 MB, penalty b: 0 bytes, after penalty b: 10.06 MB
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (40d59) -- Worker picked up work.
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (40d59) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10427049 bytes..
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (40d59) -- Batch contains: 5610 records, 10.06 MB bytes.
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to aaad5bb6-6b20-44af-92c4-ad7ccdf2b6615767807033725380821.csv.gz (369 KB)
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (369 KB) to staging
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:22:51 destination > 2024-03-20 23:22:51 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:22:54 destination > 2024-03-20 23:22:54 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:22:54 destination > 2024-03-20 23:22:54 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data aaad5bb6-6b20-44af-92c4-ad7ccdf2b6615767807033725380821.csv.gz
+2024-03-20 23:22:54 destination > 2024-03-20 23:22:54 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:22:54 destination > 2024-03-20 23:22:54 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10544471 bytes..
+2024-03-20 23:22:54 destination > 2024-03-20 23:22:54 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (40d59) -- Worker finished flushing. Current queue size: 102
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_groups, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (6d7e0) -- Worker picked up work.
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (6d7e0) -- Attempting to read from queue namespace: RAW, stream: ad_groups.
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (6d7e0) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 2f5c6d74-ffb2-4392-8134-381b9937ad4e3305489437411216580.csv.gz (0 bytes)
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_groups (0 bytes) to staging
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:23:33 destination > 2024-03-20 23:23:33 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:23:34 destination > 2024-03-20 23:23:34 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:23:34 destination > 2024-03-20 23:23:34 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 2f5c6d74-ffb2-4392-8134-381b9937ad4e3305489437411216580.csv.gz
+2024-03-20 23:23:34 destination > 2024-03-20 23:23:34 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:23:34 destination > 2024-03-20 23:23:34 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:23:34 destination > 2024-03-20 23:23:34 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (6d7e0) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:23:38 destination > 2024-03-20 23:23:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 1394, num bytes: 2.94 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:23:38 destination > 2024-03-20 23:23:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:24:02 platform > Records read: 20000 (21 MB)
+2024-03-20 23:24:38 destination > 2024-03-20 23:24:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 2999, num bytes: 6.24 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:24:38 destination > 2024-03-20 23:24:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:25:38 destination > 2024-03-20 23:25:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 4687, num bytes: 9.99 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:25:38 destination > 2024-03-20 23:25:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: false , size trigger: true current threshold b: 10 MB, queue size b: 10.07 MB, penalty b: 0 bytes, after penalty b: 10.07 MB
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (920f2) -- Worker picked up work.
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (920f2) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10409163 bytes..
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (920f2) -- Batch contains: 4721 records, 10.07 MB bytes.
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 1a2db3bf-bb65-45ab-9b0b-c3d9e533395816913979816845449446.csv.gz (338 KB)
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (338 KB) to staging
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:25:39 destination > 2024-03-20 23:25:39 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:25:42 destination > 2024-03-20 23:25:42 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:25:42 destination > 2024-03-20 23:25:42 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 1a2db3bf-bb65-45ab-9b0b-c3d9e533395816913979816845449446.csv.gz
+2024-03-20 23:25:42 destination > 2024-03-20 23:25:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:25:42 destination > 2024-03-20 23:25:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10562357 bytes..
+2024-03-20 23:25:42 destination > 2024-03-20 23:25:42 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (920f2) -- Worker finished flushing. Current queue size: 97
+2024-03-20 23:26:38 destination > 2024-03-20 23:26:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 1860, num bytes: 4.28 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:26:38 destination > 2024-03-20 23:26:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:26:55 platform > Records read: 25000 (31 MB)
+2024-03-20 23:27:38 destination > 2024-03-20 23:27:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 3679, num bytes: 8.48 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:27:38 destination > 2024-03-20 23:27:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: false , size trigger: true current threshold b: 10 MB, queue size b: 10.04 MB, penalty b: 0 bytes, after penalty b: 10.04 MB
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (41e7b) -- Worker picked up work.
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (41e7b) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10445528 bytes..
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (41e7b) -- Batch contains: 4335 records, 10.04 MB bytes.
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 3239b893-2c52-425a-b544-580363b082a16158133086841350345.csv.gz (307 KB)
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (307 KB) to staging
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:27:58 destination > 2024-03-20 23:27:58 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:28:02 destination > 2024-03-20 23:28:02 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:28:02 destination > 2024-03-20 23:28:02 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 3239b893-2c52-425a-b544-580363b082a16158133086841350345.csv.gz
+2024-03-20 23:28:02 destination > 2024-03-20 23:28:02 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:28:02 destination > 2024-03-20 23:28:02 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10525992 bytes..
+2024-03-20 23:28:02 destination > 2024-03-20 23:28:02 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (41e7b) -- Worker finished flushing. Current queue size: 137
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_groups, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (92b60) -- Worker picked up work.
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (92b60) -- Attempting to read from queue namespace: RAW, stream: ad_groups.
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (92b60) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 09cce133-435f-455d-8f7a-5d8838f88d9113572709566196784507.csv.gz (0 bytes)
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_groups (0 bytes) to staging
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:28:34 destination > 2024-03-20 23:28:34 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:28:35 destination > 2024-03-20 23:28:35 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:28:35 destination > 2024-03-20 23:28:35 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 09cce133-435f-455d-8f7a-5d8838f88d9113572709566196784507.csv.gz
+2024-03-20 23:28:35 destination > 2024-03-20 23:28:35 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:28:35 destination > 2024-03-20 23:28:35 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:28:35 destination > 2024-03-20 23:28:35 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (92b60) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:28:38 destination > 2024-03-20 23:28:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 1282, num bytes: 3.05 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:28:38 destination > 2024-03-20 23:28:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:29:36 platform > Records read: 30000 (42 MB)
+2024-03-20 23:29:38 destination > 2024-03-20 23:29:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 3115, num bytes: 7.26 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:29:38 destination > 2024-03-20 23:29:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:30:38 destination > 2024-03-20 23:30:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 20 MB (20.0 MB), % used: 0.0019242564552790773 | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 4030, num bytes: 9.6 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:30:38 destination > 2024-03-20 23:30:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:30:47 source > Read 25742 records from ads stream
+2024-03-20 23:30:47 source > Marking stream ads as STOPPED
+2024-03-20 23:30:47 source > Finished syncing ads
+2024-03-20 23:30:47 source > SourceBingAds runtimes:
+Syncing stream ad_groups 0:01:04.554234
+Syncing stream ads 0:17:06.925007
+2024-03-20 23:30:47 source > Marking stream campaigns as STARTED
+2024-03-20 23:30:47 source > Syncing stream: campaigns 
+2024-03-20 23:30:48 source > Marking stream campaigns as RUNNING
+2024-03-20 23:30:49 source > Read 153 records from campaigns stream
+2024-03-20 23:30:49 source > Marking stream campaigns as STOPPED
+2024-03-20 23:30:49 source > Finished syncing campaigns
+2024-03-20 23:30:49 source > SourceBingAds runtimes:
+Syncing stream ad_groups 0:01:04.554234
+Syncing stream ads 0:17:06.925007
+Syncing stream campaigns 0:00:01.266175
+2024-03-20 23:30:49 source > Marking stream ad_group_performance_report_daily as STARTED
+2024-03-20 23:30:49 source > Syncing stream: ad_group_performance_report_daily 
+2024-03-20 23:30:53 source > Marking stream ad_group_performance_report_daily as RUNNING
+2024-03-20 23:30:56 source > Web service reported a SOAP processing fault using an unexpected HTTP status code 200. Reporting as an internal server error.
+2024-03-20 23:30:56 source > Giving up for returned error code: -1. Error details: {'faultcode': s:Server, 'faultstring': Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6., 'detail': {'ApiFaultDetail': {'TrackingId': bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6, 'BatchErrors': , 'OperationErrors': {'OperationError': {'Code': 2040, 'Details': , 'ErrorCode': InvalidCustomDateRange, 'Message': The specified report time contains an invalid date in custom date range. Please submit a report request with valid start and end dates for the custom date range.}}}}}
+2024-03-20 23:30:56 source > Giving up _request(...) after 1 tries (suds.WebFault: Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.')
+2024-03-20 23:30:56 source > Encountered an exception while reading stream ad_group_performance_report_daily
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 126, in read
+    yield from self._read_stream(
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 203, in _read_stream
+    for record in record_iterator:
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 239, in _read_incremental
+    for record_data_or_message in stream_instance.read_incremental(
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/streams/core.py", line 156, in read_incremental
+    for record_data_or_message in records:
+  File "/airbyte/integration_code/source_bing_ads/base_streams.py", line 111, in read_records
+    response = self.send_request(params, customer_id=customer_id, account_id=account_id)
+  File "/airbyte/integration_code/source_bing_ads/report_streams.py", line 187, in send_request
+    return self.client.request(**request_kwargs)
+  File "/airbyte/integration_code/source_bing_ads/client.py", line 153, in request
+    return backoff.on_exception(
+  File "/usr/local/lib/python3.9/site-packages/backoff/_sync.py", line 105, in retry
+    ret = target(*args, **kwargs)
+  File "/airbyte/integration_code/source_bing_ads/client.py", line 184, in _request
+    return getattr(service, operation_name)(**params)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 59, in download_report
+    report_file_path = self.download_file(download_parameters)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 75, in download_file
+    operation = self.submit_download(download_parameters.report_request)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 102, in submit_download
+    response = self.service_client.SubmitGenerateReport(report_request)
+  File "/usr/local/lib/python3.9/site-packages/bingads/service_client.py", line 286, in __call__
+    raise ex
+  File "/usr/local/lib/python3.9/site-packages/bingads/service_client.py", line 278, in __call__
+    response = self.service_client.soap_client.service.__getattr__(self.name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 586, in __call__
+    return client.invoke(args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 728, in invoke
+    result = self.send(soapenv, timeout=timeout)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 777, in send
+    return self.process_reply(reply.message, None, None)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 840, in process_reply
+    raise WebFault(fault, replyroot)
+suds.WebFault: Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.'
+2024-03-20 23:30:56 source > Marking stream ad_group_performance_report_daily as STOPPED
+2024-03-20 23:30:56 source > Finished syncing ad_group_performance_report_daily
+2024-03-20 23:30:56 source > SourceBingAds runtimes:
+Syncing stream ad_group_performance_report_daily 0:00:07.795239
+Syncing stream ad_groups 0:01:04.554234
+Syncing stream ads 0:17:06.925007
+Syncing stream campaigns 0:00:01.266175
+2024-03-20 23:30:56 source > Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.'
+Traceback (most recent call last):
+  File "/airbyte/integration_code/main.py", line 8, in <module>
+    run()
+  File "/airbyte/integration_code/source_bing_ads/run.py", line 14, in run
+    launch(source, sys.argv[1:])
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py", line 214, in launch
+    for message in source_entrypoint.run(parsed_args):
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py", line 121, in run
+    yield from map(AirbyteEntrypoint.airbyte_message_to_string, self.read(source_spec, config, config_catalog, state))
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py", line 163, in read
+    yield from self.source.read(self.logger, config, catalog, state)
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 149, in read
+    raise e
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 126, in read
+    yield from self._read_stream(
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 203, in _read_stream
+    for record in record_iterator:
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py", line 239, in _read_incremental
+    for record_data_or_message in stream_instance.read_incremental(
+  File "/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/streams/core.py", line 156, in read_incremental
+    for record_data_or_message in records:
+  File "/airbyte/integration_code/source_bing_ads/base_streams.py", line 111, in read_records
+    response = self.send_request(params, customer_id=customer_id, account_id=account_id)
+  File "/airbyte/integration_code/source_bing_ads/report_streams.py", line 187, in send_request
+    return self.client.request(**request_kwargs)
+  File "/airbyte/integration_code/source_bing_ads/client.py", line 153, in request
+    return backoff.on_exception(
+  File "/usr/local/lib/python3.9/site-packages/backoff/_sync.py", line 105, in retry
+    ret = target(*args, **kwargs)
+  File "/airbyte/integration_code/source_bing_ads/client.py", line 184, in _request
+    return getattr(service, operation_name)(**params)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 59, in download_report
+    report_file_path = self.download_file(download_parameters)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 75, in download_file
+    operation = self.submit_download(download_parameters.report_request)
+  File "/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py", line 102, in submit_download
+    response = self.service_client.SubmitGenerateReport(report_request)
+  File "/usr/local/lib/python3.9/site-packages/bingads/service_client.py", line 286, in __call__
+    raise ex
+  File "/usr/local/lib/python3.9/site-packages/bingads/service_client.py", line 278, in __call__
+    response = self.service_client.soap_client.service.__getattr__(self.name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 586, in __call__
+    return client.invoke(args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 728, in invoke
+    result = self.send(soapenv, timeout=timeout)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 777, in send
+    return self.process_reply(reply.message, None, None)
+  File "/usr/local/lib/python3.9/site-packages/suds/client.py", line 840, in process_reply
+    raise WebFault(fault, replyroot)
+suds.WebFault: Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.'
+2024-03-20 23:30:57 platform > readFromSource: source exception
+io.airbyte.workers.internal.exception.SourceException: Source process exited with non-zero exit code 1
+	at io.airbyte.workers.general.BufferedReplicationWorker.readFromSource(BufferedReplicationWorker.java:366) ~[io.airbyte-airbyte-commons-worker-0.50.45.jar:?]
+	at io.airbyte.workers.general.BufferedReplicationWorker.lambda$runAsyncWithHeartbeatCheck$3(BufferedReplicationWorker.java:235) ~[io.airbyte-airbyte-commons-worker-0.50.45.jar:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-03-20 23:30:57 platform > readFromSource: done. (source.isFinished:true, fromSource.isClosed:false)
+2024-03-20 23:31:38 destination > 2024-03-20 23:31:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 40 MB (40.0 MB), % used: 0.0038485129105581546 | Queue `campaigns`, num records: 153, num bytes: 160.06 KB, allocated bytes: 10 MB | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 513, num bytes: 750.7 KB, allocated bytes: 10 MB | Queue `ads`, num records: 4277, num bytes: 9.8 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:31:38 destination > 2024-03-20 23:31:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:32:38 destination > 2024-03-20 23:32:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 40 MB (40.0 MB), % used: 0.0038485129105581546 | Queue `campaigns`, num records: 153, num bytes: 160.06 KB, allocated bytes: 10 MB | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 513, num bytes: 750.7 KB, allocated bytes: 10 MB | Queue `ads`, num records: 4277, num bytes: 9.8 MB, allocated bytes: 10 MB | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:32:38 destination > 2024-03-20 23:32:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 9.8 MB, penalty b: 0 bytes, after penalty b: 9.8 MB
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (2df9e) -- Worker picked up work.
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (2df9e) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 205563 bytes..
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (2df9e) -- Batch contains: 4277 records, 9.8 MB bytes.
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 23e956c5-6b81-453b-a610-1da4a2ac067d13575152164664678321.csv.gz (322 KB)
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (322 KB) to staging
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:32:59 destination > 2024-03-20 23:32:59 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_groups, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (1f99a) -- Worker picked up work.
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (1f99a) -- Attempting to read from queue namespace: RAW, stream: ad_groups.
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (1f99a) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 242562ff-bd33-4d83-8c11-60b4903b3f3718169779877739151950.csv.gz (0 bytes)
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_groups (0 bytes) to staging
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:33:35 destination > 2024-03-20 23:33:35 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:33:38 destination > 2024-03-20 23:33:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 39.8 MB (39.80395984649658 MB), % used: 0.003829651334014512 | Queue `campaigns`, num records: 153, num bytes: 160.06 KB, allocated bytes: 10 MB | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 513, num bytes: 750.7 KB, allocated bytes: 10 MB | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:33:38 destination > 2024-03-20 23:33:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 2
+2024-03-20 23:34:38 destination > 2024-03-20 23:34:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 39.8 MB (39.80395984649658 MB), % used: 0.003829651334014512 | Queue `campaigns`, num records: 153, num bytes: 160.06 KB, allocated bytes: 10 MB | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 513, num bytes: 750.7 KB, allocated bytes: 10 MB | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:34:38 destination > 2024-03-20 23:34:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 2
+2024-03-20 23:34:58 destination > 2024-03-20 23:34:58 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:34:58 destination > 2024-03-20 23:34:58 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 23e956c5-6b81-453b-a610-1da4a2ac067d13575152164664678321.csv.gz
+2024-03-20 23:34:58 destination > 2024-03-20 23:34:58 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:34:58 destination > 2024-03-20 23:34:58 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10280197 bytes..
+2024-03-20 23:34:58 destination > 2024-03-20 23:34:58 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (2df9e) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:35:38 destination > 2024-03-20 23:35:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 30 MB (30.0 MB), % used: 0.002886384682918616 | Queue `campaigns`, num records: 153, num bytes: 160.06 KB, allocated bytes: 10 MB | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 513, num bytes: 750.7 KB, allocated bytes: 10 MB | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:35:38 destination > 2024-03-20 23:35:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 1
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - campaigns, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 160.06 KB, penalty b: 0 bytes, after penalty b: 160.06 KB
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (36c8f) -- Worker picked up work.
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (36c8f) -- Attempting to read from queue namespace: RAW, stream: campaigns.
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10321855 bytes..
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (36c8f) -- Batch contains: 153 records, 160.06 KB bytes.
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to d5e35e3d-183c-4b09-9d25-b4ba191b4d814597656928873020963.csv.gz (8 KB)
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream campaigns (8 KB) to staging
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:35:49 destination > 2024-03-20 23:35:49 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_group_performance_report_daily, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 750.7 KB, penalty b: 0 bytes, after penalty b: 750.7 KB
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (3f9e2) -- Worker picked up work.
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (3f9e2) -- Attempting to read from queue namespace: RAW, stream: ad_group_performance_report_daily.
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 9717045 bytes..
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (3f9e2) -- Batch contains: 513 records, 750.7 KB bytes.
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to e5d313d1-8720-4ed8-b9c5-8ca69155895212912080580933842576.csv.gz (27 KB)
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_group_performance_report_daily (27 KB) to staging
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:35:54 destination > 2024-03-20 23:35:54 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:36:38 destination > 2024-03-20 23:36:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10.89 MB (10.889415740966797 MB), % used: 0.0010477014266886478 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:36:38 destination > 2024-03-20 23:36:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 3
+2024-03-20 23:37:38 destination > 2024-03-20 23:37:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10.89 MB (10.889415740966797 MB), % used: 0.0010477014266886478 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:37:38 destination > 2024-03-20 23:37:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 3
+2024-03-20 23:37:42 destination > 2024-03-20 23:37:42 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:37:42 destination > 2024-03-20 23:37:42 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 242562ff-bd33-4d83-8c11-60b4903b3f3718169779877739151950.csv.gz
+2024-03-20 23:37:42 destination > 2024-03-20 23:37:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:37:42 destination > 2024-03-20 23:37:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:37:42 destination > 2024-03-20 23:37:42 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (1f99a) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ads, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (efed6) -- Worker picked up work.
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (efed6) -- Attempting to read from queue namespace: RAW, stream: ads.
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (efed6) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to cf0450d4-7878-42ed-b47b-e18c18bdff044275511796569978295.csv.gz (0 bytes)
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ads (0 bytes) to staging
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:38:00 destination > 2024-03-20 23:38:00 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_groups, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (42a8a) -- Worker picked up work.
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (42a8a) -- Attempting to read from queue namespace: RAW, stream: ad_groups.
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (42a8a) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 05dcd9b3-2033-421b-80c9-a2c7ef8c53024427753513323966481.csv.gz (0 bytes)
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_groups (0 bytes) to staging
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:38:36 destination > 2024-03-20 23:38:36 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:38:38 destination > 2024-03-20 23:38:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10.89 MB (10.889415740966797 MB), % used: 0.0010477014266886478 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:38:38 destination > 2024-03-20 23:38:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 4
+2024-03-20 23:38:45 destination > 2024-03-20 23:38:45 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:38:45 destination > 2024-03-20 23:38:45 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data d5e35e3d-183c-4b09-9d25-b4ba191b4d814597656928873020963.csv.gz
+2024-03-20 23:38:45 destination > 2024-03-20 23:38:45 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:38:45 destination > 2024-03-20 23:38:45 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 163905 bytes..
+2024-03-20 23:38:45 destination > 2024-03-20 23:38:45 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (36c8f) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:38:47 destination > 2024-03-20 23:38:47 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:38:47 destination > 2024-03-20 23:38:47 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data e5d313d1-8720-4ed8-b9c5-8ca69155895212912080580933842576.csv.gz
+2024-03-20 23:38:47 destination > 2024-03-20 23:38:47 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:38:47 destination > 2024-03-20 23:38:47 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 768715 bytes..
+2024-03-20 23:38:47 destination > 2024-03-20 23:38:47 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (3f9e2) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:39:38 destination > 2024-03-20 23:39:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10 MB (10.0 MB), % used: 9.621282276395386E-4 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:39:38 destination > 2024-03-20 23:39:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 2
+2024-03-20 23:40:38 destination > 2024-03-20 23:40:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10 MB (10.0 MB), % used: 9.621282276395386E-4 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:40:38 destination > 2024-03-20 23:40:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 2
+2024-03-20 23:40:40 destination > 2024-03-20 23:40:40 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:40:40 destination > 2024-03-20 23:40:40 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 05dcd9b3-2033-421b-80c9-a2c7ef8c53024427753513323966481.csv.gz
+2024-03-20 23:40:40 destination > 2024-03-20 23:40:40 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:40 destination > 2024-03-20 23:40:40 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:40 destination > 2024-03-20 23:40:40 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (42a8a) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:40:42 destination > 2024-03-20 23:40:42 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:40:42 destination > 2024-03-20 23:40:42 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data cf0450d4-7878-42ed-b47b-e18c18bdff044275511796569978295.csv.gz
+2024-03-20 23:40:42 destination > 2024-03-20 23:40:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:42 destination > 2024-03-20 23:40:42 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:42 destination > 2024-03-20 23:40:42 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (efed6) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - campaigns, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (39e3c) -- Worker picked up work.
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (39e3c) -- Attempting to read from queue namespace: RAW, stream: campaigns.
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (39e3c) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to b21e2b31-9f05-4a3c-afe9-a9fa5f19dfc917322367309521884090.csv.gz (0 bytes)
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream campaigns (0 bytes) to staging
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:40:50 destination > 2024-03-20 23:40:50 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_group_performance_report_daily, time trigger: true , size trigger: false current threshold b: 10 MB, queue size b: 0 bytes, penalty b: 0 bytes, after penalty b: 0 bytes
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (c0e28) -- Worker picked up work.
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (c0e28) -- Attempting to read from queue namespace: RAW, stream: ad_group_performance_report_daily.
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (c0e28) -- Batch contains: 0 records, 0 bytes bytes.
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(flushWriter):85 - Trying to flush but no printer is initialized.
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 WARN i.a.c.i.d.s.c.CsvSerializedBuffer(closeWriter):95 - Trying to close but no printer is initialized.
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 9c382342-4b13-4f33-8851-e0e7aba655e79329737641761430105.csv.gz (0 bytes)
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_group_performance_report_daily (0 bytes) to staging
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:40:55 destination > 2024-03-20 23:40:55 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:41:04 platform > processMessage: done. (fromSource.isDone:true, forDest.isClosed:false)
+2024-03-20 23:41:04 platform > writeToDestination: done. (forDest.isDone:true, isDestRunning:true)
+2024-03-20 23:41:04 platform > thread status... timeout thread: false , replication thread: true
+2024-03-20 23:41:04 destination > 2024-03-20 23:41:04 INFO i.a.c.i.d.FlushWorkers(close):191 - Closing flush workers -- waiting for all buffers to flush
+2024-03-20 23:41:04 destination > 2024-03-20 23:41:04 INFO i.a.c.i.d.FlushWorkers(close):216 - REMAINING_BUFFERS_INFO
+2024-03-20 23:41:04 destination >   Namespace: RAW Stream: ad_group_performance_report_daily -- remaining records: 9
+2024-03-20 23:41:04 destination > 2024-03-20 23:41:04 INFO i.a.c.i.d.FlushWorkers(close):217 - Waiting for all streams to flush.
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.DetectStreamToFlush(getNextStreamToFlush):122 - flushing: trigger info: RAW - ad_group_performance_report_daily, time trigger: false , size trigger: true current threshold b: 0 bytes, queue size b: 13.19 KB, penalty b: 0 bytes, after penalty b: 13.19 KB
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):152 - Flush Worker (57179) -- Worker picked up work.
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):154 - Flush Worker (57179) -- Attempting to read from queue namespace: RAW, stream: ad_group_performance_report_daily.
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 10472250 bytes..
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):167 - Flush Worker (57179) -- Batch contains: 9 records, 13.19 KB bytes.
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to ccaf2b03-30a6-4728-9a42-6793577384e413986526433020742960.csv.gz (1 KB)
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.s.AsyncFlush(flush):98 - Flushing CSV buffer for stream ad_group_performance_report_daily (1 KB) to staging
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.d.j.DefaultJdbcDatabase(lambda$unsafeQuery$1):115 - closing connection
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.i.d.s.SnowflakeInternalStagingSqlOperations(uploadRecordsToStage):100 - Successfully loaded records to stage 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/ with 0 re-attempt(s)
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(close):220 - Closing flush workers -- all buffers flushed
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(close):228 - Closing flush workers -- supervisor shut down
+2024-03-20 23:41:05 destination > 2024-03-20 23:41:05 INFO i.a.c.i.d.FlushWorkers(close):230 - Closing flush workers -- Starting worker pool shutdown..
+2024-03-20 23:41:38 destination > 2024-03-20 23:41:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10.01 MB (10.012884140014648 MB), % used: 9.63367847119234E-4 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:41:38 destination > 2024-03-20 23:41:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 3
+2024-03-20 23:42:38 destination > 2024-03-20 23:42:38 INFO i.a.c.i.d.b.BufferManager(printQueueInfo):118 - [ASYNC QUEUE INFO] Global: max: 10.15 GB, allocated: 10.01 MB (10.012884140014648 MB), % used: 9.63367847119234E-4 | Queue `campaigns`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_groups`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ad_group_performance_report_daily`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | Queue `ads`, num records: 0, num bytes: 0 bytes, allocated bytes: 0 bytes | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.000000
+2024-03-20 23:42:38 destination > 2024-03-20 23:42:38 INFO i.a.c.i.d.FlushWorkers(printWorkerInfo):146 - [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 3
+2024-03-20 23:43:34 destination > 2024-03-20 23:43:34 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:43:34 destination > 2024-03-20 23:43:34 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data b21e2b31-9f05-4a3c-afe9-a9fa5f19dfc917322367309521884090.csv.gz
+2024-03-20 23:43:34 destination > 2024-03-20 23:43:34 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:43:34 destination > 2024-03-20 23:43:34 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:43:34 destination > 2024-03-20 23:43:34 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (39e3c) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:43:35 destination > 2024-03-20 23:43:35 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:43:35 destination > 2024-03-20 23:43:35 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data ccaf2b03-30a6-4728-9a42-6793577384e413986526433020742960.csv.gz
+2024-03-20 23:43:35 destination > 2024-03-20 23:43:35 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 480 bytes..
+2024-03-20 23:43:35 platform > starting state flush thread for connectionId 0d727e03-5cc5-443e-9e99-65779c022a55
+2024-03-20 23:43:35 destination > 2024-03-20 23:43:35 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 13510 bytes..
+2024-03-20 23:43:35 destination > 2024-03-20 23:43:35 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (57179) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.TypeAndDedupeOperationValve(readyToTypeAndDedupe):88 - Skipping Incremental Typing and Deduping
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 9c382342-4b13-4f33-8851-e0e7aba655e79329737641761430105.csv.gz
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.GlobalMemoryManager(free):88 - Freeing 0 bytes..
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.FlushWorkers(lambda$flush$1):176 - Flush Worker (c0e28) -- Worker finished flushing. Current queue size: 0
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.FlushWorkers(close):235 - Closing flush workers  -- workers shut down
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.b.BufferManager(close):92 - Buffers cleared..
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):131 - Cleaning up destination started for 4 streams
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.DefaultTyperDeduper(typeAndDedupe):273 - Typing and deduping all tables
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):243 - Waiting for raw table writes to pause for RAW.ad_groups
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):243 - Waiting for raw table writes to pause for RAW.ads
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):243 - Waiting for raw table writes to pause for RAW.campaigns
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.TypeAndDedupeTransaction(executeTypeAndDedupe):36 - Attempting typing and deduping for RAW.ad_groups with suffix _airbyte_tmp
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.TypeAndDedupeTransaction(executeTypeAndDedupe):36 - Attempting typing and deduping for RAW.ads with suffix _airbyte_tmp
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.TypeAndDedupeTransaction(executeTypeAndDedupe):36 - Attempting typing and deduping for RAW.campaigns with suffix _airbyte_tmp
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):243 - Waiting for raw table writes to pause for RAW.ad_group_performance_report_daily
+2024-03-20 23:43:36 destination > 2024-03-20 23:43:36 INFO i.a.i.b.d.t.TypeAndDedupeTransaction(executeTypeAndDedupe):36 - Attempting typing and deduping for RAW.ad_group_performance_report_daily with suffix 
+2024-03-20 23:44:09 destination > 2024-03-20 23:44:09 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):255 - Allowing other threads to proceed for RAW.campaigns
+2024-03-20 23:44:09 destination > 2024-03-20 23:44:09 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):255 - Allowing other threads to proceed for RAW.ad_groups
+2024-03-20 23:44:14 destination > 2024-03-20 23:44:14 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):255 - Allowing other threads to proceed for RAW.ads
+2024-03-20 23:44:15 destination > 2024-03-20 23:44:15 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$typeAndDedupeTask$4):255 - Allowing other threads to proceed for RAW.ad_group_performance_report_daily
+2024-03-20 23:44:15 destination > 2024-03-20 23:44:15 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):143 - Cleaning stage in destination started for stream ad_groups. schema airbyte_internal, stage: 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/
+2024-03-20 23:44:15 destination > 2024-03-20 23:44:15 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):143 - Cleaning stage in destination started for stream ads. schema airbyte_internal, stage: 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/
+2024-03-20 23:44:15 destination > 2024-03-20 23:44:15 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):143 - Cleaning stage in destination started for stream campaigns. schema airbyte_internal, stage: 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/
+2024-03-20 23:44:16 destination > 2024-03-20 23:44:16 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):143 - Cleaning stage in destination started for stream ad_group_performance_report_daily. schema airbyte_internal, stage: 2024/03/20/23/9F19F57B-7CB7-409D-920C-1961131128AB/
+2024-03-20 23:44:16 destination > 2024-03-20 23:44:16 INFO i.a.i.b.d.t.DefaultTyperDeduper(commitFinalTables):314 - Committing final tables
+2024-03-20 23:44:16 destination > 2024-03-20 23:44:16 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$commitFinalTableTask$10):337 - Overwriting final table with tmp table for stream RAW.ad_groups
+2024-03-20 23:44:16 destination > 2024-03-20 23:44:16 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$commitFinalTableTask$10):337 - Overwriting final table with tmp table for stream RAW.campaigns
+2024-03-20 23:44:16 destination > 2024-03-20 23:44:16 INFO i.a.i.b.d.t.DefaultTyperDeduper(lambda$commitFinalTableTask$10):337 - Overwriting final table with tmp table for stream RAW.ads
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 INFO i.a.i.b.d.t.DefaultTyperDeduper(cleanup):355 - Cleaning Up type-and-dedupe thread pool
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 INFO i.a.c.i.d.s.GeneralStagingFunctions(lambda$onCloseFunction$1):152 - Cleaning up destination completed.
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 INFO i.a.c.i.d.AsyncStreamConsumer(close):219 - class io.airbyte.cdk.integrations.destination_async.AsyncStreamConsumer closed
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 WARN i.a.c.i.b.IntegrationRunner(stopOrphanedThreads):366 - The main thread is exiting while children non-daemon threads from a connector are still active.
+2024-03-20 23:44:17 destination > Ideally, this situation should not happen...
+2024-03-20 23:44:17 destination > Please check with maintainers if the connector or library code should safely clean up its threads before quitting instead.
+2024-03-20 23:44:17 destination > The main thread is: main (RUNNABLE)
+2024-03-20 23:44:17 destination >  Thread stacktrace: java.base/java.lang.Thread.getStackTrace(Thread.java:1610)
+2024-03-20 23:44:17 destination >         at io.airbyte.cdk.integrations.base.IntegrationRunner.dumpThread(IntegrationRunner.java:396)
+2024-03-20 23:44:17 destination >         at io.airbyte.cdk.integrations.base.IntegrationRunner.stopOrphanedThreads(IntegrationRunner.java:370)
+2024-03-20 23:44:17 destination >         at io.airbyte.cdk.integrations.base.IntegrationRunner.runInternal(IntegrationRunner.java:192)
+2024-03-20 23:44:17 destination >         at io.airbyte.cdk.integrations.base.IntegrationRunner.run(IntegrationRunner.java:125)
+2024-03-20 23:44:17 destination >         at io.airbyte.cdk.integrations.base.adaptive.AdaptiveDestinationRunner$Runner.run(AdaptiveDestinationRunner.java:88)
+2024-03-20 23:44:17 destination >         at io.airbyte.integrations.destination.snowflake.SnowflakeDestinationRunner.main(SnowflakeDestinationRunner.java:20)
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 WARN i.a.c.i.b.IntegrationRunner(stopOrphanedThreads):378 - Active non-daemon thread: pool-10-thread-37 (RUNNABLE)
+2024-03-20 23:44:17 destination >  Thread stacktrace: java.base@17.0.8.1/sun.nio.ch.Net.poll(Native Method)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:186)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:290)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/java.net.Socket$SocketInputStream.read(Socket.java:966)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:484)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:478)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1465)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1069)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.internal.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.RestRequest.execute(RestRequest.java:222)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.RestRequest.execute(RestRequest.java:67)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.core.HttpUtil.executeRequestInternal(HttpUtil.java:751)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.core.HttpUtil.executeRequest(HttpUtil.java:684)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.core.HttpUtil.executeGeneralRequest(HttpUtil.java:601)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.telemetry.TelemetryClient.sendBatch(TelemetryClient.java:352)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.telemetry.TelemetryClient.lambda$sendBatchAsync$0(TelemetryClient.java:282)
+2024-03-20 23:44:17 destination >         at app//net.snowflake.client.jdbc.telemetry.TelemetryClient$$Lambda$319/0x00007ff01442c220.call(Unknown Source)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2024-03-20 23:44:17 destination >         at java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 INFO i.a.c.i.b.IntegrationRunner(runInternal):231 - Completed integration: io.airbyte.integrations.destination.snowflake.SnowflakeDestination
+2024-03-20 23:44:17 destination > 2024-03-20 23:44:17 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(run):89 - Completed destination: io.airbyte.integrations.destination.snowflake.SnowflakeDestination
+2024-03-20 23:44:18 platform > readFromDestination: done. (writeToDestFailed:false, dest.isFinished:true)
+2024-03-20 23:44:18 platform > thread status... timeout thread: false , replication thread: true
+2024-03-20 23:44:18 platform > sync summary: {
+  "status" : "failed",
+  "recordsSynced" : 522,
+  "bytesSynced" : 684089,
+  "startTime" : 1710976353755,
+  "endTime" : 1710978258602,
+  "totalStats" : {
+    "bytesCommitted" : 684089,
+    "bytesEmitted" : 48384668,
+    "destinationStateMessagesEmitted" : 1,
+    "destinationWriteEndTime" : 1710978258600,
+    "destinationWriteStartTime" : 1710976353756,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 1,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 758,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 758,
+    "recordsEmitted" : 31874,
+    "recordsCommitted" : 522,
+    "replicationEndTime" : 1710978258602,
+    "replicationStartTime" : 1710976353755,
+    "sourceReadEndTime" : 0,
+    "sourceReadStartTime" : 1710976353756,
+    "sourceStateMessagesEmitted" : 1
+  },
+  "streamStats" : [ {
+    "streamName" : "ad_group_performance_report_daily",
+    "stats" : {
+      "bytesCommitted" : 684089,
+      "bytesEmitted" : 684089,
+      "recordsEmitted" : 522,
+      "recordsCommitted" : 522
+    }
+  }, {
+    "streamName" : "campaigns",
+    "stats" : {
+      "bytesCommitted" : 0,
+      "bytesEmitted" : 138813,
+      "recordsEmitted" : 153,
+      "recordsCommitted" : 0
+    }
+  }, {
+    "streamName" : "ads",
+    "stats" : {
+      "bytesCommitted" : 0,
+      "bytesEmitted" : 43396308,
+      "recordsEmitted" : 25742,
+      "recordsCommitted" : 0
+    }
+  }, {
+    "streamName" : "ad_groups",
+    "stats" : {
+      "bytesCommitted" : 0,
+      "bytesEmitted" : 4165458,
+      "recordsEmitted" : 5457,
+      "recordsCommitted" : 0
+    }
+  } ],
+  "performanceMetrics" : {
+    "processFromSource" : {
+      "elapsedTimeInNanos" : 608535046824,
+      "executionCount" : 31888,
+      "avgExecTimeInNanos" : 1.9083512507024586E7
+    },
+    "readFromSource" : {
+      "elapsedTimeInNanos" : 1082165166774,
+      "executionCount" : 32073,
+      "avgExecTimeInNanos" : 3.374069051145823E7
+    },
+    "processFromDest" : {
+      "elapsedTimeInNanos" : 10477648,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 1.0477648E7
+    },
+    "writeToDest" : {
+      "elapsedTimeInNanos" : 47338912511,
+      "executionCount" : 31875,
+      "avgExecTimeInNanos" : 1485142.3532862745
+    },
+    "readFromDest" : {
+      "elapsedTimeInNanos" : 1904790948302,
+      "executionCount" : 269,
+      "avgExecTimeInNanos" : 7.081007242758365E9
+    }
+  }
+}
+2024-03-20 23:44:18 platform > failures: [ {
+  "failureOrigin" : "source",
+  "failureType" : "system_error",
+  "internalMessage" : "Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.'",
+  "externalMessage" : "Something went wrong in the connector. See the logs for more details.",
+  "metadata" : {
+    "attemptNumber" : 0,
+    "jobId" : 4063,
+    "from_trace_message" : true,
+    "connector_command" : "read"
+  },
+  "stacktrace" : "Traceback (most recent call last):\n  File \"/airbyte/integration_code/main.py\", line 8, in <module>\n    run()\n  File \"/airbyte/integration_code/source_bing_ads/run.py\", line 14, in run\n    launch(source, sys.argv[1:])\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py\", line 214, in launch\n    for message in source_entrypoint.run(parsed_args):\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py\", line 121, in run\n    yield from map(AirbyteEntrypoint.airbyte_message_to_string, self.read(source_spec, config, config_catalog, state))\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/entrypoint.py\", line 163, in read\n    yield from self.source.read(self.logger, config, catalog, state)\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py\", line 149, in read\n    raise e\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py\", line 126, in read\n    yield from self._read_stream(\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py\", line 203, in _read_stream\n    for record in record_iterator:\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/abstract_source.py\", line 239, in _read_incremental\n    for record_data_or_message in stream_instance.read_incremental(\n  File \"/usr/local/lib/python3.9/site-packages/airbyte_cdk/sources/streams/core.py\", line 156, in read_incremental\n    for record_data_or_message in records:\n  File \"/airbyte/integration_code/source_bing_ads/base_streams.py\", line 111, in read_records\n    response = self.send_request(params, customer_id=customer_id, account_id=account_id)\n  File \"/airbyte/integration_code/source_bing_ads/report_streams.py\", line 187, in send_request\n    return self.client.request(**request_kwargs)\n  File \"/airbyte/integration_code/source_bing_ads/client.py\", line 153, in request\n    return backoff.on_exception(\n  File \"/usr/local/lib/python3.9/site-packages/backoff/_sync.py\", line 105, in retry\n    ret = target(*args, **kwargs)\n  File \"/airbyte/integration_code/source_bing_ads/client.py\", line 184, in _request\n    return getattr(service, operation_name)(**params)\n  File \"/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py\", line 59, in download_report\n    report_file_path = self.download_file(download_parameters)\n  File \"/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py\", line 75, in download_file\n    operation = self.submit_download(download_parameters.report_request)\n  File \"/usr/local/lib/python3.9/site-packages/bingads/v13/reporting/reporting_service_manager.py\", line 102, in submit_download\n    response = self.service_client.SubmitGenerateReport(report_request)\n  File \"/usr/local/lib/python3.9/site-packages/bingads/service_client.py\", line 286, in __call__\n    raise ex\n  File \"/usr/local/lib/python3.9/site-packages/bingads/service_client.py\", line 278, in __call__\n    response = self.service_client.soap_client.service.__getattr__(self.name)(*args, **kwargs)\n  File \"/usr/local/lib/python3.9/site-packages/suds/client.py\", line 586, in __call__\n    return client.invoke(args, kwargs)\n  File \"/usr/local/lib/python3.9/site-packages/suds/client.py\", line 728, in invoke\n    result = self.send(soapenv, timeout=timeout)\n  File \"/usr/local/lib/python3.9/site-packages/suds/client.py\", line 777, in send\n    return self.process_reply(reply.message, None, None)\n  File \"/usr/local/lib/python3.9/site-packages/suds/client.py\", line 840, in process_reply\n    raise WebFault(fault, replyroot)\nsuds.WebFault: Server raised fault: 'Invalid client data. Check the SOAP fault details for more information. TrackingId: bf40580a-c8ee-4ceb-9efb-fe0a0b8dd4f6.'\n",
+  "timestamp" : 1710977456956
+}, {
+  "failureOrigin" : "source",
+  "internalMessage" : "Source process exited with non-zero exit code 1",
+  "externalMessage" : "Something went wrong within the source connector",
+  "metadata" : {
+    "attemptNumber" : 0,
+    "jobId" : 4063,
+    "connector_command" : "read"
+  },
+  "stacktrace" : "io.airbyte.workers.internal.exception.SourceException: Source process exited with non-zero exit code 1\n\tat io.airbyte.workers.general.BufferedReplicationWorker.readFromSource(BufferedReplicationWorker.java:366)\n\tat io.airbyte.workers.general.BufferedReplicationWorker.lambda$runAsyncWithHeartbeatCheck$3(BufferedReplicationWorker.java:235)\n\tat java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n",
+  "timestamp" : 1710977457962
+} ]
+2024-03-20 23:44:18 platform > 
+2024-03-20 23:44:18 platform > ----- END REPLICATION -----
+2024-03-20 23:44:18 platform > 
+2024-03-20 23:44:18 platform > Retry State: RetryManager(completeFailureBackoffPolicy=BackoffPolicy(minInterval=PT10S, maxInterval=PT30M, base=3), partialFailureBackoffPolicy=null, successiveCompleteFailureLimit=5, totalCompleteFailureLimit=10, successivePartialFailureLimit=1000, totalPartialFailureLimit=10, successiveCompleteFailures=0, totalCompleteFailures=0, successivePartialFailures=1, totalPartialFailures=1)
+ Backoff before next attempt: 0 seconds

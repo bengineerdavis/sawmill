@@ -1,0 +1,176 @@
+2024-03-10 05:01:41 INFO i.a.w.t.TemporalAttemptExecution(get):126 - Cloud storage job log path: /workspace/10357/0/logs.log
+2024-03-10 05:01:45 source > INFO main i.a.i.s.m.MssqlSource(main):660 starting source: class io.airbyte.integrations.source.mssql.MssqlSource
+2024-03-10 05:01:45 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-10 05:01:45 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-10 05:01:45 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-10 05:01:45 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-10 05:01:41 INFO i.a.w.t.TemporalAttemptExecution(get):129 - Executing worker wrapper. Airbyte version: 0.50.33
+2024-03-10 05:01:41 INFO i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-10 05:01:41 INFO i.a.w.g.BufferedReplicationWorker(run):152 - start sync worker. job id: 10357 attempt id: 0
+2024-03-10 05:01:41 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-10 05:01:41 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2024-03-10 05:01:41 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-10 05:01:41 INFO i.a.w.i.DefaultAirbyteDestination(start):92 - Running destination...
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):128 - Attempting to start pod = destination-s3-write-10357-0-ydhaa for airbyte/destination-s3:0.5.8 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@2d408c28[cpuRequest=1,cpuLimit=,memoryRequest=4Gi,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@3e778632[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@3676141e[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@ee303a8[cpuRequest=0.5,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@27ebef90[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):132 - destination-s3-write-10357-0-ydhaa stdoutLocalPort = 9010
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):135 - destination-s3-write-10357-0-ydhaa stderrLocalPort = 9011
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-10 05:01:41 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):128 - Attempting to start pod = source-mssql-read-10357-0-bjfwo for airbyte/source-mssql:3.7.7 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@34fbb788[cpuRequest=1,cpuLimit=,memoryRequest=4Gi,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@3e778632[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@67bbaf83[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=null, stdOut=io.airbyte.config.ResourceRequirements@66971058[cpuRequest=0.5,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@79815caa[hosts=[vpce-0a5e7638383b5fa7a-tv2ean05.vpce-svc-06121b7af7f9312f6.us-west-2.vpce.amazonaws.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):132 - source-mssql-read-10357-0-bjfwo stdoutLocalPort = 9012
+2024-03-10 05:01:41 INFO i.a.w.p.KubeProcessFactory(create):135 - source-mssql-read-10357-0-bjfwo stderrLocalPort = 9013
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$10):668 - Creating stdout socket server...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$10):668 - Creating stdout socket server...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):686 - Creating stderr socket server...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):686 - Creating stderr socket server...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(<init>):593 - Creating pod source-mssql-read-10357-0-bjfwo...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(<init>):593 - Creating pod destination-s3-write-10357-0-ydhaa...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-10 05:01:41 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(<init>):624 - Copying files...
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: input_state.json
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/555b8a97-f2b9-4ebd-bd66-1085b35239c1/input_state.json airbyte-stg/source-mssql-read-10357-0-bjfwo:/config/input_state.json -c init
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/f759f86e-88c3-4f00-8d67-5924bbdc02a5/source_config.json airbyte-stg/source-mssql-read-10357-0-bjfwo:/config/source_config.json -c init
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_catalog.json
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/3b350f91-dcb4-46e8-b0fc-b4adb83cd0d0/source_catalog.json airbyte-stg/source-mssql-read-10357-0-bjfwo:/config/source_catalog.json -c init
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/92b1f599-31be-4d4d-b5a8-c0758ca81034/FINISHED_UPLOADING airbyte-stg/source-mssql-read-10357-0-bjfwo:/config/FINISHED_UPLOADING -c init
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:42 INFO i.a.w.p.KubePodProcess(<init>):627 - Waiting until pod is ready...
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(<init>):624 - Copying files...
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: destination_config.json
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/e14c1683-fdd7-49c1-8abc-e8f84a71996c/destination_config.json airbyte-stg/destination-s3-write-10357-0-ydhaa:/config/destination_config.json -c init
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: destination_catalog.json
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/e699a17f-e9f6-4894-9c22-6ed083745f4b/destination_catalog.json airbyte-stg/destination-s3-write-10357-0-ydhaa:/config/destination_catalog.json -c init
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/dad9f174-997c-4a62-ae54-3efa6ed81c06/FINISHED_UPLOADING airbyte-stg/destination-s3-write-10357-0-ydhaa:/config/FINISHED_UPLOADING -c init
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$10):677 - Setting stdout...
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):689 - Setting stderr...
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-10 05:01:43 INFO i.a.w.p.KubePodProcess(<init>):627 - Waiting until pod is ready...
+2024-03-10 05:01:44 INFO i.a.w.p.KubePodProcess(<init>):644 - Reading pod IP...
+2024-03-10 05:01:44 INFO i.a.w.p.KubePodProcess(<init>):646 - Pod IP: 10.8.37.211
+2024-03-10 05:01:44 INFO i.a.w.p.KubePodProcess(<init>):653 - Using null stdin output stream...
+2024-03-10 05:01:44 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-10 05:01:44 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$10):677 - Setting stdout...
+2024-03-10 05:01:44 INFO i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):689 - Setting stderr...
+2024-03-10 05:01:45 INFO i.a.w.p.KubePodProcess(<init>):644 - Reading pod IP...
+2024-03-10 05:01:45 INFO i.a.w.p.KubePodProcess(<init>):646 - Pod IP: 10.8.45.249
+2024-03-10 05:01:45 INFO i.a.w.p.KubePodProcess(<init>):649 - Creating stdin socket...
+2024-03-10 05:01:45 INFO i.a.w.i.VersionedAirbyteMessageBufferedWriterFactory(createWriter):41 - Writing messages to protocol version 0.2.0
+2024-03-10 05:01:45 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-10 05:01:45 INFO i.a.w.g.BufferedReplicationWorker(readFromSource):371 - readFromSource: start
+2024-03-10 05:01:45 INFO i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):98 - Starting source heartbeat check. Will check every 1 minutes.
+2024-03-10 05:01:45 INFO i.a.w.g.BufferedReplicationWorker(processMessage):407 - processMessage: start
+2024-03-10 05:01:45 INFO i.a.w.g.BufferedReplicationWorker(writeToDestination):448 - writeToDestination: start
+2024-03-10 05:01:45 INFO i.a.w.g.BufferedReplicationWorker(readFromDestination):481 - readFromDestination: start
+2024-03-10 05:04:47 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:04:47 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 104s
+2024-03-10 05:04:58 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:04:58 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 114s
+2024-03-10 05:05:08 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:05:08 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 125s
+2024-03-10 05:05:19 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:05:19 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 135s
+2024-03-10 05:05:29 source > INFO pool-8-thread-1 i.d.c.c.BaseSourceTask(logStatistics):215 7 records sent during previous 00:01:13.153, last recorded offset of {server=facppm1, database=facppm1} partition is {transaction_id=null, event_serial_no=1, commit_lsn=0006562b:002333bd:000e, change_lsn=0006562b:002333bb:0001}
+2024-03-10 05:05:29 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:05:29 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 146s
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.a.c.i.d.AirbyteDebeziumHandler$CapacityReportingBlockingQueue(reportQueueUtilization):76 CDC events queue size: 0. remaining 10000
+2024-03-10 05:05:40 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(heartbeatPosNotChanging):200 Time since last hb_pos change 156s
+2024-03-10 05:05:40 source > INFO main i.a.c.i.d.i.DebeziumRecordIterator(requestClose):209 Closing: Heartbeat indicates sync is not progressing
+2024-03-10 05:05:40 source > INFO main i.d.e.EmbeddedEngine(stop):1238 Stopping the embedded engine
+2024-03-10 05:05:40 source > INFO main i.d.e.EmbeddedEngine(stop):1245 Waiting for PT5M for connector to stop
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.d.e.EmbeddedEngine(stopTaskAndCommitOffset):1046 Stopping the task and engine
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.d.c.c.BaseSourceTask(stop):284 Stopping down connector
+2024-03-10 05:05:40 source > INFO debezium-sqlserverconnector-facppm1-change-event-source-coordinator i.d.c.s.SqlServerChangeEventSourceCoordinator(executeChangeEventSources):133 Finished streaming
+2024-03-10 05:05:40 source > INFO debezium-sqlserverconnector-facppm1-change-event-source-coordinator i.d.p.ChangeEventSourceCoordinator(streamingConnected):423 Connected metrics set to 'false'
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.d.p.s.SignalProcessor(stop):127 SignalProcessor stopped
+2024-03-10 05:05:40 source > INFO pool-11-thread-1 i.d.j.JdbcConnection(lambda$doClose$4):947 Connection gracefully closed
+2024-03-10 05:05:40 source > INFO pool-12-thread-1 i.d.j.JdbcConnection(lambda$doClose$4):947 Connection gracefully closed
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 o.a.k.c.s.FileOffsetBackingStore(stop):71 Stopped FileOffsetBackingStore
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.a.c.i.d.i.DebeziumRecordPublisher(lambda$start$1):67 Debezium engine shutdown. Engine terminated successfully : true
+2024-03-10 05:05:40 source > INFO pool-8-thread-1 i.a.c.i.d.i.DebeziumRecordPublisher(lambda$start$1):68 Connector 'io.debezium.connector.sqlserver.SqlServerConnector' completed normally.
+2024-03-10 05:05:40 source > INFO main i.a.c.i.d.i.AirbyteSchemaHistoryStorage(read):74 File Size 0.22242450714111328 MB is less than the size limit of 1 MB, reading the content of the file without compression.
+2024-03-10 05:05:40 source > INFO main i.a.i.s.m.MssqlCdcStateHandler(saveState):49 debezium state offset: {"[\"facppm1\",{\"server\":\"facppm1\",\"database\":\"facppm1\"}]":"{\"transaction_id\":null,\"event_serial_no\":1,\"commit_lsn\":\"0006562b:002333bd:000e\",\"change_lsn\":\"0006562b:002333bb:0001\"}"}
+2024-03-10 05:05:40 source > INFO main i.a.c.i.s.r.AbstractDbSource(lambda$read$1):184 Closing database connection pool.
+2024-03-10 05:05:40 source > INFO main c.z.h.HikariDataSource(close):349 HikariPool-1 - Shutdown initiated...
+2024-03-10 05:05:40 source > INFO main c.z.h.HikariDataSource(close):351 HikariPool-1 - Shutdown completed.
+2024-03-10 05:05:40 source > INFO main i.a.c.i.s.r.AbstractDbSource(lambda$read$1):186 Closed database connection pool.
+2024-03-10 05:05:40 source > INFO main i.a.c.i.b.IntegrationRunner(runInternal):227 Completed integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedSource
+2024-03-10 05:05:40 source > INFO main i.a.i.s.m.MssqlSource(main):662 completed source: class io.airbyte.integrations.source.mssql.MssqlSource
+2024-03-10 05:05:40 destination > 2024-03-10 05:05:40 INFO i.a.c.i.d.r.SerializedBufferingStrategy(lambda$getOrCreateBuffer$0):108 - Starting a new buffer for stream CMC_CKPY_PAYEE_SUM (current state: 0 bytes in 0 buffers)
+2024-03-10 05:05:40 destination > 2024-03-10 05:05:40 INFO i.a.c.i.d.r.SerializedBufferingStrategy(lambda$getOrCreateBuffer$0):108 - Starting a new buffer for stream CMC_CKCK_CHECK (current state: 0 bytes in 1 buffers)
+2024-03-10 05:05:40 destination > 2024-03-10 05:05:40 INFO i.a.c.i.d.r.SerializedBufferingStrategy(lambda$getOrCreateBuffer$0):108 - Starting a new buffer for stream CMC_CKST_STATUS (current state: 0 bytes in 2 buffers)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.b.FailureTrackingAirbyteMessageConsumer(close):80 - Airbyte message consumer: succeeded.
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.b.BufferedStreamConsumer(close):295 - executing on success close procedure.
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):132 - Flushing all 3 current buffers (0 bytes in total)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):136 - Flushing buffer of stream CMC_CKPY_PAYEE_SUM (0 bytes)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.s.S3ConsumerFactory(lambda$flushBufferFunction$2):119 - Flushing buffer for stream CMC_CKPY_PAYEE_SUM (0 bytes) to storage
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 1b505422-3292-479a-884a-d3bccc4a1bc43240702584895958452.csv (4 KB)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 - Initiated multipart upload to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_0.csv with full ID xwTSC_lOt0zhsCNSffCI2foScN1giYDOnP9t7Klxe4a8NaKRY3yUcqMiU5M2rOBz.VicyWm3DNocmpJ_EOTiBCDegmjcCOfDUcWH_LaEibjLGLQmV6sip0EgPhbeEyBMQl0PwY2Y.steeUaF8I7zdyEy8nXTUg91tsFRpXQEHe4-
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO a.m.s.MultiPartOutputStream(close):158 - Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO a.m.s.StreamTransferManager(complete):367 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_0.csv with id xwTSC_lOt...RpXQEHe4-]: Uploading leftover stream [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO a.m.s.StreamTransferManager(uploadStreamPart):558 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_0.csv with id xwTSC_lOt...RpXQEHe4-]: Finished uploading [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO a.m.s.StreamTransferManager(complete):395 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_0.csv with id xwTSC_lOt...RpXQEHe4-]: Completed
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.s.S3StorageOperations(loadDataIntoBucket):218 - Uploaded buffer file to storage: 1b505422-3292-479a-884a-d3bccc4a1bc43240702584895958452.csv -> raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_0.csv (filename: 2024_03_10_1710046905498_0.csv)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.s.S3StorageOperations(uploadRecordsToBucket):135 - Successfully loaded records to stage raw/airbyte/facets_fac_dbo/CMC_CKPY_PAYEE_SUM/2024_03_10_1710046905498_ with 0 re-attempt(s)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 1b505422-3292-479a-884a-d3bccc4a1bc43240702584895958452.csv
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):138 - Flushing completed for CMC_CKPY_PAYEE_SUM
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):136 - Flushing buffer of stream CMC_CKCK_CHECK (0 bytes)
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.s.S3ConsumerFactory(lambda$flushBufferFunction$2):119 - Flushing buffer for stream CMC_CKCK_CHECK (0 bytes) to storage
+2024-03-10 05:05:42 destination > 2024-03-10 05:05:42 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 60ab59db-d19c-44d1-9f76-64066615e2b47089420068414091192.csv (4 KB)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 - Initiated multipart upload to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_0.csv with full ID _VlTevGwEtTpqgkyWBtCkeDJ9CtiXXRDU898pbrGa5Frz4NFm0SxzQjW5ymtIrN_C.Gy7zriyKKu8DGCQ2yZtrsHVAhORH1H2U0W59aozOBUr2lwkuTgBI8i4ofbEsVSEhebFBYjq4HK0QeDR.0P6305Vgp3.vCWubqRwv33KsA-
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.MultiPartOutputStream(close):158 - Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(complete):367 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_0.csv with id _VlTevGwE...Rwv33KsA-]: Uploading leftover stream [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(uploadStreamPart):558 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_0.csv with id _VlTevGwE...Rwv33KsA-]: Finished uploading [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(complete):395 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_0.csv with id _VlTevGwE...Rwv33KsA-]: Completed
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.s.S3StorageOperations(loadDataIntoBucket):218 - Uploaded buffer file to storage: 60ab59db-d19c-44d1-9f76-64066615e2b47089420068414091192.csv -> raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_0.csv (filename: 2024_03_10_1710046905498_0.csv)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.s.S3StorageOperations(uploadRecordsToBucket):135 - Successfully loaded records to stage raw/airbyte/facets_fac_dbo/CMC_CKCK_CHECK/2024_03_10_1710046905498_ with 0 re-attempt(s)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 60ab59db-d19c-44d1-9f76-64066615e2b47089420068414091192.csv
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):138 - Flushing completed for CMC_CKCK_CHECK
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):136 - Flushing buffer of stream CMC_CKST_STATUS (0 bytes)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.s.S3ConsumerFactory(lambda$flushBufferFunction$2):119 - Flushing buffer for stream CMC_CKST_STATUS (0 bytes) to storage
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.BaseSerializedBuffer(flush):172 - Finished writing data to 4d96aa77-96ba-43a2-a9ff-1fe5141d7c8e9834077111744026620.csv (3 KB)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 - Initiated multipart upload to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_0.csv with full ID _myyieDJV1HIr4pOM0OU8Khz8PYi7b0Zuekcl92ypXuPLrE2OAbCxsb_SsBzR2ZDS7GQDwzyiFfQRICZHDlIyC8HCP9iJB9dhDfAsxhn9z0sN.LbQCMaPm..7kcOG2RxgscoVidtN7NTgIO4zvEfuXiShX5qWeXRI.qz_piCm8A-
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.MultiPartOutputStream(close):158 - Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(complete):367 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_0.csv with id _myyieDJV...z_piCm8A-]: Uploading leftover stream [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(uploadStreamPart):558 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_0.csv with id _myyieDJV...z_piCm8A-]: Finished uploading [Part number 1 containing 0.00 MB]
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO a.m.s.StreamTransferManager(complete):395 - [Manager uploading to abacus-cambia02-data-lake-stg-623353383501-us-west-2/raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_0.csv with id _myyieDJV...z_piCm8A-]: Completed
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.s.S3StorageOperations(loadDataIntoBucket):218 - Uploaded buffer file to storage: 4d96aa77-96ba-43a2-a9ff-1fe5141d7c8e9834077111744026620.csv -> raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_0.csv (filename: 2024_03_10_1710046905498_0.csv)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.s.S3StorageOperations(uploadRecordsToBucket):135 - Successfully loaded records to stage raw/airbyte/facets_fac_dbo/CMC_CKST_STATUS/2024_03_10_1710046905498_ with 0 re-attempt(s)
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.FileBuffer(deleteFile):109 - Deleting tempFile data 4d96aa77-96ba-43a2-a9ff-1fe5141d7c8e9834077111744026620.csv
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(flushAllBuffers):138 - Flushing completed for CMC_CKST_STATUS
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(close):157 - Closing buffer for stream CMC_CKPY_PAYEE_SUM
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(close):157 - Closing buffer for stream CMC_CKCK_CHECK
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.d.r.SerializedBufferingStrategy(close):157 - Closing buffer for stream CMC_CKST_STATUS
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.b.IntegrationRunner(runInternal):231 - Completed integration: io.airbyte.integrations.destination.s3.S3Destination
+2024-03-10 05:05:43 destination > 2024-03-10 05:05:43 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(run):103 - Completed destination: io.airbyte.integrations.destination.s3.S3Destination

@@ -1,0 +1,522 @@
+>> ATTEMPT 1/3
+
+2024-03-28 13:29:16 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/0/logs.log
+2024-03-28 13:29:16 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:29:16 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:29:16 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:16 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:29:16 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:29:16 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-check-1787-0-mosup for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@f0b5ac[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@52c078e0[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-check-1787-0-mosup stdoutLocalPort = 9006
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-check-1787-0-mosup stderrLocalPort = 9008
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-check-1787-0-mosup...
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:29:16 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:29:18 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:29:18 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:29:18 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:29:18 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/f96b7470-02eb-49c1-90cc-c75235e8a17d/source_config.json data-airbyte-glb-github-prod/source-github-check-1787-0-mosup:/config/source_config.json -c init
+2024-03-28 13:29:18 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:29:29 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:29:29 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:29:29 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/ca6b2bda-5086-4a3f-bb93-3e566d80886e/FINISHED_UPLOADING data-airbyte-glb-github-prod/source-github-check-1787-0-mosup:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:29:29 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:29:39 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):368 - Waiting for init container to terminate before checking exit value...
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):373 - Init container terminated with exit value 0.
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):318 - Init was successful; ignoring non-zero kubectl cp exit code for success indicator file.
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:29:40 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:29:41 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:29:41 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.7.49
+2024-03-28 13:29:41 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:29:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:29:47 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Check succeeded
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-check-1787-0-mosup) - Closed all resources for pod
+2024-03-28 13:29:48 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@27cba838[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:48 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/0/logs.log
+2024-03-28 13:29:48 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:29:48 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:29:48 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:29:48 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-check-1787-0-cuquv for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@64f28101[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-check-1787-0-cuquv stdoutLocalPort = 9007
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-check-1787-0-cuquv stderrLocalPort = 9009
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-check-1787-0-cuquv...
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:29:48 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:29:50 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:29:50 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:29:50 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:29:50 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/830cbb96-e833-4685-8d67-89a513b30f2e/source_config.json data-airbyte-glb-github-prod/destination-bigquery-check-1787-0-cuquv:/config/source_config.json -c init
+2024-03-28 13:29:50 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:29:59 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:30:00 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:30:00 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/d2219f73-9317-439c-b3e3-55d07c4629a4/FINISHED_UPLOADING data-airbyte-glb-github-prod/destination-bigquery-check-1787-0-cuquv:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:30:00 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:30:10 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:30:10 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:30:11 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:30:11 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:30:12 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:30:12 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.13.133
+2024-03-28 13:30:12 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):106 Running integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):107 Command: CHECK
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):108 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-28 13:30:12 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:30:12 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:30:12 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword always_show - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:30:12 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.b.BigQueryUtils(getLoadingMethod):419 Selected loading method is set to: GCS
+2024-03-28 13:30:17 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3FormatConfigs(getS3FormatConfig):22 S3 format config: {"format_type":"CSV","flattening":"No flattening"}
+2024-03-28 13:30:17 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):40 Started testing if all required credentials assigned to user for single file uploading
+2024-03-28 13:30:17 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):48 Finished checking for normal upload mode
+2024-03-28 13:30:17 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):52 Started testing if all required credentials assigned to user for multipart upload
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 Initiated multipart upload to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711632617952 with full ID ABPnzm6XE-Hr0NyQqlufuxv30-c41mgVakwlwMIJUL5vT7YyI3tMjR0idT7UBwA5XxRd3tY
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:30:18 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN a.m.s.MultiPartOutputStream(close):160 [MultipartOutputStream for parts 1 - 10000] is already closed
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):367 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711632617952 with id ABPnzm6XE...A5XxRd3tY]: Uploading leftover stream [Part number 1 containing 3.34 MB]
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(uploadStreamPart):558 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711632617952 with id ABPnzm6XE...A5XxRd3tY]: Finished uploading [Part number 1 containing 3.34 MB]
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):395 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711632617952 with id ABPnzm6XE...A5XxRd3tY]: Completed
+2024-03-28 13:30:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):74 Finished verification for multipart upload mode
+2024-03-28 13:30:19 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):195 Completed integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:30:19 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Destination process done (exit code 0)
+2024-03-28 13:30:20 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-check-1787-0-cuquv) - Closed all resources for pod
+2024-03-28 13:30:20 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@694c8bef[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:30:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:30:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:30:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:30:21 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/0/logs.log
+2024-03-28 13:30:21 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:30:21 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:30:21 [32mINFO[m i.a.w.g.BufferedReplicationWorker(run):142 - start sync worker. job id: 1787 attempt id: 0
+2024-03-28 13:30:21 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:30:21 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2024-03-28 13:30:21 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:30:21 [32mINFO[m i.a.w.i.DefaultAirbyteDestination(start):88 - Running destination...
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-write-1787-0-ijvjd for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@7d229f7e[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@10171dbd[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@470a2f43[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@13213494[cpuRequest=0.1,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@7a1190e1[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-write-1787-0-ijvjd stdoutLocalPort = 9016
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-write-1787-0-ijvjd stderrLocalPort = 9010
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:30:21 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-read-1787-0-fcjlt for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@5a9ccd8e[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@10171dbd[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@4e9e5e8e[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=null, stdOut=io.airbyte.config.ResourceRequirements@fd860a0[cpuRequest=0.2,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@c433f1a[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-read-1787-0-fcjlt stdoutLocalPort = 9012
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-read-1787-0-fcjlt stderrLocalPort = 9011
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-read-1787-0-fcjlt...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-write-1787-0-ijvjd...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:30:21 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: input_state.json
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/bae64b62-5024-46e7-9e27-a010ded86354/input_state.json data-airbyte-glb-github-prod/source-github-read-1787-0-fcjlt:/config/input_state.json -c init
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: destination_config.json
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/abf00cd8-da20-486c-aa58-946be4c767c3/destination_config.json data-airbyte-glb-github-prod/destination-bigquery-write-1787-0-ijvjd:/config/destination_config.json -c init
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:30:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:42:34 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-0-fcjlt) - Destroying Kube process.
+2024-03-28 13:42:35 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-0-fcjlt) - Closed all resources for pod
+2024-03-28 13:42:35 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-0-fcjlt) - Destroyed Kube process.
+2024-03-28 13:42:36 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-0-ijvjd) - Destroying Kube process.
+2024-03-28 13:42:36 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-0-ijvjd) - Closed all resources for pod
+2024-03-28 13:42:36 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-0-ijvjd) - Destroyed Kube process.
+
+
+
+
+>> ATTEMPT 2/3
+
+2024-03-28 13:42:38 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/1/logs.log
+2024-03-28 13:42:38 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:42:38 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:42:38 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-check-1787-1-nybvq for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@1276893[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@636dc11e[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-check-1787-1-nybvq stdoutLocalPort = 9013
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-check-1787-1-nybvq stderrLocalPort = 9015
+2024-03-28 13:42:38 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:42:38 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:42:38 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-check-1787-1-nybvq...
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:42:38 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:42:40 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:42:40 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:42:40 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:42:40 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/63f21fe3-f188-4d73-bdc5-01c292f201a6/source_config.json data-airbyte-glb-github-prod/source-github-check-1787-1-nybvq:/config/source_config.json -c init
+2024-03-28 13:42:40 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:42:52 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:42:52 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:42:52 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/68d8ff84-b3f5-4112-9d58-648bf87f41fa/FINISHED_UPLOADING data-airbyte-glb-github-prod/source-github-check-1787-1-nybvq:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:42:52 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):368 - Waiting for init container to terminate before checking exit value...
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):373 - Init container terminated with exit value 0.
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):318 - Init was successful; ignoring non-zero kubectl cp exit code for success indicator file.
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:43:04 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:43:05 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:43:05 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.7.50
+2024-03-28 13:43:05 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:43:05 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:43:11 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Check succeeded
+2024-03-28 13:43:11 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-check-1787-1-nybvq) - Closed all resources for pod
+2024-03-28 13:43:11 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@608347aa[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:11 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/1/logs.log
+2024-03-28 13:43:11 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:43:11 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:43:11 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:11 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:11 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:11 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:11 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:12 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:43:12 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:43:12 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-check-1787-1-mxxcd for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@1c4861d4[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-check-1787-1-mxxcd stdoutLocalPort = 9017
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-check-1787-1-mxxcd stderrLocalPort = 9014
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-check-1787-1-mxxcd...
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:43:12 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:43:13 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:43:13 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:43:13 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:43:13 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/2421aa59-2371-400c-8a8e-cd5839479436/source_config.json data-airbyte-glb-github-prod/destination-bigquery-check-1787-1-mxxcd:/config/source_config.json -c init
+2024-03-28 13:43:13 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:43:24 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:43:24 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:43:24 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/91a38c48-2342-42ef-8eca-9e8b50de27f9/FINISHED_UPLOADING data-airbyte-glb-github-prod/destination-bigquery-check-1787-1-mxxcd:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:43:24 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):368 - Waiting for init container to terminate before checking exit value...
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):373 - Init container terminated with exit value 0.
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):318 - Init was successful; ignoring non-zero kubectl cp exit code for success indicator file.
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:43:36 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:43:37 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:43:37 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.13.134
+2024-03-28 13:43:37 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):106 Running integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):107 Command: CHECK
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):108 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-28 13:43:37 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:43:37 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:43:37 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword always_show - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:43:37 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.b.BigQueryUtils(getLoadingMethod):419 Selected loading method is set to: GCS
+2024-03-28 13:43:40 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3FormatConfigs(getS3FormatConfig):22 S3 format config: {"format_type":"CSV","flattening":"No flattening"}
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):40 Started testing if all required credentials assigned to user for single file uploading
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):48 Finished checking for normal upload mode
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):52 Started testing if all required credentials assigned to user for multipart upload
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 Initiated multipart upload to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711633421552 with full ID ABPnzm6LmFeSwhYOE8DWZ8OccOhx5PclW8KJh-dv5UQKEMjH-YpoI2cwUuka3ZL9KjEK8CA
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:43:41 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN a.m.s.MultiPartOutputStream(close):160 [MultipartOutputStream for parts 1 - 10000] is already closed
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):367 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711633421552 with id ABPnzm6Lm...L9KjEK8CA]: Uploading leftover stream [Part number 1 containing 3.34 MB]
+2024-03-28 13:43:41 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(uploadStreamPart):558 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711633421552 with id ABPnzm6Lm...L9KjEK8CA]: Finished uploading [Part number 1 containing 3.34 MB]
+2024-03-28 13:43:42 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):395 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711633421552 with id ABPnzm6Lm...L9KjEK8CA]: Completed
+2024-03-28 13:43:42 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):74 Finished verification for multipart upload mode
+2024-03-28 13:43:43 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):195 Completed integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:43:43 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Destination process done (exit code 0)
+2024-03-28 13:43:43 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-check-1787-1-mxxcd) - Closed all resources for pod
+2024-03-28 13:43:43 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@7ebcf21a[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:43:43 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:43 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:43:43 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:44 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/1/logs.log
+2024-03-28 13:43:44 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:43:44 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:43:44 [32mINFO[m i.a.w.g.BufferedReplicationWorker(run):142 - start sync worker. job id: 1787 attempt id: 1
+2024-03-28 13:43:44 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:44 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2024-03-28 13:43:44 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:43:44 [32mINFO[m i.a.w.i.DefaultAirbyteDestination(start):88 - Running destination...
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-read-1787-1-tgpbr for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@66b3f73a[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@3eaba725[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@3d8c7d8e[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=null, stdOut=io.airbyte.config.ResourceRequirements@175e3b06[cpuRequest=0.2,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@6e2d14f0[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-write-1787-1-kryss for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@28cc5b21[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@3eaba725[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@6c3d2a3d[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@24f33b9e[cpuRequest=0.1,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@756abaa6[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-read-1787-1-tgpbr stdoutLocalPort = 9020
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-write-1787-1-kryss stdoutLocalPort = 9021
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-read-1787-1-tgpbr stderrLocalPort = 9019
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-write-1787-1-kryss stderrLocalPort = 9025
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-read-1787-1-tgpbr...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-write-1787-1-kryss...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:43:44 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: destination_config.json
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/1b474d63-93ac-49ea-a4cc-039c3a7d8bbe/destination_config.json data-airbyte-glb-github-prod/destination-bigquery-write-1787-1-kryss:/config/destination_config.json -c init
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: input_state.json
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/1e703dbc-1871-4330-9302-dc3fb485d5ab/input_state.json data-airbyte-glb-github-prod/source-github-read-1787-1-tgpbr:/config/input_state.json -c init
+2024-03-28 13:43:45 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:54:19 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-1-tgpbr) - Destroying Kube process.
+2024-03-28 13:54:19 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-1-kryss) - Destroying Kube process.
+2024-03-28 13:54:20 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-1-kryss) - Closed all resources for pod
+2024-03-28 13:54:20 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-1-kryss) - Destroyed Kube process.
+2024-03-28 13:54:20 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-1-tgpbr) - Closed all resources for pod
+2024-03-28 13:54:20 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-1-tgpbr) - Destroyed Kube process.
+
+
+
+
+>> ATTEMPT 3/3
+
+2024-03-28 13:54:21 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/2/logs.log
+2024-03-28 13:54:22 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:54:22 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:54:22 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:54:22 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:54:22 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:54:22 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-check-1787-2-edlzv for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@1bb18841[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@5f5d6a3c[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-check-1787-2-edlzv stdoutLocalPort = 9018
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-check-1787-2-edlzv stderrLocalPort = 9024
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-check-1787-2-edlzv...
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:54:22 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:54:23 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:54:23 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:54:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:54:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/377e0152-b041-4e40-8051-5aefdf7eb9bd/source_config.json data-airbyte-glb-github-prod/source-github-check-1787-2-edlzv:/config/source_config.json -c init
+2024-03-28 13:54:24 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:55:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:55:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:55:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/51da29ca-cb07-4cf9-849a-36eeb2141102/FINISHED_UPLOADING data-airbyte-glb-github-prod/source-github-check-1787-2-edlzv:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:55:23 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:56:12 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:56:12 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):368 - Waiting for init container to terminate before checking exit value...
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):373 - Init container terminated with exit value 0.
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):318 - Init was successful; ignoring non-zero kubectl cp exit code for success indicator file.
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.7.51
+2024-03-28 13:56:13 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:56:13 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:56:18 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Check succeeded
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-check-1787-2-edlzv) - Closed all resources for pod
+2024-03-28 13:56:19 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@59d6a116[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:56:19 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/2/logs.log
+2024-03-28 13:56:19 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:56:19 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-28 13:56:19 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:56:19 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-check-1787-2-yigam for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@4c6d797e[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@341bc6f6[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@5a8632ac[cpuRequest=0.25,cpuLimit=2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@4b01aaed[cpuRequest=0.1,cpuLimit=2.0,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-check-1787-2-yigam stdoutLocalPort = 9023
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-check-1787-2-yigam stderrLocalPort = 9027
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-check-1787-2-yigam...
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:56:19 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:56:21 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:56:21 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:56:21 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: source_config.json
+2024-03-28 13:56:21 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/5b563cbf-ed61-431a-89f9-deaf239f6712/source_config.json data-airbyte-glb-github-prod/destination-bigquery-check-1787-2-yigam:/config/source_config.json -c init
+2024-03-28 13:56:21 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:57:01 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:57:02 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: FINISHED_UPLOADING
+2024-03-28 13:57:02 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/2acbd54d-9f7a-4a51-a12d-91454193efba/FINISHED_UPLOADING data-airbyte-glb-github-prod/destination-bigquery-check-1787-2-yigam:/config/FINISHED_UPLOADING -c init
+2024-03-28 13:57:02 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:57:52 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):655 - Setting stdout...
+2024-03-28 13:57:52 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):667 - Setting stderr...
+2024-03-28 13:57:53 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):368 - Waiting for init container to terminate before checking exit value...
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToTerminate):373 - Init container terminated with exit value 0.
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):318 - Init was successful; ignoring non-zero kubectl cp exit code for success indicator file.
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):324 - kubectl cp complete, closing process
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(<init>):605 - Waiting until pod is ready...
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(<init>):622 - Reading pod IP...
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(<init>):624 - Pod IP: 192.169.13.135
+2024-03-28 13:57:54 [32mINFO[m i.a.w.p.KubePodProcess(<init>):631 - Using null stdin output stream...
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):177 - Reading messages from protocol version 0.2.0
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):106 Running integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):107 Command: CHECK
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):108 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-28 13:57:54 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:57:54 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:57:54 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword always_show - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-28 13:57:54 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.b.BigQueryUtils(getLoadingMethod):419 Selected loading method is set to: GCS
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3FormatConfigs(getS3FormatConfig):22 S3 format config: {"format_type":"CSV","flattening":"No flattening"}
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):40 Started testing if all required credentials assigned to user for single file uploading
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testSingleUpload):48 Finished checking for normal upload mode
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):52 Started testing if all required credentials assigned to user for multipart upload
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(getMultiPartOutputStreams):329 Initiated multipart upload to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711634278766 with full ID ABPnzm4-KYbJ6m7VBA2WFoaLtiBKeuZCWSbm5_02cvPNAg4xVTc4GnPbRn3x2ZtoEy3SsFw
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.MultiPartOutputStream(close):158 Called close() on [MultipartOutputStream for parts 1 - 10000]
+2024-03-28 13:57:58 [33mWARN[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):309 - WARN a.m.s.MultiPartOutputStream(close):160 [MultipartOutputStream for parts 1 - 10000] is already closed
+2024-03-28 13:57:58 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):367 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711634278766 with id ABPnzm4-K...toEy3SsFw]: Uploading leftover stream [Part number 1 containing 3.34 MB]
+2024-03-28 13:57:59 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(uploadStreamPart):558 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711634278766 with id ABPnzm4-K...toEy3SsFw]: Finished uploading [Part number 1 containing 3.34 MB]
+2024-03-28 13:57:59 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO a.m.s.StreamTransferManager(complete):395 [Manager uploading to glb-github-orgdatapltfrm-prod-airbyte-ingestion/gcs/test_1711634278766 with id ABPnzm4-K...toEy3SsFw]: Completed
+2024-03-28 13:57:59 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.d.s.S3BaseChecks(testMultipartUpload):74 Finished verification for multipart upload mode
+2024-03-28 13:58:00 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - INFO i.a.i.b.IntegrationRunner(runInternal):195 Completed integration: io.airbyte.integrations.destination.bigquery.BigQueryDestination
+2024-03-28 13:58:00 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(internalLog):312 - Destination process done (exit code 0)
+2024-03-28 13:58:01 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-check-1787-2-yigam) - Closed all resources for pod
+2024-03-28 13:58:01 [32mINFO[m i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@7ee9b15d[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-28 13:58:01 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:58:01 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-28 13:58:01 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:58:02 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):122 - Cloud storage job log path: /workspace/1787/2/logs.log
+2024-03-28 13:58:02 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):125 - Executing worker wrapper. Airbyte version: 0.50.24
+2024-03-28 13:58:02 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-28 13:58:02 [32mINFO[m i.a.w.g.BufferedReplicationWorker(run):142 - start sync worker. job id: 1787 attempt id: 2
+2024-03-28 13:58:02 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:58:02 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2024-03-28 13:58:02 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-28 13:58:02 [32mINFO[m i.a.w.i.DefaultAirbyteDestination(start):88 - Running destination...
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = source-github-read-1787-2-lvrzn for airbyte/source-github:1.0.1 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@78849ea3[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@62f61c2[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@3f3cd4bc[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=null, stdOut=io.airbyte.config.ResourceRequirements@6660f7aa[cpuRequest=0.2,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts io.airbyte.config.AllowedHosts@3a4d1c43[hosts=[api.github.com, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - source-github-read-1787-2-lvrzn stdoutLocalPort = 9022
+2024-03-28 13:58:02 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1228 - Using default value for environment variable OTEL_COLLECTOR_ENDPOINT: ''
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - source-github-read-1787-2-lvrzn stderrLocalPort = 9029
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):119 - Attempting to start pod = destination-bigquery-write-1787-2-ohlrr for airbyte/destination-bigquery:1.4.5 with resources ConnectorResourceRequirements[main=io.airbyte.config.ResourceRequirements@5692bfd5[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}], heartbeat=io.airbyte.config.ResourceRequirements@62f61c2[cpuRequest=0.05,cpuLimit=0.2,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdErr=io.airbyte.config.ResourceRequirements@61c8443b[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdIn=io.airbyte.config.ResourceRequirements@7e897bf[cpuRequest=0.1,cpuLimit=1,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}], stdOut=io.airbyte.config.ResourceRequirements@71790576[cpuRequest=0.01,cpuLimit=0.5,memoryRequest=25Mi,memoryLimit=50Mi,additionalProperties={}]] and allowedHosts null
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):123 - destination-bigquery-write-1787-2-ohlrr stdoutLocalPort = 9028
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubeProcessFactory(create):126 - destination-bigquery-write-1787-2-ohlrr stderrLocalPort = 9034
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$11):646 - Creating stdout socket server...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(lambda$setupStdOutAndStdErrListeners$12):664 - Creating stderr socket server...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod source-github-read-1787-2-lvrzn...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(<init>):571 - Creating pod destination-bigquery-write-1787-2-ohlrr...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):350 - Waiting for init container to be ready before copying files...
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:58:02 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):354 - Init container present..
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: destination_config.json
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/12bb40a8-1b1a-4d21-9a5c-7d252accc07b/destination_config.json data-airbyte-glb-github-prod/destination-bigquery-write-1787-2-ohlrr:/config/destination_config.json -c init
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(waitForInitPodToRun):357 - Init container ready..
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(<init>):602 - Copying files...
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):299 - Uploading file: input_state.json
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):307 - kubectl cp /tmp/184463d0-753b-4688-a4f9-1a596c68f6c3/input_state.json data-airbyte-glb-github-prod/source-github-read-1787-2-lvrzn:/config/input_state.json -c init
+2024-03-28 13:58:03 [32mINFO[m i.a.w.p.KubePodProcess(copyFilesToKubeConfigVolume):310 - Waiting for kubectl cp to complete
+2024-03-28 14:13:34 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-2-lvrzn) - Destroying Kube process.
+2024-03-28 14:13:36 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-2-lvrzn) - Closed all resources for pod
+2024-03-28 14:13:36 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / source-github-read-1787-2-lvrzn) - Destroyed Kube process.
+2024-03-28 14:13:36 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):710 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-2-ohlrr) - Destroying Kube process.
+2024-03-28 14:13:36 [32mINFO[m i.a.w.p.KubePodProcess(close):787 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-2-ohlrr) - Closed all resources for pod
+2024-03-28 14:13:36 [32mINFO[m i.a.w.p.KubePodProcess(cleanup):716 - (pod: data-airbyte-glb-github-prod / destination-bigquery-write-1787-2-ohlrr) - Destroyed Kube process.
+2024-03-28 14:13:37 [1;31mERROR[m i.a.w.t.s.a.AppendToAttemptLogActivityImpl(log):54 - Failing job: 1787, reason: Job failed after too many retries for connection 4ecbb523-3026-4f81-b5ef-b460cb4155c0
+
+
+

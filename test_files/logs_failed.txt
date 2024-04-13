@@ -1,0 +1,387 @@
+2024-03-27 04:56:07 INFO i.a.w.t.TemporalAttemptExecution(get):124 - Docker volume job log path: /tmp/workspace/3285/0/logs.log
+2024-03-27 04:56:07 INFO i.a.w.t.TemporalAttemptExecution(get):129 - Executing worker wrapper. Airbyte version: 0.50.33
+2024-03-27 04:56:07 INFO i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-27 04:56:07 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:07 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:07 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:07 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-27 04:56:07 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:07 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:07 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:07 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 04:56:07 INFO i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/source-postgres:3.3.18 exists...
+2024-03-27 04:56:07 INFO i.a.c.i.LineGobbler(voidCall):149 - airbyte/source-postgres:3.3.18 not found locally. Attempting to pull the image...
+2024-03-27 04:56:27 INFO i.a.c.i.LineGobbler(voidCall):149 - Pulled airbyte/source-postgres:3.3.18 from remote.
+2024-03-27 04:56:27 INFO i.a.w.p.DockerProcessFactory(create):140 - Creating docker container = source-postgres-check-3285-0-zzmwm with resources io.airbyte.config.ResourceRequirements@429be436[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts io.airbyte.config.AllowedHosts@7cb0fd49[hosts=[65.0.195.55, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-27 04:56:27 INFO i.a.w.p.DockerProcessFactory(create):187 - Preparing command: docker run --rm --init -i -w /data/3285/0 --log-driver none --name source-postgres-check-3285-0-zzmwm --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/source-postgres:3.3.18 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.33 -e WORKER_JOB_ID=3285 airbyte/source-postgres:3.3.18 check --config source_config.json
+2024-03-27 04:56:27 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-27 04:56:30 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresSource(main):712 starting source: class io.airbyte.integrations.source.postgres.PostgresSource
+2024-03-27 04:56:30 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-27 04:56:30 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.IntegrationRunner(runInternal):132 Running integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedSource
+2024-03-27 04:56:30 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.IntegrationRunner(runInternal):133 Command: CHECK
+2024-03-27 04:56:30 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.IntegrationRunner(runInternal):134 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword groups - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword group - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword always_show - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:30 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword display_type - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:31 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.s.SshTunnel(getInstance):252 Starting connection with method: NO_TUNNEL
+2024-03-27 04:56:31 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:31 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresSource(toSslJdbcParamInternal):768 REQUIRED toSslJdbcParam require
+2024-03-27 04:56:31 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main c.z.h.HikariDataSource(<init>):79 HikariPool-1 - Starting...
+2024-03-27 04:56:31 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main c.z.h.HikariDataSource(<init>):81 HikariPool-1 - Start completed.
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.s.j.AbstractJdbcSource(lambda$getCheckOperations$1):140 Attempting to get metadata from the database to see if we can connect.
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main c.z.h.HikariDataSource(close):349 HikariPool-1 - Shutdown initiated...
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main c.z.h.HikariDataSource(close):351 HikariPool-1 - Shutdown completed.
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.c.i.b.IntegrationRunner(runInternal):227 Completed integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedSource
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO main i.a.i.s.p.PostgresSource(main):714 completed source: class io.airbyte.integrations.source.postgres.PostgresSource
+2024-03-27 04:56:32 INFO i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@701c0c6[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:32 INFO i.a.w.t.TemporalAttemptExecution(get):124 - Docker volume job log path: /tmp/workspace/3285/0/logs.log
+2024-03-27 04:56:32 INFO i.a.w.t.TemporalAttemptExecution(get):129 - Executing worker wrapper. Airbyte version: 0.50.33
+2024-03-27 04:56:32 INFO i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-27 04:56:32 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:32 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:32 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:32 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:32 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- START CHECK -----
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/destination-mssql:0.2.0 exists...
+2024-03-27 04:56:32 INFO i.a.c.i.LineGobbler(voidCall):149 - airbyte/destination-mssql:0.2.0 was found locally.
+2024-03-27 04:56:32 INFO i.a.w.p.DockerProcessFactory(create):140 - Creating docker container = destination-mssql-check-3285-0-ujgrc with resources io.airbyte.config.ResourceRequirements@3c92bf4b[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2024-03-27 04:56:32 INFO i.a.w.p.DockerProcessFactory(create):187 - Preparing command: docker run --rm --init -i -w /data/3285/0 --log-driver none --name destination-mssql-check-3285-0-ujgrc --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/destination-mssql:0.2.0 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.33 -e WORKER_JOB_ID=3285 airbyte/destination-mssql:0.2.0 check --config source_config.json
+2024-03-27 04:56:32 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-27 04:56:36 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.d.m.MSSQLDestination(main):102 starting destination: class io.airbyte.integrations.destination.mssql.MSSQLDestination
+2024-03-27 04:56:36 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {check=null, config=source_config.json}
+2024-03-27 04:56:36 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.IntegrationRunner(runInternal):106 Running integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2024-03-27 04:56:36 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.IntegrationRunner(runInternal):107 Command: CHECK
+2024-03-27 04:56:36 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.IntegrationRunner(runInternal):108 Integration config: IntegrationConfig{command=CHECK, configPath='source_config.json', catalogPath='null', statePath='null'}
+2024-03-27 04:56:36 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:36 WARN i.a.w.i.VersionedAirbyteStreamFactory(internalLog):314 - WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:37 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.s.SshTunnel(getInstance):204 Starting connection with method: NO_TUNNEL
+2024-03-27 04:56:37 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO c.z.h.HikariDataSource(<init>):80 HikariPool-1 - Starting...
+2024-03-27 04:56:37 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO c.z.h.HikariDataSource(<init>):82 HikariPool-1 - Start completed.
+2024-03-27 04:56:38 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO c.z.h.HikariDataSource(close):350 HikariPool-1 - Shutdown initiated...
+2024-03-27 04:56:38 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO c.z.h.HikariDataSource(close):352 HikariPool-1 - Shutdown completed.
+2024-03-27 04:56:38 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.b.IntegrationRunner(runInternal):197 Completed integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2024-03-27 04:56:38 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - INFO i.a.i.d.m.MSSQLDestination(main):104 completed destination: class io.airbyte.integrations.destination.mssql.MSSQLDestination
+2024-03-27 04:56:38 INFO i.a.w.i.VersionedAirbyteStreamFactory(internalLog):317 - Destination process done (exit code 0)
+2024-03-27 04:56:38 INFO i.a.w.g.DefaultCheckConnectionWorker(run):117 - Check connection job received output: io.airbyte.config.StandardCheckConnectionOutput@3c628a75[status=succeeded,message=<null>,additionalProperties={}]
+2024-03-27 04:56:38 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:38 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- END CHECK -----
+2024-03-27 04:56:38 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:39 INFO i.a.w.t.TemporalAttemptExecution(get):124 - Docker volume job log path: /tmp/workspace/3285/0/logs.log
+2024-03-27 04:56:39 INFO i.a.w.t.TemporalAttemptExecution(get):129 - Executing worker wrapper. Airbyte version: 0.50.33
+2024-03-27 04:56:39 INFO i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-27 04:56:39 INFO i.a.w.g.BufferedReplicationWorker(run):152 - start sync worker. job id: 3285 attempt id: 0
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:39 INFO i.a.w.i.DefaultAirbyteDestination(start):92 - Running destination...
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2024-03-27 04:56:39 INFO i.a.c.EnvConfigs(getEnvOrDefault):1158 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/destination-mssql:0.2.0 exists...
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/source-postgres:3.3.18 exists...
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - airbyte/destination-mssql:0.2.0 was found locally.
+2024-03-27 04:56:39 INFO i.a.w.p.DockerProcessFactory(create):140 - Creating docker container = destination-mssql-write-3285-0-rszcp with resources io.airbyte.config.ResourceRequirements@4f32fcc2[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2024-03-27 04:56:39 INFO i.a.c.i.LineGobbler(voidCall):149 - airbyte/source-postgres:3.3.18 was found locally.
+2024-03-27 04:56:39 INFO i.a.w.p.DockerProcessFactory(create):187 - Preparing command: docker run --rm --init -i -w /data/3285/0 --log-driver none --name destination-mssql-write-3285-0-rszcp --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/destination-mssql:0.2.0 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.33 -e WORKER_JOB_ID=3285 airbyte/destination-mssql:0.2.0 write --config destination_config.json --catalog destination_catalog.json
+2024-03-27 04:56:39 INFO i.a.w.p.DockerProcessFactory(create):140 - Creating docker container = source-postgres-read-3285-0-rbxek with resources io.airbyte.config.ResourceRequirements@1154972b[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts io.airbyte.config.AllowedHosts@68642f25[hosts=[65.0.195.55, *.datadoghq.com, *.datadoghq.eu, *.sentry.io],additionalProperties={}]
+2024-03-27 04:56:39 INFO i.a.w.p.DockerProcessFactory(create):187 - Preparing command: docker run --rm --init -i -w /data/3285/0 --log-driver none --name source-postgres-read-3285-0-rbxek -e CONCURRENT_SOURCE_STREAM_READ=false --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/source-postgres:3.3.18 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e FIELD_SELECTION_WORKSPACES= -e USE_STREAM_CAPABLE_STATE=true -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT=config -e AIRBYTE_VERSION=0.50.33 -e WORKER_JOB_ID=3285 airbyte/source-postgres:3.3.18 read --config source_config.json --catalog source_catalog.json --state input_state.json
+2024-03-27 04:56:39 INFO i.a.w.i.VersionedAirbyteMessageBufferedWriterFactory(createWriter):41 - Writing messages to protocol version 0.2.0
+2024-03-27 04:56:39 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-27 04:56:39 INFO i.a.w.i.VersionedAirbyteStreamFactory(create):186 - Reading messages from protocol version 0.2.0
+2024-03-27 04:56:39 INFO i.a.w.g.BufferedReplicationWorker(readFromSource):371 - readFromSource: start
+2024-03-27 04:56:39 INFO i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):98 - Starting source heartbeat check. Will check every 1 minutes.
+2024-03-27 04:56:39 INFO i.a.w.g.BufferedReplicationWorker(processMessage):407 - processMessage: start
+2024-03-27 04:56:39 INFO i.a.w.g.BufferedReplicationWorker(readFromDestination):481 - readFromDestination: start
+2024-03-27 04:56:39 INFO i.a.w.g.BufferedReplicationWorker(writeToDestination):448 - writeToDestination: start
+2024-03-27 04:56:45 destination > INFO i.a.i.d.m.MSSQLDestination(main):102 starting destination: class io.airbyte.integrations.destination.mssql.MSSQLDestination
+2024-03-27 04:56:45 source > INFO main i.a.i.s.p.PostgresSource(main):712 starting source: class io.airbyte.integrations.source.postgres.PostgresSource
+2024-03-27 04:56:46 source > INFO main i.a.c.i.b.IntegrationCliParser(parseOptions):126 integration args: {read=null, catalog=source_catalog.json, state=input_state.json, config=source_config.json}
+2024-03-27 04:56:46 source > INFO main i.a.c.i.b.IntegrationRunner(runInternal):132 Running integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedSource
+2024-03-27 04:56:46 source > INFO main i.a.c.i.b.IntegrationRunner(runInternal):133 Command: READ
+2024-03-27 04:56:46 source > INFO main i.a.c.i.b.IntegrationRunner(runInternal):134 Integration config: IntegrationConfig{command=READ, configPath='source_config.json', catalogPath='source_catalog.json', statePath='input_state.json'}
+2024-03-27 04:56:46 destination > INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {catalog=destination_catalog.json, write=null, config=destination_config.json}
+2024-03-27 04:56:46 destination > INFO i.a.i.b.IntegrationRunner(runInternal):106 Running integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2024-03-27 04:56:46 destination > INFO i.a.i.b.IntegrationRunner(runInternal):107 Command: WRITE
+2024-03-27 04:56:46 destination > INFO i.a.i.b.IntegrationRunner(runInternal):108 Integration config: IntegrationConfig{command=WRITE, configPath='destination_config.json', catalogPath='destination_catalog.json', statePath='null'}
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword groups - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword group - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword always_show - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:46 source > WARN main c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword display_type - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:47 destination > WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:47 destination > WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2024-03-27 04:56:48 destination > INFO i.a.i.b.s.SshTunnel(getInstance):204 Starting connection with method: NO_TUNNEL
+2024-03-27 04:56:48 source > INFO main i.a.c.i.b.s.SshTunnel(getInstance):252 Starting connection with method: NO_TUNNEL
+2024-03-27 04:56:48 source > INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:48 source > INFO main i.a.c.i.s.r.s.StateManagerFactory(createStateManager):57 Stream state manager selected to manage state object with type LEGACY.
+2024-03-27 04:56:48 source > INFO main i.a.c.i.s.r.s.CursorManager(createCursorInfoForStream):192 No cursor field set in catalog but not present in state. Stream: public_equipments, New Cursor Field: null. Resetting cursor value
+2024-03-27 04:56:48 source > INFO main i.a.i.s.p.PostgresSource(toSslJdbcParamInternal):768 REQUIRED toSslJdbcParam require
+2024-03-27 04:56:49 destination > INFO c.z.h.HikariDataSource(<init>):80 HikariPool-1 - Starting...
+2024-03-27 04:56:49 source > INFO main c.z.h.HikariDataSource(<init>):79 HikariPool-1 - Starting...
+2024-03-27 04:56:49 destination > INFO c.z.h.HikariDataSource(<init>):82 HikariPool-1 - Start completed.
+2024-03-27 04:56:49 source > INFO main c.z.h.HikariDataSource(<init>):81 HikariPool-1 - Start completed.
+2024-03-27 04:56:49 destination > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$toWriteConfig$0):103 Write config: WriteConfig{streamName=equipments, namespace=null, outputSchemaName=dbo, tmpTableName=_airbyte_tmp_xhu_equipments, outputTableName=_airbyte_raw_equipments, syncMode=overwrite}
+2024-03-27 04:56:49 destination > INFO i.a.i.d.b.BufferedStreamConsumer(startTracked):173 class io.airbyte.integrations.destination.buffered_stream_consumer.BufferedStreamConsumer started.
+2024-03-27 04:56:49 destination > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):142 Preparing raw tables in destination started for 1 streams
+2024-03-27 04:56:49 destination > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):147 Preparing raw table in destination started for stream equipments. schema: dbo, table name: _airbyte_raw_equipments
+2024-03-27 04:56:51 source > INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:51 source > INFO main i.a.c.i.s.j.AbstractJdbcSource(logPreSyncDebugData):467 Data source product recognized as PostgreSQL:15.1 (Ubuntu 15.1-1.pgdg20.04+1)
+2024-03-27 04:56:51 source > INFO main i.a.i.s.p.PostgresSource(logPreSyncDebugData):266 Discovering indexes for schema "public", table "equipments"
+2024-03-27 04:56:51 source > INFO main i.a.c.i.s.j.AbstractJdbcSource(discoverInternal):169 Internal schemas to exclude: [catalog_history, information_schema, pg_catalog, pg_internal]
+2024-03-27 04:56:51 source > INFO main i.a.c.d.j.s.AdaptiveStreamingQueryConfig(initialize):31 Set initial fetch size: 10 rows
+2024-03-27 04:56:51 source > INFO main i.a.c.d.j.s.AdaptiveStreamingQueryConfig(accept):40 Set new fetch size: 1285020 rows
+2024-03-27 04:56:51 source > INFO main i.a.c.d.j.s.TwoStageSizeEstimator(getTargetBufferByteSize):71 Max memory limit: 6178209792, JDBC buffer size: 3706925875
+2024-03-27 04:56:52 destination > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):160 Preparing raw tables in destination completed.
+2024-03-27 04:56:53 source > INFO main i.a.i.s.p.PostgresUtils(isCdc):70 using CDC: false
+2024-03-27 04:56:53 source > INFO main i.a.i.s.p.PostgresSource(estimateFullRefreshSyncSize):822 Estimate for table: "public"."equipments" : {sync_row_count: 2, sync_bytes: 8192, total_table_row_count: 2, total_table_bytes: 8192}
+2024-03-27 04:56:53 source > INFO main i.a.c.i.s.j.AbstractJdbcSource(queryTableFullRefresh):113 Queueing query for table: equipments
+2024-03-27 04:56:53 source > INFO main i.a.c.i.s.r.RelationalDbQueryUtils(lambda$queryTable$0):77 Queueing query: SELECT "sync","delete","createdat","deletedat","lastsync","id","assetnumber","updatedat" FROM "public"."equipments"
+2024-03-27 04:56:53 source > INFO main i.a.c.d.j.s.AdaptiveStreamingQueryConfig(initialize):31 Set initial fetch size: 10 rows
+2024-03-27 04:56:53 source > INFO main i.a.c.i.s.r.AbstractDbSource(lambda$read$1):188 Closing database connection pool.
+2024-03-27 04:56:53 source > INFO main c.z.h.HikariDataSource(close):349 HikariPool-1 - Shutdown initiated...
+2024-03-27 04:56:53 source > INFO main c.z.h.HikariDataSource(close):351 HikariPool-1 - Shutdown completed.
+2024-03-27 04:56:53 source > INFO main i.a.c.i.s.r.AbstractDbSource(lambda$read$1):190 Closed database connection pool.
+2024-03-27 04:56:53 source > INFO main i.a.c.i.b.IntegrationRunner(runInternal):227 Completed integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedSource
+2024-03-27 04:56:53 source > INFO main i.a.i.s.p.PostgresSource(main):714 completed source: class io.airbyte.integrations.source.postgres.PostgresSource
+2024-03-27 04:56:53 INFO i.a.w.g.ReplicationWorkerHelper(endOfSource):169 - Total records read: 6 (344 bytes)
+2024-03-27 04:56:53 INFO i.a.w.i.FieldSelector(reportMetrics):122 - Schema validation was performed to a max of 10 records with errors per stream.
+2024-03-27 04:56:53 WARN i.a.w.i.FieldSelector(lambda$reportMetrics$1):124 - Schema validation errors found for stream public_equipments. Error messages: [$.lastsync: null found, string expected, $.assetnumber: null found, string expected, $.deletedat: null found, string expected]
+2024-03-27 04:56:53 INFO i.a.w.g.BufferedReplicationWorker(readFromSource):399 - readFromSource: done. (source.isFinished:true, fromSource.isClosed:false)
+2024-03-27 04:56:53 INFO i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):115 - thread status... heartbeat thread: false , replication thread: true
+2024-03-27 04:56:53 INFO i.a.w.g.BufferedReplicationWorker(processMessage):439 - processMessage: done. (fromSource.isDone:true, forDest.isClosed:false)
+2024-03-27 04:56:53 INFO i.a.w.g.BufferedReplicationWorker(writeToDestination):471 - writeToDestination: done. (forDest.isDone:true, isDestRunning:true)
+2024-03-27 04:56:53 destination > INFO i.a.i.b.FailureTrackingAirbyteMessageConsumer(close):80 Airbyte message consumer: succeeded.
+2024-03-27 04:56:53 destination > INFO i.a.i.d.b.BufferedStreamConsumer(close):288 executing on success close procedure.
+2024-03-27 04:56:53 destination > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAllBuffers):85 Flushing equipments: 2 records (1 KB)
+2024-03-27 04:56:53 destination > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAllBuffers):91 Flushing completed for equipments
+2024-03-27 04:56:53 destination > INFO i.a.i.b.IntegrationRunner(runInternal):197 Completed integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2024-03-27 04:56:53 destination > INFO i.a.i.d.m.MSSQLDestination(main):104 completed destination: class io.airbyte.integrations.destination.mssql.MSSQLDestination
+2024-03-27 04:56:53 destination > Destination process done (exit code 0)
+2024-03-27 04:56:53 destination > Skipping in-connector normalization
+2024-03-27 04:56:54 INFO i.a.w.g.BufferedReplicationWorker(readFromDestination):507 - readFromDestination: done. (writeToDestFailed:false, dest.isFinished:true)
+2024-03-27 04:56:54 INFO i.a.w.g.ReplicationWorkerHelper(getReplicationOutput):244 - sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 2,
+  "bytesSynced" : 344,
+  "startTime" : 1711515399278,
+  "endTime" : 1711515414174,
+  "totalStats" : {
+    "bytesCommitted" : 344,
+    "bytesEmitted" : 344,
+    "destinationStateMessagesEmitted" : 0,
+    "destinationWriteEndTime" : 1711515414157,
+    "destinationWriteStartTime" : 1711515399280,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "recordsEmitted" : 2,
+    "recordsCommitted" : 2,
+    "replicationEndTime" : 1711515414174,
+    "replicationStartTime" : 1711515399278,
+    "sourceReadEndTime" : 1711515413756,
+    "sourceReadStartTime" : 1711515399283,
+    "sourceStateMessagesEmitted" : 0
+  },
+  "streamStats" : [ {
+    "streamName" : "equipments",
+    "streamNamespace" : "public",
+    "stats" : {
+      "bytesCommitted" : 344,
+      "bytesEmitted" : 344,
+      "recordsEmitted" : 2,
+      "recordsCommitted" : 2
+    }
+  } ],
+  "performanceMetrics" : {
+    "processFromSource" : {
+      "elapsedTimeInNanos" : 56000480,
+      "executionCount" : 6,
+      "avgExecTimeInNanos" : 9333413.333333334
+    },
+    "readFromSource" : {
+      "elapsedTimeInNanos" : 14361799963,
+      "executionCount" : 2133,
+      "avgExecTimeInNanos" : 6733145.786685419
+    },
+    "processFromDest" : {
+      "elapsedTimeInNanos" : 0,
+      "executionCount" : 0,
+      "avgExecTimeInNanos" : "NaN"
+    },
+    "writeToDest" : {
+      "elapsedTimeInNanos" : 32512,
+      "executionCount" : 2,
+      "avgExecTimeInNanos" : 16256.0
+    },
+    "readFromDest" : {
+      "elapsedTimeInNanos" : 14733834092,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 1.4733834092E10
+    }
+  }
+}
+2024-03-27 04:56:54 INFO i.a.w.g.ReplicationWorkerHelper(getReplicationOutput):245 - failures: [ ]
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- END REPLICATION -----
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:54 INFO i.a.w.t.TemporalAttemptExecution(get):124 - Docker volume job log path: /tmp/workspace/3285/0/logs.log
+2024-03-27 04:56:54 INFO i.a.w.t.TemporalAttemptExecution(get):129 - Executing worker wrapper. Airbyte version: 0.50.33
+2024-03-27 04:56:54 INFO i.a.a.c.AirbyteApiClient(retryWithJitterThrows):290 - Attempt 0 to save workflow id for cancellation
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:54 INFO i.a.w.n.DefaultNormalizationRunner(runProcess):105 - Running with normalization version: airbyte/normalization-mssql:0.4.3
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- START DEFAULT NORMALIZATION -----
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/normalization-mssql:0.4.3 exists...
+2024-03-27 04:56:54 INFO i.a.c.i.LineGobbler(voidCall):149 - airbyte/normalization-mssql:0.4.3 was found locally.
+2024-03-27 04:56:54 INFO i.a.w.p.DockerProcessFactory(create):140 - Creating docker container = normalization-mssql-normalize-3285-0-hmrqu with resources io.airbyte.config.ResourceRequirements@36982970[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2024-03-27 04:56:54 INFO i.a.w.p.DockerProcessFactory(create):187 - Preparing command: docker run --rm --init -i -w /data/3285/0/normalize --log-driver none --name normalization-mssql-normalize-3285-0-hmrqu --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e AIRBYTE_VERSION=0.50.33 airbyte/normalization-mssql:0.4.3 run --integration-type mssql --config destination_config.json --catalog destination_catalog.json
+2024-03-27 04:56:54 normalization > Running: transform-config --config destination_config.json --integration-type mssql --out /data/3285/0/normalize
+2024-03-27 04:56:55 normalization > Namespace(config='destination_config.json', integration_type=<DestinationType.MSSQL: 'mssql'>, out='/data/3285/0/normalize')
+2024-03-27 04:56:55 normalization > transform_mssql
+2024-03-27 04:56:56 normalization > Running: transform-catalog --integration-type mssql --profile-config-dir /data/3285/0/normalize --catalog destination_catalog.json --out /data/3285/0/normalize/models/generated/ --json-column _airbyte_data
+2024-03-27 04:56:57 normalization > Processing destination_catalog.json...
+2024-03-27 04:56:57 normalization >   Generating airbyte_ctes/dbo/equipments_ab1.sql from equipments
+2024-03-27 04:56:57 normalization >   Generating airbyte_ctes/dbo/equipments_ab2.sql from equipments
+2024-03-27 04:56:57 normalization >   Generating airbyte_ctes/dbo/equipments_ab3.sql from equipments
+2024-03-27 04:56:57 normalization >   Adding drop table hook for equipments_scd to equipments
+2024-03-27 04:56:57 normalization >   Generating airbyte_tables/dbo/equipments.sql from equipments
+2024-03-27 04:56:57 normalization > detected no config file for ssh, assuming ssh is off.
+2024-03-27 04:57:03 normalization >            [--event-buffer-size EVENT_BUFFER_SIZE]
+2024-03-27 04:57:03 normalization >   --event-buffer-size EVENT_BUFFER_SIZE
+2024-03-27 04:57:03 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:03 normalization > DBT >=1.0.0 detected; using 10K event buffer size
+2024-03-27 04:57:03 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:08 normalization > Running with dbt=1.0.0
+2024-03-27 04:57:08 normalization > Partial parse save file not found. Starting full parse.
+2024-03-27 04:57:11 normalization > [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.airbyte_utils.generated.airbyte_incremental
+- models.airbyte_utils.generated.airbyte_views
+
+2024-03-27 04:57:11 normalization > Found 4 models, 0 tests, 0 snapshots, 0 analyses, 621 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+2024-03-27 04:57:12 normalization > Concurrency: 8 threads (target='prod')
+2024-03-27 04:57:12 normalization > 1 of 1 START table model dbo.equipments................................................................................. [RUN]
+2024-03-27 04:57:12 normalization > Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+2024-03-27 04:57:12 normalization > 1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+2024-03-27 04:57:12 normalization > Finished running 1 table model in 0.69s.
+2024-03-27 04:57:12 normalization > Completed with 1 error and 0 warnings:
+2024-03-27 04:57:12 normalization > ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+2024-03-27 04:57:12 normalization > Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+2024-03-27 04:57:12 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:12 normalization > Diagnosing dbt debug to check if destination is available for dbt and well configured (1):
+2024-03-27 04:57:12 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:17 normalization > 04:57:17  Running with dbt=1.0.0
+2024-03-27 04:57:17 normalization > dbt version: 1.0.0
+2024-03-27 04:57:17 normalization > python version: 3.9.9
+2024-03-27 04:57:17 normalization > python path: /usr/local/bin/python
+2024-03-27 04:57:17 normalization > os info: Linux-6.2.0-1015-aws-x86_64-with-glibc2.31
+2024-03-27 04:57:17 normalization > Using profiles.yml file at /data/3285/0/normalize/profiles.yml
+2024-03-27 04:57:17 normalization > Using dbt_project.yml file at /data/3285/0/normalize/dbt_project.yml
+2024-03-27 04:57:17 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:17 normalization > Configuration:
+2024-03-27 04:57:17 normalization >   profiles.yml file [OK found and valid]
+2024-03-27 04:57:17 normalization >   dbt_project.yml file [OK found and valid]
+2024-03-27 04:57:17 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:17 normalization > Required dependencies:
+2024-03-27 04:57:17 normalization >  - git [OK found]
+2024-03-27 04:57:17 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:17 normalization > Connection:
+2024-03-27 04:57:17 normalization >   server: 10.0.5.12
+2024-03-27 04:57:17 normalization >   database: Fieldproxy
+2024-03-27 04:57:17 normalization >   schema: dbo
+2024-03-27 04:57:17 normalization >   port: 1433
+2024-03-27 04:57:17 normalization >   UID: fieldpxyacc
+2024-03-27 04:57:17 normalization >   client_id: None
+2024-03-27 04:57:17 normalization >   authentication: sql
+2024-03-27 04:57:17 normalization >   encrypt: False
+2024-03-27 04:57:17 normalization >   trust_cert: False
+2024-03-27 04:57:18 normalization >   Connection test: [OK connection ok]
+2024-03-27 04:57:18 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:18 normalization > All checks passed!
+2024-03-27 04:57:18 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:18 normalization > Forward dbt output logs to diagnose/debug errors (0):
+2024-03-27 04:57:18 INFO i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2024-03-27 04:57:18 normalization > Running with dbt=1.0.0
+2024-03-27 04:57:18 normalization > Partial parse save file not found. Starting full parse.
+2024-03-27 04:57:18 normalization > [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.airbyte_utils.generated.airbyte_incremental
+- models.airbyte_utils.generated.airbyte_views
+
+2024-03-27 04:57:18 normalization > Found 4 models, 0 tests, 0 snapshots, 0 analyses, 621 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+2024-03-27 04:57:18 normalization > Concurrency: 8 threads (target='prod')
+2024-03-27 04:57:18 normalization > 1 of 1 START table model dbo.equipments................................................................................. [RUN]
+2024-03-27 04:57:18 normalization > Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+2024-03-27 04:57:18 normalization > 1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+2024-03-27 04:57:18 normalization > Finished running 1 table model in 0.69s.
+2024-03-27 04:57:18 normalization > Completed with 1 error and 0 warnings:
+2024-03-27 04:57:18 normalization > ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+2024-03-27 04:57:18 normalization > Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+2024-03-27 04:57:18 INFO i.a.w.n.DefaultNormalizationRunner(close):174 - Terminating normalization process...
+2024-03-27 04:57:18 ERROR i.a.w.g.DefaultNormalizationWorker(run):91 - Normalization failed for job 3285.
+io.airbyte.workers.exception.WorkerException: Normalization process did not terminate normally (exit code: 1)
+	at io.airbyte.workers.normalization.DefaultNormalizationRunner.close(DefaultNormalizationRunner.java:185) ~[io.airbyte-airbyte-commons-worker-0.50.33.jar:?]
+	at io.airbyte.workers.general.DefaultNormalizationWorker.run(DefaultNormalizationWorker.java:89) ~[io.airbyte-airbyte-commons-worker-0.50.33.jar:?]
+	at io.airbyte.workers.general.DefaultNormalizationWorker.run(DefaultNormalizationWorker.java:38) ~[io.airbyte-airbyte-commons-worker-0.50.33.jar:?]
+	at io.airbyte.workers.temporal.TemporalAttemptExecution.get(TemporalAttemptExecution.java:135) ~[io.airbyte-airbyte-workers-0.50.33.jar:?]
+	at io.airbyte.workers.temporal.sync.NormalizationActivityImpl.lambda$normalize$2(NormalizationActivityImpl.java:186) ~[io.airbyte-airbyte-workers-0.50.33.jar:?]
+	at io.airbyte.commons.temporal.TemporalUtils.withBackgroundHeartbeat(TemporalUtils.java:314) ~[io.airbyte-airbyte-commons-temporal-0.50.33.jar:?]
+	at io.airbyte.workers.temporal.sync.NormalizationActivityImpl.normalize(NormalizationActivityImpl.java:136) ~[io.airbyte-airbyte-workers-0.50.33.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:578) ~[?:?]
+	at io.temporal.internal.activity.RootActivityInboundCallsInterceptor$POJOActivityInboundCallsInterceptor.executeActivity(RootActivityInboundCallsInterceptor.java:64) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.activity.RootActivityInboundCallsInterceptor.execute(RootActivityInboundCallsInterceptor.java:43) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.activity.ActivityTaskExecutors$BaseActivityTaskExecutor.execute(ActivityTaskExecutors.java:95) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.activity.ActivityTaskHandlerImpl.handle(ActivityTaskHandlerImpl.java:92) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.worker.ActivityWorker$TaskHandlerImpl.handleActivity(ActivityWorker.java:241) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:206) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.worker.ActivityWorker$TaskHandlerImpl.handle(ActivityWorker.java:179) ~[temporal-sdk-1.17.0.jar:?]
+	at io.temporal.internal.worker.PollTaskExecutor.lambda$process$0(PollTaskExecutor.java:93) ~[temporal-sdk-1.17.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1589) ~[?:?]
+2024-03-27 04:57:18 INFO i.a.w.g.DefaultNormalizationWorker(run):102 - Normalization executed in 24 seconds for job 3285.
+2024-03-27 04:57:18 INFO i.a.w.g.DefaultNormalizationWorker(run):114 - Normalization summary: io.airbyte.config.NormalizationSummary@2bc10ba9[startTime=1711515414285,endTime=1711515438427,failures=[io.airbyte.config.FailureReason@15ad90af[failureOrigin=normalization,failureType=system_error,internalMessage=('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)"),externalMessage=Normalization failed during the dbt run. This may indicate a problem with the data itself.,metadata=io.airbyte.config.Metadata@29ce7339[additionalProperties={attemptNumber=0, jobId=3285, from_trace_message=true}],stacktrace=AirbyteDbtError: 
+Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)"),retryable=<null>,timestamp=1711515438423,additionalProperties={}], io.airbyte.config.FailureReason@5e8bcee6[failureOrigin=normalization,failureType=system_error,internalMessage=('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)"),externalMessage=Normalization failed during the dbt run. This may indicate a problem with the data itself.,metadata=io.airbyte.config.Metadata@7d340add[additionalProperties={attemptNumber=0, jobId=3285, from_trace_message=true}],stacktrace=AirbyteDbtError: 
+Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+Unhandled error while executing model.airbyte_utils.equipments
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)")
+1 of 1 ERROR creating table model dbo.equipments........................................................................ [ERROR in 0.24s]
+('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement failed. Column 'assetnumber' has a data type that cannot participate in a columnstore index. Omit column 'assetnumber'. (35343) (SQLMoreResults)"),retryable=<null>,timestamp=1711515438423,additionalProperties={}]],additionalProperties={}]
+2024-03-27 04:57:18 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:57:18 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- END DEFAULT NORMALIZATION -----
+2024-03-27 04:57:18 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-27 04:57:18 INFO i.a.w.t.s.a.AppendToAttemptLogActivityImpl(log):56 - Retry State: RetryManager(completeFailureBackoffPolicy=BackoffPolicy(minInterval=PT10S, maxInterval=PT30M, base=3), partialFailureBackoffPolicy=null, successiveCompleteFailureLimit=5, totalCompleteFailureLimit=10, successivePartialFailureLimit=1000, totalPartialFailureLimit=10, successiveCompleteFailures=0, totalCompleteFailures=0, successivePartialFailures=1, totalPartialFailures=1)
+ Backoff before next attempt: 0 seconds

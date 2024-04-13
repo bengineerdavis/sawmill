@@ -1,0 +1,67 @@
+2024-03-09 17:05:20 INFO i.a.w.p.KubePodProcess(close):809 - (pod: airbyte-stg / source-mssql-read-10349-0-njuda) - Closed all resources for pod
+2024-03-09 17:05:20 INFO i.a.w.g.ReplicationWorkerHelper(endOfSource):169 - Total records read: 1 (0 bytes)
+2024-03-09 17:05:20 INFO i.a.w.i.FieldSelector(reportMetrics):122 - Schema validation was performed to a max of 10 records with errors per stream.
+2024-03-09 17:05:20 INFO i.a.w.g.BufferedReplicationWorker(readFromSource):399 - readFromSource: done. (source.isFinished:true, fromSource.isClosed:false)
+2024-03-09 17:05:20 INFO i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):115 - thread status... heartbeat thread: false , replication thread: true
+2024-03-09 17:05:20 INFO i.a.w.g.BufferedReplicationWorker(processMessage):439 - processMessage: done. (fromSource.isDone:true, forDest.isClosed:false)
+2024-03-09 17:05:20 INFO i.a.w.g.BufferedReplicationWorker(writeToDestination):471 - writeToDestination: done. (forDest.isDone:true, isDestRunning:true)
+2024-03-09 17:05:21 INFO i.a.w.i.s.SyncPersistenceImpl(startBackgroundFlushStateTask):160 - starting state flush thread for connectionId 7d0771c4-b926-4b7d-80f5-583cc1654e55
+2024-03-09 17:05:22 INFO i.a.w.p.KubePodProcess(close):809 - (pod: airbyte-stg / destination-s3-write-10349-0-glypp) - Closed all resources for pod
+2024-03-09 17:05:22 INFO i.a.w.g.BufferedReplicationWorker(readFromDestination):507 - readFromDestination: done. (writeToDestFailed:false, dest.isFinished:true)
+2024-03-09 17:05:22 INFO i.a.w.g.ReplicationWorkerHelper(getReplicationOutput):244 - sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 0,
+  "bytesSynced" : 0,
+  "startTime" : 1710003685319,
+  "endTime" : 1710003922220,
+  "totalStats" : {
+    "bytesCommitted" : 0,
+    "bytesEmitted" : 0,
+    "destinationStateMessagesEmitted" : 1,
+    "destinationWriteEndTime" : 1710003922219,
+    "destinationWriteStartTime" : 1710003685320,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 1,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 1,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 1,
+    "recordsEmitted" : 0,
+    "recordsCommitted" : 0,
+    "replicationEndTime" : 1710003922220,
+    "replicationStartTime" : 1710003685319,
+    "sourceReadEndTime" : 1710003920612,
+    "sourceReadStartTime" : 1710003685320,
+    "sourceStateMessagesEmitted" : 1
+  },
+  "streamStats" : [ ],
+  "performanceMetrics" : {
+    "processFromSource" : {
+      "elapsedTimeInNanos" : 1345627,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 1345627.0
+    },
+    "readFromSource" : {
+      "elapsedTimeInNanos" : 220699866448,
+      "executionCount" : 209886,
+      "avgExecTimeInNanos" : 1051522.5715293065
+    },
+    "processFromDest" : {
+      "elapsedTimeInNanos" : 26267510,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 2.626751E7
+    },
+    "writeToDest" : {
+      "elapsedTimeInNanos" : 5161551,
+      "executionCount" : 1,
+      "avgExecTimeInNanos" : 5161551.0
+    },
+    "readFromDest" : {
+      "elapsedTimeInNanos" : 222291162711,
+      "executionCount" : 1701351,
+      "avgExecTimeInNanos" : 130655.67464385656
+    }
+  }
+}
+2024-03-09 17:05:22 INFO i.a.w.g.ReplicationWorkerHelper(getReplicationOutput):245 - failures: [ ]
+2024-03-09 17:05:22 INFO i.a.c.i.LineGobbler(voidCall):149 - 
+2024-03-09 17:05:22 INFO i.a.c.i.LineGobbler(voidCall):149 - ----- END REPLICATION -----
+2024-03-09 17:05:22 INFO i.a.c.i.LineGobbler(voidCall):149 - 
