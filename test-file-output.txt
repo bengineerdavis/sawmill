@@ -1,0 +1,9 @@
+2024-03-20 23:12:33 platform > readFromDestination: start
+2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(getDestination):75 - Running destination under deployment mode: OSS
+2024-03-09 11:03:43 source > INFO main o.a.k.c.c.AbstractConfig(logAll):369 JsonConverterConfig values: 
+    converter.type = key
+    decimal.format = BASE64
+    replace.null.with.default = true
+    schemas.cache.size = 1000
+    schemas.enable = false
