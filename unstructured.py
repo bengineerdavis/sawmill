@@ -1,12 +1,9 @@
-
-
-
 """
 This module provides a function to serialize unstructured text-based data files into a Pandas DataFrame using regex patterns.
 
 Example usage:
     from pathlib import Path
-    
+
     # file contents: '2024-03-20 23:12:33 platform > readFromDestination: start'
     file_data = Path('.') / 'file_data.txt'
 
@@ -41,7 +38,7 @@ from typing import (
 class RestructuredData(object):
     """
     This class provides a structured representation of unstructured text (file, string, or stream). It uses regex
-    patterns to serialize text data into entries and their corresponding line numbers, and stores them in a 
+    patterns to serialize text data into entries and their corresponding line numbers, and stores them in a
     Pandas DataFrame. The class allows for easy searching and filtering of text data using DataFrame methods
     or SQL-like queries.
 
@@ -59,14 +56,14 @@ class RestructuredData(object):
 
     def _extract_entries(self):
         """
-        A helper method to extract entries and their line numbers from unstructured data. 
+        A helper method to extract entries and their line numbers from unstructured data.
         This method populates the 'entries' DataFrame.
 
         Returns:
             None: This method does not return any value but modifies the 'entries' attribute.
         """
         pass
-    
+
     def read_unstructured(self):
         """
         Reads in unstructured data and returns a DataFrame with all entries and their line numbers extracted into their own rows.
@@ -87,7 +84,10 @@ class RestructuredData(object):
         return self.data
 
 
-def read_unstructured(file_path: Union[str, TextIO, os.PathLike], entry_pattern: LiteralString = "^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})") -> pd.DataFrame:
+def read_unstructured(
+    file_path: Union[str, TextIO, os.PathLike],
+    entry_pattern: LiteralString = "^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})",
+) -> pd.DataFrame:
     r"""
     Serializes unstructured text-based data files into a Pandas DataFrame (columns, rows) using regex patterns
 
@@ -147,14 +147,14 @@ def read_unstructured(file_path: Union[str, TextIO, os.PathLike], entry_pattern:
     pattern = re.compile(entry_pattern, re.MULTILINE)
 
     # Open the file and read through it line by line.
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         for line_number, line in enumerate(file):
             # Check if the line matches the entry pattern, indicating a new log entry.
             if pattern.match(line):
                 # If the current log entry list is not empty, it means the previous entry is complete.
                 if entry_lines:
                     # Save the collected lines and their indices.
-                    entries.append(''.join(entry_lines))
+                    entries.append("".join(entry_lines))
                     line_indices.append(indices)
                     # Reset the lists for the next log entry.
                     entry_lines = []
@@ -169,7 +169,7 @@ def read_unstructured(file_path: Union[str, TextIO, os.PathLike], entry_pattern:
 
         # After the last line is processed, check if there is an unfinished log entry to save.
         if entry_lines:
-            entries.append(''.join(entry_lines))
+            entries.append("".join(entry_lines))
             line_indices.append(indices)
 
     # Create a DataFrame from the collected log entries and their line numbers.
@@ -188,7 +188,7 @@ def _extract_column_data(entries: pd.DataFrame, data_pattern: str) -> List:
     Returns:
         List: A list of extracted values for the current column. If no match is found, None is appended.
     """
-    
+
     # Create an empty list to store the extracted values for the current column
     extracted_values = []
 
@@ -203,7 +203,10 @@ def _extract_column_data(entries: pd.DataFrame, data_pattern: str) -> List:
 
     return extracted_values
 
-def extract_columns(entries_df: pd.DataFrame, extract_from_column: str, column_patterns: Dict[str, str]) -> pd.DataFrame:
+
+def extract_columns(
+    entries_df: pd.DataFrame, extract_from_column: str, column_patterns: Dict[str, str]
+) -> pd.DataFrame:
     r"""
     Extracts metadata from each row's complex string in an 'entries' DataFrame and creates a new DataFrame with the extracted metadata
     inserted into each related row in the new DataFrame.
@@ -246,7 +249,7 @@ def extract_columns(entries_df: pd.DataFrame, extract_from_column: str, column_p
         >>> entries_df = pd.DataFrame(entries)
         >>> extract_from = 'entry'
         >>> result = extract_columns(entries_df, extract_from, column_patterns)
-    
+
         >>> # update DataFrame display settings for better readability
         >>> pd.set_option('display.max_columns', 5)
         >>> pd.set_option('display.width', 100)
@@ -260,12 +263,11 @@ def extract_columns(entries_df: pd.DataFrame, extract_from_column: str, column_p
     """
     # Create an empty DataFrame to store the extracted metadata
     extracted_df = pd.DataFrame()
-    
+
     # Iterate over the column patterns, create the new column, and extract the matching metadata
     entries = entries_df[extract_from_column]
     for column_name, pattern in column_patterns.items():
         extracted_values = _extract_column_data(entries, pattern)
         extracted_df[column_name] = extracted_values
-    
-    return extracted_df
 
+    return extracted_df
