@@ -26,7 +26,7 @@ jobs:
         poetry install
     - name: Lint with ruff
       run: |
-        poetry run ruff src/
+        poetry run ruff check src/
     - name: Run tests with pytest
       run: |
-        poetry run pytest
+        poetry run pytest --xdoc
