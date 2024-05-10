@@ -1,0 +1,22 @@
+name: Bug Report
+description: File a bug report
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for taking the time to contribute! Please fill out the form below."
+  - type: input
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug you encountered.
+      placeholder: e.g., "The application crashed when I clicked 'Submit'."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detail the steps taken to reproduce the issue.
+      placeholder: "1. Go to '...' 2. Click on '....' 3. See error"
+    validations:
+      required: true
