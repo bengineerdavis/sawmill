@@ -62,7 +62,7 @@ class RestructuredData(object):
         )
         self.file_path: Union[str, TextIO, os.PathLike]
 
-       self._entries = "None"  # Placeholder for lazy loading
+        self._entries = "None"  # Placeholder for lazy loading
 
     @property
     def entries(self) -> pd.DataFrame:
@@ -90,8 +90,6 @@ class RestructuredData(object):
 
         Returns:
             pd.DataFrame: A DataFrame (spreadsheet-like, 2d data object) containing entries and their line numbers.
-
-        Raises:
 
         Examples:
             >>> import tempfile
@@ -122,11 +120,11 @@ class RestructuredData(object):
             ...     restructured = RestructuredFileData(file_path = Path(ud))
             ...     records = restructured._entries.to_dict(orient="records")
 
-            >>> records[0] == {'entry': '2024-03-20 23:12:33 platform > readFromDestination: start\n', 'line_numbers': [0]}
-            >>> records[1] == {'entry': '2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release\n', 'line_numbers': [1]}
-            >>> records[2] == {'entry': '2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(getDestination):75 - Running destination under deployment mode: OSS\n', 'line_numbers': [2]}
-            >>> records[3] == {'entry': '2024-03-09 11:03:43 source > INFO main o.a.k.c.c.AbstractConfig(logAll):369 JsonConverterConfig values:\n\tconverter.type = key\n\tdecimal.format = BASE64\n\treplace.null.with.default = true\n\tschemas.cache.size = 1000\n\tschemas.enable = false\n', 'line_numbers': [3, 4, 5, 6, 7, 8]}
-            >>> records[4] == {'entry': '2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release', 'line_numbers': [9]}
+            ... records[0] == {'entry': '2024-03-20 23:12:33 platform > readFromDestination: start\n', 'line_numbers': [0]}
+            ... records[1] == {'entry': '2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release\n', 'line_numbers': [1]}
+            ... records[2] == {'entry': '2024-03-20 23:12:36 destination > 2024-03-20 23:12:36 INFO i.a.c.i.b.a.AdaptiveDestinationRunner$Runner(getDestination):75 - Running destination under deployment mode: OSS\n', 'line_numbers': [2]}
+            ... records[3] == {'entry': '2024-03-09 11:03:43 source > INFO main o.a.k.c.c.AbstractConfig(logAll):369 JsonConverterConfig values:\n\tconverter.type = key\n\tdecimal.format = BASE64\n\treplace.null.with.default = true\n\tschemas.cache.size = 1000\n\tschemas.enable = false\n', 'line_numbers': [3, 4, 5, 6, 7, 8]}
+            ... records[4] == {'entry': '2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release', 'line_numbers': [9]}
         """
 
         # Initialize lists to hold log entries and their corresponding line numbers.
@@ -204,8 +202,6 @@ class RestructuredData(object):
 
         Returns:
             A new Pandas DataFrame with the extracted metadata as separate rows
-
-        Raises:
 
         Examples:
             >>> import tempfile

@@ -3,7 +3,7 @@
 
 SCRIPT := t3reports
 PYTHON := $$(pyenv which python)
-PY_VERSION := 3.12.1
+PY_VERSION := 3.11
 VENV_NAME := sawmill-dev
 
 INSTALL_DIR := ../
@@ -65,7 +65,7 @@ update: check  # use to update venv's Python dependencies and auxiliary tools; a
 	poetry update
 
 
-.PHONY: venv venv-update install
+.PHONY: venv
 venv:  # create a fresh, dedicated venv for the T3RAP local repo and t3report app with pyenv-virtualenv plugin
 	@echo "Making sure that Python versiom $(PY_VERSION) has been installed by pyenv!"
 	pyenv install --skip-existing $(PY_VERSION)
@@ -80,3 +80,8 @@ venv:  # create a fresh, dedicated venv for the T3RAP local repo and t3report ap
 install: clean venv  ## fresh developer installation of the t3reports app and Python dependencies
 	@echo installing Python dependencies with poetry
 	poetry install
+
+
+.PHONY: tests
+tests:  # run all tests
+	poetry run pytest -v --xdoctest-modules
