@@ -27,6 +27,7 @@ from typing import (
     TextIO,
     Union,
 )
+from textwrap import fill
 
 import pandas as pd
 
@@ -55,7 +56,7 @@ class RestructuredData(object):
                 "date": r"(\d{4}-\d{2}-\d{2})",  # Matches a date in the format YYYY-MM-DD
                 "time": r"(\d{2}:\d{2}:\d{2})",  # Matches a time in the format HH:MM:SS
                 "category": r"(?<=\d{2}:\d{2}:\d{2}\s)(\w+)",  # Matches any one word after a timestamp (see 'date' and 'time' patterns above)
-                "message": r"(.+)",  # Matches one or more of any character
+                # "message": r"(.+)",  # Matches one or more of any character
             } if column_patterns is None else column_patterns
         self.file_path: Union[str, TextIO, os.PathLike] = file_path
 
@@ -163,6 +164,14 @@ class RestructuredData(object):
         # Create a DataFrame from the collected log entries and their line numbers.
         entries = pd.DataFrame({"entry": entries, "line_numbers": indices})
 
+        # for saner viewing, texwrap the entries
+        wrap_width = 60
+        # entries['entry'] = entries['entry'].apply(lambda x: fill(x, width=wrap_width))
+        # entries['line_numbers'] = entries['line_numbers'].apply(lambda x: fill(x, width=wrap_width))
+        entries['entry'] = entries['entry'].str.wrap(wrap_width)
+        entries['line_numbers'] = entries['line_numbers'].str.wrap(wrap_width)
+
+
         return entries
 
     # helper function
@@ -244,14 +253,22 @@ class RestructuredData(object):
             4	2024-03-20	23:12:36	destination	2024-03-20 23:12:36 destination > WARN StatusC...
         """
 
+        # Set pandas Dataframe options to display all rows and columns
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', None)
+        pd.set_option('display.max_colwidth', None)
+
+        # Create an empty DataFrame to store the extracted metadata
+        self.data = pd.DataFrame()
+
+        # saw raw entries to the object for later use or debugging
         self._extracted_entries = self._extract_entries(
             file_path=self.file_path,
             entry_pattern=self.entry_pattern,
         )
-        self._raw_entries = self._extracted_entries[extract_from]
 
-        # Create an empty DataFrame to store the extracted metadata
-        self.data = pd.DataFrame()
+        self._raw_entries = self._extracted_entries[extract_from]
 
         # Iterate over the column patterns, create the new column, and extract the matching metadata
         for column_name, pattern in self.column_patterns.items():
@@ -259,4 +276,6 @@ class RestructuredData(object):
                 self._raw_entries, pattern
             )
 
-        return self.data
+        self.data = pd.concat([self.data, self._extracted_entries], axis=1)
+
+        return self.data.to_string(index=False)
