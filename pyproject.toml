@@ -25,7 +25,7 @@ pytest-xdist = "^3.5.0"
 jupyterlab = "^4.1.6"
 
 [tool.poetry.scripts]
-sawmill = 'sawmill.cli:app'
+sawmill = 'sawmill.cli:main'
 
 [build-system]
 requires = ["poetry-core"]

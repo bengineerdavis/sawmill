@@ -31,7 +31,6 @@ from typing import (
 import pandas as pd
 
 
-# TODO: move functions below into this class in it's public instance methods
 class RestructuredData(object):
     """
     This class provides a structured representation of unstructured text (file, string, or stream). It uses regex
@@ -47,20 +46,18 @@ class RestructuredData(object):
         data (pd.DataFrame): DataFrame that stores extracted metadata from each entry, along with related raw entry.
     """
 
-    def __init__(self):
+    def __init__(self, file_path, entry_pattern=None, column_patterns=None):
         """
         Initializes the RestructuredData object with empty DataFrames for entries and data.
         """
-        self.entry_pattern: LiteralString = "^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})"
-        self.column_patterns = (
-            {
+        self.entry_pattern: LiteralString = "^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})" if entry_pattern is None else entry_pattern
+        self.column_patterns: Dict[str:re.Pattern] = {
                 "date": r"(\d{4}-\d{2}-\d{2})",  # Matches a date in the format YYYY-MM-DD
                 "time": r"(\d{2}:\d{2}:\d{2})",  # Matches a time in the format HH:MM:SS
                 "category": r"(?<=\d{2}:\d{2}:\d{2}\s)(\w+)",  # Matches any one word after a timestamp (see 'date' and 'time' patterns above)
                 "message": r"(.+)",  # Matches one or more of any character
-            },
-        )
-        self.file_path: Union[str, TextIO, os.PathLike]
+            } if column_patterns is None else column_patterns
+        self.file_path: Union[str, TextIO, os.PathLike] = file_path
 
         self._entries = "None"  # Placeholder for lazy loading
 
@@ -126,43 +123,45 @@ class RestructuredData(object):
             ... records[3] == {'entry': '2024-03-09 11:03:43 source > INFO main o.a.k.c.c.AbstractConfig(logAll):369 JsonConverterConfig values:\n\tconverter.type = key\n\tdecimal.format = BASE64\n\treplace.null.with.default = true\n\tschemas.cache.size = 1000\n\tschemas.enable = false\n', 'line_numbers': [3, 4, 5, 6, 7, 8]}
             ... records[4] == {'entry': '2024-03-20 23:12:36 destination > WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release', 'line_numbers': [9]}
         """
-
-        # Initialize lists to hold log entries and their corresponding line numbers.
-        entries = []
-        line_indices = []
-
-
+    
         # Compile the regex pattern for identifying the start of log entries.
         pattern = re.compile(entry_pattern, re.MULTILINE)
 
+        entries = []
+        indices = []
+
         # Open the file and read through it line by line.
         with open(file_path, "r") as file:
-            for line_number, line in enumerate(file):
+            
+            entry_lines = []
+            line_indices = []
+
+            for index, line in enumerate(file):
                 # Check if the line matches the entry pattern, indicating a new log entry.
                 if pattern.match(line):
                     # If the current log entry list is not empty, it means the previous entry is complete.
                     if entry_lines:
                         # Save the collected lines and their indices.
                         entries.append("".join(entry_lines))
-                        line_indices.append(indices)
+                        indices.append(line_indices)
                         # Reset the lists for the next log entry.
                         entry_lines = []
-                        indices = []
-                    # Add the current line to the new log entry.
-                    entry_lines.append(line)
-                    indices.append(line_number)
+                        line_indices = []
+                        # Add the current line to the new log entry.
+                        entry_lines.append(line)
+                        line_indices.append(index)
                 else:
                     # If the line does not match the pattern, it continues the current log entry.
                     entry_lines.append(line)
-                    indices.append(line_number)
+                    line_indices.append(index)
 
             # After the last line is processed, check if there is an unfinished log entry to save.
             if entry_lines:
                 entries.append("".join(entry_lines))
-                line_indices.append(indices)
+                indices.append(line_indices)
 
         # Create a DataFrame from the collected log entries and their line numbers.
-        entries = pd.DataFrame({"entry": entries, "line_numbers": line_indices})
+        entries = pd.DataFrame({"entry": entries, "line_numbers": indices})
 
         return entries
 
