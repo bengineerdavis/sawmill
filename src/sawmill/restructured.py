@@ -73,6 +73,14 @@ class RestructuredData(object):
         if self._entries is None:
             self._entries = self._extract_entries(self.file_path, self.entry_pattern)
         return self._entries
+    
+
+    # create functions to extract each table and column-set I want from unstructured file
+    # maybe one reusable function that can extract any table and column-set from an unstructured file
+    # entries df
+    # metadata df
+    # file lines df
+    # log files df
 
     def _extract_entries(
         self,
@@ -130,6 +138,7 @@ class RestructuredData(object):
 
         entries = []
         indices = []
+        lines = {}
 
         # Open the file and read through it line by line.
         with open(file_path, "r") as file:
@@ -138,6 +147,7 @@ class RestructuredData(object):
             line_indices = []
 
             for index, line in enumerate(file):
+                
                 # Check if the line matches the entry pattern, indicating a new log entry.
                 if pattern.match(line):
                     # If the current log entry list is not empty, it means the previous entry is complete.
@@ -156,21 +166,17 @@ class RestructuredData(object):
                     entry_lines.append(line)
                     line_indices.append(index)
 
+                # # keep track of the line index for each line in the file
+                # line.update({index: line})
+
             # After the last line is processed, check if there is an unfinished log entry to save.
             if entry_lines:
                 entries.append("".join(entry_lines))
                 indices.append(line_indices)
 
         # Create a DataFrame from the collected log entries and their line numbers.
+        lines = pd.DataFrame({"line_index_in_file": entries, "lines": indices, "entry": entries})
         entries = pd.DataFrame({"entry": entries, "line_numbers": indices})
-
-        # for saner viewing, texwrap the entries
-        wrap_width = 60
-        # entries['entry'] = entries['entry'].apply(lambda x: fill(x, width=wrap_width))
-        # entries['line_numbers'] = entries['line_numbers'].apply(lambda x: fill(x, width=wrap_width))
-        entries['entry'] = entries['entry'].str.wrap(wrap_width)
-        entries['line_numbers'] = entries['line_numbers'].str.wrap(wrap_width)
-
 
         return entries
 
@@ -257,7 +263,7 @@ class RestructuredData(object):
         pd.set_option('display.max_rows', None)
         pd.set_option('display.max_columns', None)
         pd.set_option('display.width', None)
-        pd.set_option('display.max_colwidth', None)
+        pd.set_option('display.max_colwidth', 0)
 
         # Create an empty DataFrame to store the extracted metadata
         self.data = pd.DataFrame()
@@ -276,6 +282,7 @@ class RestructuredData(object):
                 self._raw_entries, pattern
             )
 
+        
         self.data = pd.concat([self.data, self._extracted_entries], axis=1)
 
-        return self.data.to_string(index=False)
+        return print(self.data)
