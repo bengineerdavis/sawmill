@@ -82,14 +82,6 @@ flowchart TD
                 text raw_data
                 string one_or_more_meta_data_cols
             }
-            SESSION ||--o{ FILE : includes
-            SESSION {
-                int primary_key PK
-                int file_fk
-                timestamp timestamp
-                bool command_success
-                text command_error_msg
-            }
     </div>
 </p>
 
