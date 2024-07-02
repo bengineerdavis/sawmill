@@ -160,11 +160,6 @@ class RestructuredData(object):
                 self.entries = self.line.update(entries=self.entries)
                 self.entries = self.entry.update(entries=self.entries)
 
-        # Create a DataFrame from the collected log entries and their line numbers.
-        entries = pd.DataFrame({"entry": entries, "line_numbers": line_indices})
-
-        return entries
-
     def _write_contents(self) -> str:
 
         with open(self.file_path, "r") as file:
@@ -253,7 +248,7 @@ class RestructuredData(object):
             4	2024-03-20	23:12:36	destination	2024-03-20 23:12:36 destination > WARN StatusC...
         """
 
-        self._extracted_entries = self._extract_entries(
+        self.extract = self.extract(
             file_path=self.file_path,
             entry_pattern=self.entry_pattern,
         )
