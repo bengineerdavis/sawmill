@@ -1,5 +1,5 @@
 {
-  "dependencies": {
-    "mermaid": "^10.9.1"
-  }
+	"dependencies": {
+		"mermaid": "^10.9.1"
+	}
 }

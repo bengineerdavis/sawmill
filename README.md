@@ -15,7 +15,13 @@ pipx install sawmill
 
 ### Developers
 
-1. Clone the repository
+1. Install the [pnpm package manager](https://pnpm.io/installation)
+2. The development environment assumes [Visual Studio Code](https://code.visualstudio.com/download) as the default project code editor, with the following plugins:
+    - Required: 
+        - [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+    - Recommended: 
+        - [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) (free to sign up for an account?)
+3. Clone the repository
 ```sh
 # if the user has ssh access to GitHub
 git clone git@github.com:bengineerdavis/sawmill.git
@@ -26,22 +32,22 @@ for everyone else ...
 ```sh
 git clone https://github.com/bengineerdavis/sawmill.git
 ```
-2. Install [`pipx`](https://github.com/pypa/pipx?tab=readme-ov-file#install-pipx)
-3. Use `pipx` to install `poetry`
+4. Install [`pipx`](https://github.com/pypa/pipx?tab=readme-ov-file#install-pipx)
+5. Use `pipx` to install `poetry`
 ```sh
 pipx install poetry
 ```
-4. OPTIONAL: the user may set up their own `virtual environment` or let `poetry` to manage it for them
-5. Navigate into the new local `sawmill` directory
+6. OPTIONAL: the user may set up their own `virtual environment` or let `poetry` to manage it for them
+7. Navigate into the new local `sawmill` directory
 ```sh
 cd sawmill
 ```
-6. Use pipx to make an editable installation of sawmill on the user's local machine
+8. Use pipx to make an editable installation of sawmill on the user's local machine
 ```sh
 pipx install -e .
 ```
-7. Install project dependencies 
+9. Install project dependencies 
 ```sh
 make install
-```
-6. Ready to contribute!
+``` 
+10. Ready to contribute!

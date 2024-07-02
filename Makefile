@@ -80,6 +80,7 @@ venv:  # create a fresh, dedicated venv for the T3RAP local repo and t3report ap
 install: clean venv  ## fresh developer installation of the t3reports app and Python dependencies
 	@echo installing Python dependencies with poetry
 	poetry install
+	pnpm install 
 
 .PHONY: tests
 tests:  # run all tests for the t3reports app
