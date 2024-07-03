@@ -18,80 +18,36 @@ DataFrame that has only those rows that match the SQL query. SQL fed into the CL
 utility will be pasted on into duckdb, which queries/joins the tables and produces the 
 final result, as defined by the user-provided SQL command.
 
-# Flow Diagram
+<!-- TODO: come back and fix the flow diagram below -->
 
-```mermaid
-flowchart TD
-    A[👤 User]
-    B[sawmill 💻]
-    C[File 📂 ]
-    D[Entries]
-    E[Lines]
-    F[Files]
-    G[Sessions]
-    H[Entries 📝]
-    I[Lines 📄]
-    J[Files 🗂️]
-    K[Sessions: 🕒]
-    L[🔍 SQL command is executed using DuckDB]
-    M[🔗 Tables are queried and joined]
-    N[📄 Final DataFrame with results is produced]
-
-    Z --> |"sawmill CLI command is executed"| A
-    B --> |"🔀 Saw mill loads and begins to extract contents out of the file"| C
-    C --> |"Divided into Entries"| D
-    C --> |"Divided into Lines"| E
-    C --> |"Divided into Files"| F
-    C --> |"Divided into Sessions"| G
-    G --> |"DuckDB executes the user-provided SQL command"| H
-    H --> |"Tables are queried and joined based on the SQL command"| I
-    I --> |"A new DataFrame with the query results is produced"| J
-
-```
-<!-- %% Add comments
-    click A 
-    click B "The file is read and processed" "Comment for B"
-    click C "The file is divided into entries, lines, files, and sessions" "Comment for C"
-    click D "The data is structured in-memory as Pandas DataFrames" "Comment for D"
-    click H "DuckDB executes the user-provided SQL command" "Comment for H"
-    click I "Tables are queried and joined based on the SQL command" "Comment for I"
-    click J "A new DataFrame with the query results is produced" "Comment for J" -->
 
 ## Entity-Relationship Diagram
 
-<p align="center">
-    <div class="mermaid">
-        erDiagram
-            ENTRY ||--o{ LINE : has
-            ENTRY {
-                int primary_key PK
-                text contents
-                int file_fk
-            }
-            LINE {
-                int primary_key PK
-                text contents
-                int entry_fk
-                int file_fk
-            }
-            FILE ||--o{ ENTRY : contains
-            FILE ||--o{ LINE : contains
-            FILE {
-                int primary_key PK
-                string file_path
-                text raw_data
-                string one_or_more_meta_data_cols
-            }
-            SESSION ||--o{ FILE : includes
-            SESSION {
-                int primary_key PK
-                int file_fk
-                timestamp timestamp
-                bool command_success
-                text command_error_msg
-            }
-    </div>
-</p>
+```mermaid
+erDiagram
+    df_entries ||--o{ df_lines : has
+    df_entries {
+        int id PK
+        text entry
+        int file_id FK
+        int line_numbers
+    }
+    df_lines {
+        int id PK
+        text line
+        int line_number
+        int entry_id FK
+        int file_id FK
+    }
+    df_file ||--o{ df_entries : contains
+    df_file ||--o{ df_lines : contains
+    df_file {
+        int id PK
+        string file_path
+        text raw_data
+        string one_or_more_meta_data_cols
+    }
+```
 
 ### Schema Deep-dive
 
