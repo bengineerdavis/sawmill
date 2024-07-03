@@ -18,7 +18,8 @@ DataFrame that has only those rows that match the SQL query. SQL fed into the CL
 utility will be pasted on into duckdb, which queries/joins the tables and produces the 
 final result, as defined by the user-provided SQL command.
 
-# Flow Diagram
+<!-- TODO: come back and fix the flow diagram below -->
+<!-- # Flow Diagram
 
 ```mermaid
 flowchart TD
@@ -45,9 +46,8 @@ flowchart TD
     C --> |"Divided into Sessions"| G
     G --> |"DuckDB executes the user-provided SQL command"| H
     H --> |"Tables are queried and joined based on the SQL command"| I
-    I --> |"A new DataFrame with the query results is produced"| J
+    I --> |"A new DataFrame with the query results is produced"| J -->
 
-```
 <!-- %% Add comments
     click A 
     click B "The file is read and processed" "Comment for B"
