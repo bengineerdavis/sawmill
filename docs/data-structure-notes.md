@@ -27,22 +27,26 @@ final result, as defined by the user-provided SQL command.
 erDiagram
     df_entries ||--o{ df_lines : has
     df_entries {
-        int id PK
+        integer id PK
         text entry
-        int file_id FK
-        int line_numbers
+        date date
+        time time
+        string log_status
+        string component
+        integer line_numbers
+        integer file_id FK
     }
     df_lines {
-        int id PK
+        integer id PK
         text line
-        int line_number
-        int entry_id FK
-        int file_id FK
+        integer line_number
+        integer entry_id FK
+        integer file_id FK
     }
     df_file ||--o{ df_entries : contains
     df_file ||--o{ df_lines : contains
     df_file {
-        int id PK
+        integer id PK
         string file_path
         text raw_data
         string one_or_more_meta_data_cols
