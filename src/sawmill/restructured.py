@@ -27,10 +27,19 @@ from typing import (
     TextIO,
     Union,
 )
+from pathlib import Path
+import json
+import textwrap
 
 import pandas as pd
 
 from .entry import Entry, Line
+
+import logging
+import duckdb
+
+
+logger = logging.getLogger(__name__)
 
 
 class RestructuredData(object):
@@ -48,42 +57,41 @@ class RestructuredData(object):
         data (pd.DataFrame): DataFrame that stores extracted metadata from each entry, along with related raw entry.
     """
 
-    def __init__(self):
+    def __init__(self, file_path, file_id=0):
         """
         Initializes the RestructuredData object with empty DataFrames for entries and data.
         """
         self.entry_pattern: LiteralString = r"^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})"
-        self.column_patterns = (
-            {
+        self.column_patterns = {
                 "date": r"(\d{4}-\d{2}-\d{2})",  # Matches a date in the format YYYY-MM-DD
                 "time": r"(\d{2}:\d{2}:\d{2})",  # Matches a time in the format HH:MM:SS
-                "category": r"(?<=\d{2}:\d{2}:\d{2}\s)(\w+)",  # Matches any one word after a timestamp (see 'date' and 'time' patterns above)
-                "message": r"(.+)",  # Matches one or more of any character
-            },
-        )
-        self.file_path: Union[str, TextIO, os.PathLike]
-        self.file_id
+                "log_status": r"\b(INFO|WARN|ERROR|DEBUG|TRACE|NOTICE)\b", # Matches on INFO|WARN|ERROR|DEBUG|TRACE|NOTICE messages
+                "component": r"(?<=\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\s)(?!INFO|WARN|ERROR|DEBUG\b)(\w+)(?=\s*>)",  # Matches any one word after a timestamp that is not INFO, WARN, ERROR, DEBUG
+                # "message": r"(.+)",  # Matches one or more of any character
+        }
+        self.file_path: Union[str, TextIO, os.PathLike] = Path(file_path)
+        self.file_id = file_id
         self._data: List[pd.DataFrame] | None = None
         self.entries = {
-            "id": List[int],
-            "entry": List[str],
-            "line_numbers": List[List[int]],
-            "file_id": List[int],
+            "id": [],
+            "entry": [],
+            "line_numbers": [],
+            "file_id": [],
         }
         self.lines = {
-            "id": 0,
-            "lines": List[str],
-            "entry_id": List[int],
-            "file_id": List[int],
+            "id": [],
+            "line": [],
+            "entry_id": [],
+            "file_id": [],
         }
         self.file = {
             "id": [self.file_id],  # List[int]
             "path": [self.file_path],
             "name": [self.file_path.name],
-            "contents": [self._write_contents(self)],
+            "contents": [self._write_contents()],
         }
 
-    def extract(self) -> pd.DataFrame:
+    def _extract(self) -> pd.DataFrame:
         r"""
         Reads in unstructured data and returns a DataFrame with all entries and their line numbers extracted into their own rows, via regex patterns.
 
@@ -133,33 +141,33 @@ class RestructuredData(object):
 
         # Open the file and read through it line by line.
         with open(self.file_path, "r") as file:
+            entry = Entry(file_id=self.file_id)
+            lines = Line(file_id=self.file_id)
             for index, line in enumerate(file):
-
-                entry = Entry(file_id=self.file_id)
-                lines = Line(
-                    content=self.lines, entry_id=entry.id, file_id=self.file_id
-                )
-
+                logger.debug(f"Processing line {index}: {line}")
+                logger.debug(f"Processing entries dict:\n\n{self.entries}\n\n")
+                
+                self.lines = lines.update(id=index, content=line, entry_id=entry.id, lines=self.lines)
                 # Check if the line matches the entry pattern, indicating a new log entry.
                 if pattern.match(line):
                     # If the current log entry list is not empty, it means the previous entry is complete.
-                    if entry.lines > 0:
+                    if entry.lines:
                         # Save the collected lines and their indices.
-                        entry.add(line=line, line_number=index)
+                        self.entries = entry.update(entries=self.entries)
                         # Reset the lists for the next log entry.
                         entry.flush()
                     # Add the current line to the new log entry.
-                    self.entries = entry.add(line=line, line_number=index)
-                    self.lines = lines.update(id=index, content=line, lines=self.lines)
+                    entry.add(line=line, line_number=index)
                 else:
                     # If the line does not match the pattern, it continues the current log entry.
-                    self.entries = self.entry.update(entries=self.entries)
+                    entry.add(line=line, line_number=index)
+                    # breakpoint()
 
             # After the last line is processed, check if there is an unfinished log entry to save.
-            if len(entry._lines) > 0:
-                self.entries = self.line.update(entries=self.entries)
-                self.entries = self.entry.update(entries=self.entries)
-
+            if len(entry.lines) > 0:
+                self.lines = lines.update(id=index, content=line, entry_id=entry.id, lines=self.lines)
+                self.entries = entry.update(entries=self.entries)
+            
     def _write_contents(self) -> str:
 
         with open(self.file_path, "r") as file:
@@ -196,7 +204,7 @@ class RestructuredData(object):
 
         return extracted_values
 
-    def read(self, extract_from="entry") -> pd.DataFrame:
+    def read(self, extract_from="entry"):
         r"""
         Extracts metadata from each row's complex string in an 'entries' DataFrame and creates a new DataFrame with the extracted metadata
         inserted into each related row in the new DataFrame.
@@ -247,20 +255,64 @@ class RestructuredData(object):
             3	2024-03-09	11:03:43	source	2024-03-09 11:03:43 source > INFO main o.a.k.c...
             4	2024-03-20	23:12:36	destination	2024-03-20 23:12:36 destination > WARN StatusC...
         """
+       
+        # Extract the raw entries from the unstructured data
+        self._extract()
 
-        self.extract = self.extract(
-            file_path=self.file_path,
-            entry_pattern=self.entry_pattern,
-        )
-        self._raw_entries = self._extracted_entries[extract_from]
+        # Isolate the the raw text column for each extracted entry
+        self._raw_entries = self.entries[extract_from]
 
         # Create an empty DataFrame to store the extracted metadata
-        self.data = pd.DataFrame()
-
+        self.data = {}
+        self.data["entries"] = pd.DataFrame(self.entries)
+        self.data["lines"] = pd.DataFrame(self.lines)
+        self.data["file"] = pd.DataFrame(self.file)
+        
         # Iterate over the column patterns, create the new column, and extract the matching metadata
         for column_name, pattern in self.column_patterns.items():
-            self.data[column_name] = self._extract_metadata_columns(
-                self._raw_entries, pattern
+            self.data["entries"][column_name] = self._extract_metadata_columns(
+            self._raw_entries, pattern
             )
-
+        
+        # TODO refactor things like local data caching to the user directory
+        # TODO: add rules about purging old data
+        # TODO: move app-level config to a separate config file and corresponding config object 
+        local_data_root_dir = Path(__name__).parent.parent.parent / "data"
+        cache_dir = local_data_root_dir / Path(self.file_path).name
+        cache_dir.mkdir(exist_ok=True, parents=True)
+        timestamp = pd.Timestamp.now().strftime("%Y-%m-%d_%H:%M:%S")
+        for tablename, records in self.data.items():
+            logger.debug(f"Table: {tablename}")
+            logger.debug(f"Records: {records}")
+            records.to_json(
+                f"{cache_dir / tablename}_{timestamp}.json", 
+                orient="records", 
+                date_format="iso",
+                default_handler=str,
+                index=False,
+                )
+        
         return self.data
+
+
+    def search(self, query) -> str:
+        # grab data from the tables
+        schema = self.read()
+        tables = [tablename for tablename in schema.keys()]
+
+        # import the tables
+        df_entries, df_lines, df_file = [df for df in schema.values()]
+        
+        # try improve the table formatting output for the user
+        df_entries['entry'].str.wrap(100)
+        pd.set_option('display.max_colwidth', 400)
+        pd.set_option('display.width', 800)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.max_rows', None)
+
+        # Print the query result
+        results = duckdb.query(query).to_df()
+    
+        print(results)
+        
+        

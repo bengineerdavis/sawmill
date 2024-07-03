@@ -34,22 +34,24 @@ final result, as defined by the user-provided SQL command.
 
 ```mermaid
 erDiagram
-    ENTRY ||--o{ LINE : has
-    ENTRY {
-        int primary_key PK
-        text contents
-        int file_fk
+    df_entries ||--o{ df_lines : has
+    df_entries {
+        int id PK
+        text entry
+        int file_id FK
+        int line_numbers
     }
-    LINE {
-        int primary_key PK
-        text contents
-        int entry_fk
-        int file_fk
+    df_lines {
+        int id PK
+        text line
+        int line_number
+        int entry_id FK
+        int file_id FK
     }
-    FILE ||--o{ ENTRY : contains
-    FILE ||--o{ LINE : contains
-    FILE {
-        int primary_key PK
+    df_file ||--o{ df_entries : contains
+    df_file ||--o{ df_lines : contains
+    df_file {
+        int id PK
         string file_path
         text raw_data
         string one_or_more_meta_data_cols
