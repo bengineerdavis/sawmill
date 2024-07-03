@@ -19,34 +19,7 @@ utility will be pasted on into duckdb, which queries/joins the tables and produc
 final result, as defined by the user-provided SQL command.
 
 <!-- TODO: come back and fix the flow diagram below -->
-<!-- # Flow Diagram
 
-```mermaid
-flowchart TD
-    A[👤 User]
-    B[sawmill 💻]
-    C[File 📂 ]
-    D[Entries]
-    E[Lines]
-    F[Files]
-    G[Sessions]
-    H[Entries 📝]
-    I[Lines 📄]
-    J[Files 🗂️]
-    K[Sessions: 🕒]
-    L[🔍 SQL command is executed using DuckDB]
-    M[🔗 Tables are queried and joined]
-    N[📄 Final DataFrame with results is produced]
-
-    Z --> |"sawmill CLI command is executed"| A
-    B --> |"🔀 Saw mill loads and begins to extract contents out of the file"| C
-    C --> |"Divided into Entries"| D
-    C --> |"Divided into Lines"| E
-    C --> |"Divided into Files"| F
-    C --> |"Divided into Sessions"| G
-    G --> |"DuckDB executes the user-provided SQL command"| H
-    H --> |"Tables are queried and joined based on the SQL command"| I
-    I --> |"A new DataFrame with the query results is produced"| J -->
 
 <!-- %% Add comments
     click A 
@@ -59,31 +32,29 @@ flowchart TD
 
 ## Entity-Relationship Diagram
 
-<p align="center">
-    <div class="mermaid">
-        erDiagram
-            ENTRY ||--o{ LINE : has
-            ENTRY {
-                int primary_key PK
-                text contents
-                int file_fk
-            }
-            LINE {
-                int primary_key PK
-                text contents
-                int entry_fk
-                int file_fk
-            }
-            FILE ||--o{ ENTRY : contains
-            FILE ||--o{ LINE : contains
-            FILE {
-                int primary_key PK
-                string file_path
-                text raw_data
-                string one_or_more_meta_data_cols
-            }
-    </div>
-</p>
+```mermaid
+erDiagram
+    ENTRY ||--o{ LINE : has
+    ENTRY {
+        int primary_key PK
+        text contents
+        int file_fk
+    }
+    LINE {
+        int primary_key PK
+        text contents
+        int entry_fk
+        int file_fk
+    }
+    FILE ||--o{ ENTRY : contains
+    FILE ||--o{ LINE : contains
+    FILE {
+        int primary_key PK
+        string file_path
+        text raw_data
+        string one_or_more_meta_data_cols
+    }
+```
 
 ### Schema Deep-dive
 
