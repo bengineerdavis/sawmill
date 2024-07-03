@@ -13,6 +13,8 @@ pipx install sawmill
 ```
 3. The user is ready to call `sawmill` from the command line!
 
+4. See [Usage](#usage)
+
 ### Developers
 
 1. Install the [pnpm package manager](https://pnpm.io/installation)
@@ -51,3 +53,11 @@ pipx install -e .
 make install
 ``` 
 10. Ready to contribute!
+
+## Usage
+
+```bash
+# command returns pandas DataFrame with user-select columns and rows defined in the SQL script
+
+sawmill [path/to/file] [sql command string]|[sql command from file.sql]
+
