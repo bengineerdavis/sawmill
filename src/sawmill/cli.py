@@ -3,8 +3,6 @@ import typer
 from .restructured import RestructuredData
 
 # from io import TextIO
-import os
-from typing import Union, TextIO
 import logging
 from pathlib import Path
 
