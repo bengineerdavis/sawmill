@@ -4,6 +4,19 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## [Unreleased] 
 
+<!-- [0.9.0] -->
+
+### Added
+
+- Adds ruff 'make lint' and 'make format' commands to the Makefile
+- Adds ruff.toml for ruff linting and formatting configurations
+
+<!-- [0.8.0] -->
+
+### Changed
+
+- Updates README.md with more succinct and percise instructions for users and developers
+
 ## [0.7.0] - 2024-07-02
 
 ### Added
