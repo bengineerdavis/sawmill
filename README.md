@@ -36,9 +36,18 @@ Sawmill is a terminal tool that lets you use SQL commands to filter local log fi
 
 ## Setup
 
+### User Requirements
+
+Before a user begins using the application, they must meet following requirements:
+
+- how to install Python projects locally -- we recommend using [pipx](https://pipx.pypa.io/stable/installation/) to install this project.
+- a basic understanding of SQL and the command line.
+
+It is recommended that the user is familiar with the project and it's processes by reading the README.md and other documentation.
+
 ### For Users
 
-1. Install pipx:
+1. Install [pipx](https://pipx.pypa.io/stable/installation/):
     ```sh
     pip install pipx
     ```
@@ -50,40 +59,7 @@ Sawmill is a terminal tool that lets you use SQL commands to filter local log fi
 
 ### For Developers
 
-1. Install the [pnpm package manager](https://pnpm.io/installation).
-2. Use [Visual Studio Code](https://code.visualstudio.com/download) with these plugins:
-    - Required: [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
-    - Recommended: [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart)
-3. Clone the repository:
-    ```sh
-    git clone git@github.com:bengineerdavis/sawmill.git
-    ```
-    Or:
-    ```sh
-    git clone https://github.com/bengineerdavis/sawmill.git
-    ```
-4. Install pipx:
-    ```sh
-    pip install pipx
-    ```
-5. Use pipx to install Poetry:
-    ```sh
-    pipx install poetry
-    ```
-6. (Optional) Set up a virtual environment or let Poetry manage it.
-7. Navigate to the Sawmill directory:
-    ```sh
-    cd sawmill
-    ```
-8. Install Sawmill locally in editable mode:
-    ```sh
-    pipx install -e .
-    ```
-9. Install project dependencies:
-    ```sh
-    make install
-    ```
-10. Ready to contribute!
+See the [CONTRIBUTING.md](./CONTRIBUTING.md) file for more information.
 
 ## Usage
 

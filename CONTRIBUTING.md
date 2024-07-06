@@ -1,20 +1,79 @@
 # Contributing to Sawmill
 
-Thank you for your interest in contributing to Sawmill! This document provides guidelines for making contributions to the project. By participating in this project, you agree to abide by its terms.
+Thank you for your interest in contributing to Sawmill! This document provides
+guidelines for making contributions to the project. By participating in this project,
+you agree to abide by its terms.
+
+## Table of Contents
+
+## Prerequisites
+
+This project expects the following from contributors:
+
+- They should review and understand the entirety of the project's [README](./README.md):
+    - The contributor must already meet the project's [user
+  requirements](./README.md#user-requirements).
+- They must understand Git enough to add and commit changes to the project via a feature
+  branch.
+- GitHub account.
+- They should understand the project structure and its dependencies.
+- They should be able to understand and user the [Recommended
+  Tools](#recommended-tools), listed below.
+- They are expected to have a basic understanding of the project's goals and objectives.
+
+## Recommended Tools
+
+- [pyenv](), which the project uses for python version and python venv dependency management
+- [pnpm](https://pnpm.io/installation), which the project uses for managing Node.js dependencies for Mermaid.js-generated charts and graphs
+- [Makefiles](https://www.gnu.org/software/make/), which the project uses for automating
+  tasks
+- [pipx](https://pipx.pypa.io/stable/installation/) for installing sawmill for local
+  user/QA
+   testing
 
 ## Getting Started
 
 Before you begin:
-- Ensure you have Python 3.11 installed. Sawmill is developed with this version.
-- Familiarize yourself with the project by reading the README.md and other documentation.
+- Ensure you have Python 3.12, or higher, installed. See 'pyenv' in [Recommended
+  Tools](#recommended-tools).
+
 - Set up the project on your local machine. Here’s how:
 
-```bash
-git clone https://github.com/USERNAME/sawmill.git
-cd sawmill
-curl -sSL https://install.python-poetry.org | python3 -
-poetry install
-```
+1. Install the [pnpm package manager](https://pnpm.io/installation).
+2. Use [Visual Studio Code](https://code.visualstudio.com/download) with these plugins:
+    - Required: [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+    - Recommended: [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart)
+3. Clone the repository:
+    ```sh
+    git clone git@github.com:bengineerdavis/sawmill.git
+    ```
+    Or:
+    ```sh
+    git clone https://github.com/bengineerdavis/sawmill.git
+    ```
+4. Install pipx:
+    ```sh
+    pip install pipx
+    ```
+5. Use pipx to install Poetry:
+    ```sh
+    pipx install poetry
+    ```
+6. (Optional) Set up a virtual environment or let Poetry manage it.
+7. Navigate to the Sawmill directory:
+    ```sh
+    cd sawmill
+    ```
+8. Install Sawmill locally in editable mode:
+    ```sh
+    pipx install -e .
+    ```
+9. Install project dependencies:
+    ```sh
+    make install
+    ```
+10. Ready to contribute!
+
 
 ## Issues
 

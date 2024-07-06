@@ -10,12 +10,17 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 - Adds ruff 'make lint' and 'make format' commands to the Makefile
 - Adds ruff.toml for ruff linting and formatting configurations
+- Adds contributor requirements to CONTRIBUTING.md
 
 <!-- [0.8.0] -->
 
 ### Changed
 
 - Updates README.md with more succinct and percise instructions for users and developers
+- Moved all developer steps and requirements to the CONTRIBUTING.md file from the
+  project's README.md file
+- Refactors user requirements in the README.md file for simplicity and clarity -- focus
+  on not presuming the user's experience level with Python projects
 
 ## [0.7.0] - 2024-07-02
 
