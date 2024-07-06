@@ -7,7 +7,6 @@ license = "MIT"
 readme = "README.md"
 packages = [{ include = "sawmill", from = "src" }]
 
-
 [tool.poetry.dependencies]
 python = "^3.11"
 typer = { extras = ["all"], version = "^0.12.2" }
@@ -35,7 +34,3 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 addopts = "--xdoctest --doctest-modules --doctest-glob='*.rst' --doctest-glob='*.txt' --doctest-glob='*.md' --doctest-glob='*.ipynb' --doctest-glob='*.py'"
-# testpaths = [
-#     "tests",
-#     "integration",
-# ]
