@@ -72,6 +72,7 @@ class RestructuredData(object):
         self.file_path: Union[str, TextIO, os.PathLike] = Path(file_path)
         self.file_id = file_id
         self._data: List[pd.DataFrame] | None = None
+        self._default_query = "select * from df_entries limit 100"
         self.entries = {
             "id": [],
             "entry": [],
@@ -161,7 +162,6 @@ class RestructuredData(object):
                 else:
                     # If the line does not match the pattern, it continues the current log entry.
                     entry.add(line=line, line_number=index)
-                    # breakpoint()
 
             # After the last line is processed, check if there is an unfinished log entry to save.
             if len(entry.lines) > 0:
@@ -295,7 +295,17 @@ class RestructuredData(object):
         return self.data
 
 
-    def search(self, query) -> str:
+    def search(self, query: Union[str, None] = None) -> pd.DataFrame:
+        
+        # Handle 'query' valid param types and edge cases
+        if query is None:
+            query = self._default_query
+        elif Path(query).is_file():
+            with open(query, "r") as f:
+                query = f.read()
+        else:
+            query = query
+
         # grab data from the tables
         schema = self.read()
         tables = [tablename for tablename in schema.keys()]
@@ -312,7 +322,14 @@ class RestructuredData(object):
 
         # Print the query result
         results = duckdb.query(query).to_df()
-    
-        print(results)
+
+        # make sure any uncallable methods do not fail silently
+        try:
+            results_with_id_index = results.set_index("id")
+            results is not None
+        except Exception as e:
+            raise e
+        
+        return results_with_id_index
         
         

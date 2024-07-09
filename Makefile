@@ -1,7 +1,7 @@
 .PHONY: help
 .DEFAULT_GOAL := help
 
-SCRIPT := t3reports
+SCRIPT := sawmill
 PYTHON := $$(pyenv which python)
 PY_VERSION := 3.12.1
 VENV_NAME := sawmill-dev
@@ -85,3 +85,7 @@ install: clean venv  ## fresh developer installation of the t3reports app and Py
 .PHONY: tests
 tests:  # run all tests for the t3reports app
 	poetry run pytest -v
+
+.PHONY: demo
+demo:  ## run the t3reports app with the demo data
+	$(SCRIPT) view test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt

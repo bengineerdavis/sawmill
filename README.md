@@ -6,12 +6,13 @@ Simple, beautiful, powerful data analysis and reporting for your logs.
 
 As a member of support, we have to read lots of logs manually that themselves are not structured ...
 
-This means 100ks of logs per week, with an average conservative cost of at least 20 mins spent per case finding the data we need from the logs to help customers. The logs also contain at least 2-3 different contexts or different kinds of logs. 
+This means 100k's of logs per week, with an average conservative cost of at least 20 mins spent per case finding the data we need from the logs to help customers. The logs also contain at least 2-3 different contexts or different kinds of logs. 
 
-What about using Datadog or a monitoring tool? 
-Sure, that would be great, but now I need to teach an entire team to learn BOTH all of the infrastructure needed to use it, give them authenticated access, make sure the internet isn't down, and teach them a non-standard querying language ... among other things (sadness)
+    Q: What about using Datadog or a monitoring tool? 
 
-Right now according to metabase, we spend 9.5 days per ticket towards resolution ([source](https://airbyte.metabaseapp.com/dashboard/1590-support-ticket-metrics?date_filter=past3months~&zendesk_only=true&ticket_type=Airbyte%20Cloud%20Support%20Request%20Form&ticket_type=Helpdesk%20From&ticket_type=Self%20Managed%20Enterprise%20Support%20Request%20Form))\
+    A: Sure, that would be great, but now I need to teach an entire team to learn BOTH all of the infrastructure needed to use it, give them authenticated access, make sure the internet isn't down, and teach them a non-standard querying language ... among other things (sadness)
+
+Right now according to metabase, we spend 9.5 days per ticket towards resolution ([source](https://airbyte.metabaseapp.com/dashboard/1590-support-ticket-metrics?date_filter=past3months~&zendesk_only=true&ticket_type=Airbyte%20Cloud%20Support%20Request%20Form&ticket_type=Helpdesk%20From&ticket_type=Self%20Managed%20Enterprise%20Support%20Request%20Form))
 
 Wouldn't it be nice if we could ask our log questions?
 Wouldn't it be even _better_ if we could only look at the lines that are important to us, and reduce the problem space?
@@ -20,6 +21,7 @@ Wouldn't it be even _better_ if we could only look at the lines that are importa
 
 How can I get to the truth of the issue from log files in a time-efficient, error-free, reproducible way?
 How can I do this without adding complexity to my workflow or the scaling of this process to our entire support/eng teams?
+How do I build a tool around this workflow such that it can automate more parts of itself over time?
 
 ### Implementation
 

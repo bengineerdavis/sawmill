@@ -1,6 +1,7 @@
 import typer
 
 from .restructured import RestructuredData
+from .tui import live_logs
 
 # from io import TextIO
 import os
@@ -31,6 +32,17 @@ def find(file_path: str, query: str):
             restructured_file.search(query_from_file)
     else:
         restructured_file.search(query)
+
+
+@app.command()
+def view(file_path: str, query: Union[str, None] = None):
+
+    # ingest data from the file
+    restructured_file = RestructuredData(file_path=file_path)
+    logs = restructured_file.search(query)
+    
+    breakpoint()
+    live_logs(logs=logs)
 
 
 def main():
