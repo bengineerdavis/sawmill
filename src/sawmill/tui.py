@@ -1,49 +1,55 @@
 # src/sawmill/tui.py
 import pandas as pd
-from rich.console import Console
-from rich.table import Table
-from rich.live import Live
-from rich.layout import Layout
-from rich.panel import Panel
-from rich.align import Align
-from rich.text import Text
 from rich import box
+from rich.console import Console
+from rich.live import Live
+from rich.table import Table
+from rich.text import Text
 
 console = Console()
 
+
 class ScrollableLogViewer:
     def __init__(self, logs: pd.DataFrame):
-        self.logs = logs
+        self.logs = logs.astype(str)
         self.current_start = 0
-        self.page_size = 10
+        self.page_size = 100
         self.total_lines = len(logs)
 
     def display_logs(self):
+        # pre-cast into a string type to use with rich's Table API
+        # self.logs["id"] = self.logs["id"].astype(str)
         table = Table(show_header=True, header_style="bold magenta", box=box.MINIMAL)
-        table.add_column("Timestamp", style="dim", width=20)
-        
+        columns = [
+            "date",
+            "time",
+            "entry",
+            "line_numbers",
+            "log_status",
+            "component",
+        ]
+        # table.add_column("Timestamp", style="dim", width=20)
+
         # make sure all columns are included by default
-        for col in self.logs.columns.tolist():
-            if col != "timestamp":
-                table.add_column(col.capitalize())
-        
+        for col in columns:
+            table.add_column(col.capitalize())
+
         # table.add_column("Level")
         # table.add_column("Message")
 
         end = min(self.current_start + self.page_size, self.total_lines)
         log_level_column_name = "log_status"
-        for _, row in self.logs.iloc[self.current_start:end].iterrows():
+        for _, row in self.logs.iloc[self.current_start : end].iterrows():
             level_style = "green" if row[log_level_column_name] == "INFO" else "red"
             table.add_row(
-                row['id'],
-                row['timestamp'],
-                row['entry'], 
-                row['line_numbers'],
-                Text(row[log_level_column_name], 
-                style=level_style), 
-                row['component'],
+                row["date"],
+                row["time"],
+                row["entry"],
+                row["line_numbers"],
+                Text(row[log_level_column_name], style=level_style),
+                row["component"],
             )
-        
+
         return table
 
     def scroll_up(self):
@@ -53,6 +59,7 @@ class ScrollableLogViewer:
     def scroll_down(self):
         if self.current_start + self.page_size < self.total_lines:
             self.current_start += self.page_size
+
 
 # def load_logs() -> pd.DataFrame:
 #     # Placeholder log data, replace with actual log loading
@@ -67,16 +74,16 @@ class ScrollableLogViewer:
 #     })
 #     return logs
 
+
 def live_logs(logs: pd.DataFrame):
-    # logs = load_logs()
     viewer = ScrollableLogViewer(logs)
-    with Live(console=console, refresh_per_second=4, screen=True) as live:
+    table = viewer.display_logs()
+    with Live(console=console, refresh_per_second=4) as live:
         while True:
-            table = viewer.display_logs()
-            live.update(Panel(Align.center(table), title="Sawmill Log Viewer", border_style="green"))
+            live.update(table)
             key = console.input()
             if key == "q":
-                break
+                False
             elif key == "j":
                 viewer.scroll_down()
             elif key == "k":
