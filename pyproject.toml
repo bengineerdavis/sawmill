@@ -1,12 +1,11 @@
 [tool.poetry]
 name = "sawmill"
-version = "0.3.0"
+version = "0.9.0"
 description = "The smarter cousin of the classic unix 'touch' command!"
 authors = ["Ben Davis <bengineerdavis@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{ include = "sawmill", from = "src" }]
-
 
 [tool.poetry.dependencies]
 python = "^3.11"
