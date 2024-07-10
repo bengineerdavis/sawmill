@@ -4,7 +4,7 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## [Unreleased] 
 
-<!-- [0.9.0] -->
+## [0.9.0] - 2024-07-09
 
 ### Added
 
@@ -12,7 +12,7 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 - Adds ruff.toml for ruff linting and formatting configurations
 - Adds contributor requirements to CONTRIBUTING.md
 
-<!-- [0.8.0] -->
+## [0.8.0] - 2024-07-07
 
 ### Changed
 
