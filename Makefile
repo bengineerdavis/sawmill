@@ -87,5 +87,8 @@ tests:  # run all tests for the t3reports app
 	poetry run pytest -v
 
 .PHONY: demo
+TEST_FILE := test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt
+
 demo:  ## run the t3reports app with the demo data
-	$(SCRIPT) view test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt
+	$(SCRIPT) view $(TEST_FILE)
+	# $(SCRIPT) view $(TEST_FILE) | less -R

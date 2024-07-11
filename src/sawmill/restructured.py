@@ -68,7 +68,12 @@ class RestructuredData(object):
         self.file_path: Union[str, TextIO, os.PathLike] = Path(file_path)
         self.file_id = file_id
         self._data: List[pd.DataFrame] | None = None
-        self._default_query = "select * from df_entries limit 100"
+        self._default_query = """
+        SELECT * FROM df_entries as e
+        WHERE e.log_status in ('DEBUG','WARN','ERROR')
+        OR e.entry ilike '%exception%'
+        ORDER BY e.component ASC, e.log_status ASC"""
+        
         self.entries = {
             "id": [],
             "entry": [],
@@ -85,7 +90,7 @@ class RestructuredData(object):
             "id": [self.file_id],  # List[int]
             "path": [self.file_path],
             "name": [self.file_path.name],
-            "contents": [self._write_contents()],
+            "contents": [self._read_contents()],
         }
 
     def _extract(self) -> pd.DataFrame:
@@ -168,7 +173,7 @@ class RestructuredData(object):
                 )
                 self.entries = entry.update(entries=self.entries)
 
-    def _write_contents(self) -> str:
+    def _read_contents(self) -> str:
 
         with open(self.file_path, "r") as file:
             contents = file.read()
