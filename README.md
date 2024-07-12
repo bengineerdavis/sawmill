@@ -1,99 +1,69 @@
-# sawmill
+# Sawmill
 
-Simple, beautiful, powerful data analysis and reporting for your logs.
+A collection of tools for easy parsing and analyzing of log files and stack trace data. 
 
-## Motivation
+Sawmill is a Python package that allows users to query log files using SQL commands. It
+is designed to be user-friendly and extensible, with the goal of saving time and
+improving efficiency when working with log files.
 
-As a member of support, we have to read lots of logs manually that themselves are not structured ...
+## Learn more ... 
 
-This means 100k's of logs per week, with an average conservative cost of at least 20 mins spent per case finding the data we need from the logs to help customers. The logs also contain at least 2-3 different contexts or different kinds of logs. 
+* How to [install](#installation) and [usage](#usage) sawmill.
+* How to [contribute](./CONTRIBUTING.md#contributing-to-sawmill) to the project.
+* How it [works](./docs/how-it-works.md).
+* How sawmill breaks down and represents your file as a [machine-searchable datatype](./docs/data-structure-notes.md) interally.
 
-    Q: What about using Datadog or a monitoring tool? 
+## Usage
 
-    A: Sure, that would be great, but now I need to teach an entire team to learn BOTH all of the infrastructure needed to use it, give them authenticated access, make sure the internet isn't down, and teach them a non-standard querying language ... among other things (sadness)
-
-Right now according to metabase, we spend 9.5 days per ticket towards resolution ([source](https://airbyte.metabaseapp.com/dashboard/1590-support-ticket-metrics?date_filter=past3months~&zendesk_only=true&ticket_type=Airbyte%20Cloud%20Support%20Request%20Form&ticket_type=Helpdesk%20From&ticket_type=Self%20Managed%20Enterprise%20Support%20Request%20Form))
-
-Wouldn't it be nice if we could ask our log questions?
-Wouldn't it be even _better_ if we could only look at the lines that are important to us, and reduce the problem space?
-
-### Challenge
-
-How can I get to the truth of the issue from log files in a time-efficient, error-free, reproducible way?
-How can I do this without adding complexity to my workflow or the scaling of this process to our entire support/eng teams?
-How do I build a tool around this workflow such that it can automate more parts of itself over time?
-
-### Implementation
-
-Provide a `sawmill` terminal tool that can take a local file path and SQL script/string command and immediately reduce the results to only the lines that are relevant to me.
-
-### Benefits
-
-- Saves lots of time
-- Extensibiliy 
-    - The workflow encourages and supports automating itself
-    - We can extend this to handle _any_ log or stack trace formatting
-- Applicable across multiple teams
-- Approachable for our customers 
-    - (we can put this tool in their hands someday!)
-- Competitive
-    - we can maintain rules and optimizations special to our use cases as a company
-- Easy to install and learn
-- Uses the ubiquity of SQL
-- Reduces the number of lines, making issues easier to share, search, and communicate
-- This prepares us for larger log datasets, which are inevitable as our customers' use cases grow
-
-## Setup
-
-### Users
-
-1. Install pipx
-2. Use pipx to install `sawmill`
+To use Sawmill, run:
 ```sh
-pipx install sawmill
+sawmill [path/to/file] [sql command string]|[sql command from file.sql]
 ```
-3. The user is ready to call `sawmill` from the command line!
+This command returns a pandas DataFrame with the selected columns and rows defined in the SQL script.
 
-4. See [Usage](#usage)
+## Installation
 
-### Developers
+Please review and confirm the expected [prerequisites](#prerequisites)
 
-1. Install the [pnpm package manager](https://pnpm.io/installation)
-2. The development environment assumes [Visual Studio Code](https://code.visualstudio.com/download) as the default project code editor, with the following plugins:
-    - Required: 
-        - [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
-    - Recommended: 
-        - [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) (free to sign up for an account?)
-3. Clone the repository
-```sh
-# if the user has ssh access to GitHub
-git clone git@github.com:bengineerdavis/sawmill.git
-```
+1. Install sawmill on your local machine with [pipx](https://pipx.pypa.io/stable/installation/)
 
-for everyone else ...
+- While this can be done with Python's official installer, [pip], via your
+   system-installed Python, it is **strongly** recommended to use pipx
+- Install [pipx](https://pipx.pypa.io/stable/installation/):
 
-```sh
-git clone https://github.com/bengineerdavis/sawmill.git
-```
-4. Install [`pipx`](https://github.com/pypa/pipx?tab=readme-ov-file#install-pipx)
-5. Use `pipx` to install `poetry`
-```sh
-pipx install poetry
-```
-6. OPTIONAL: the user may set up their own `virtual environment` or let `poetry` to manage it for them
-7. Navigate into the new local `sawmill` directory
-```sh
-cd sawmill
-```
-8. Use pipx to make an editable installation of sawmill on the user's local machine
-```sh
-pipx install -e .
-```
-9. Install project dependencies 
-```sh
-make install
-``` 
-10. Ready to contribute!
+2. Install Sawmill with pipx:
+    ```sh
+    pipx install sawmill
+    ```
+3. You can now use Sawmill from the command line. Check out the [Usage](#usage) section,
+   next.
+
+For common issues encountered during installation, please review the [Troubleshooting](#troubleshooting) section.
+
+## Troubleshooting
+
+### Prerequisites
+
+1. Make sure that **Python** and it's dependency installer **pip**, are available on the
+   user's local machine. Please refer to the first two sections in 
+   [Requirements for Installing Packages - Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/installing-packages/#requirements-for-installing-packages)
+
+2. The user is expected to have a very basic understanding of, or willingness to learn, the
+following: A modest amount of SQL, a _little_ bit about how to use the Unix command line
+
+3. The user should already have [pipx](https://pipx.pypa.io/stable/installation/)
+   installed on their local machine
+
+_For those who wish to self-learn more about the topics above, 
+[Recommended Learning Resources](./docs/recommended-learning-resources.md) file._
+
+## Contributing
+
+Thank you for your interest in contributing to Sawmill!
+
+Please see the [CONTRIBUTING.md](./CONTRIBUTING.md) file for more information -- NOT REQUIRED
+for general usage!!
+
 
 ## Usage
 

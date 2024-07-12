@@ -29,11 +29,16 @@ from typing import (
     TextIO,
     Union,
 )
+from pathlib import Path
 
 import duckdb
 import pandas as pd
 
 from .entry import Entry, Line
+
+import logging
+import duckdb
+
 
 logger = logging.getLogger(__name__)
 
@@ -70,7 +75,7 @@ class RestructuredData(object):
         self._data: List[pd.DataFrame] | None = None
         self._default_query = """
         SELECT * FROM df_entries as e
-        WHERE e.log_status in ('DEBUG','WARN','ERROR')
+        WHERE e.log_status in ('ERROR')
         OR e.entry ilike '%exception%'
         ORDER BY e.component ASC, e.log_status ASC"""
         

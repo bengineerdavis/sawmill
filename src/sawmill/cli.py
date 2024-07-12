@@ -19,7 +19,7 @@ app = typer.Typer()
 @app.command()
 def find(file_path: str, query: str):
     """Convert an unstructured text file into csv-like (columns, rows) output
-
+    
     Example:
         pass"""
 

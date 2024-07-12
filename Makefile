@@ -43,7 +43,7 @@ clean-venv:  # removes auto-activation of venv and then deletes the venv T3RAP e
 
 
 .PHONY: check
-check:  # confirms that a pyenv virtual environment is activated
+check:  ## confirms that a pyenv virtual environment is activated
 	@echo "check for successfully created and activated Python venv or stopping make command ..."
 	if [ ! -f .python-version ]; then \
     	echo '.python-version not found! .python-version is missing -- pyenv virtual environment is not activated' && \
@@ -54,7 +54,7 @@ check:  # confirms that a pyenv virtual environment is activated
 
 
 .PHONY: update
-update: check  # use to update venv's Python dependencies and auxiliary tools; also updates user-wide pipx installation of t3reports
+update: check  ## use to update venv's Python dependencies and auxiliary tools; also updates user-wide pipx installation of t3reports
 	@echo "using pipx to update poetry"
 	pipx upgrade poetry
 
@@ -66,8 +66,8 @@ update: check  # use to update venv's Python dependencies and auxiliary tools; a
 
 
 .PHONY: venv venv-update install
-venv:  # create a fresh, dedicated venv for the T3RAP local repo and t3report app with pyenv-virtualenv plugin
-	@echo "Making sure that Python versiom $(PY_VERSION) has been installed by pyenv!"
+venv:  ## create a fresh, dedicated venv for the T3RAP local repo and t3report app with pyenv-virtualenv plugin
+	@echo "Making sure that Python version $(PY_VERSION) has been installed by pyenv!"
 	pyenv install --skip-existing $(PY_VERSION)
 	
 	@echo "Creating a fresh virtualenv is install for the $(VENV_NAME) directory with Python version $(PY_VERSION)"
@@ -83,12 +83,27 @@ install: clean venv  ## fresh developer installation of the t3reports app and Py
 	pnpm install 
 
 .PHONY: tests
-tests:  # run all tests for the t3reports app
+tests:  ## run all tests for the t3reports app
 	poetry run pytest -v
 
-.PHONY: demo
-TEST_FILE := test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt
+# New targets for formatting and linting using ruff
+RUFF := $(PYTHON) -m ruff check
+SOURCE_DIRS := src tests
 
-demo:  ## run the t3reports app with the demo data
+.PHONY: format
+format:  ## run ruff to format the code using black
+	$(RUFF) $(SOURCE_DIRS) --fix
+
+.PHONY: lint
+lint:  ## run ruff to lint the code
+	$(RUFF) $(SOURCE_DIRS) --fix
+
+.PHONY: check-format-lint
+check-format-lint: format lint  ## run both formatting and linting
+
+.PHONY: demo
+TEST_FILE := 'test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt'
+demo:  ## run the demo script
+
 	$(SCRIPT) view $(TEST_FILE)
-	# $(SCRIPT) view $(TEST_FILE) | less -R
+	
