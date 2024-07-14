@@ -6,6 +6,14 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## [0.10.1] - 2024-07-11
 
+### Changed
+
+- Updates poetry.lock and pyproject.toml files to use 'typer[all]' instead of 'typer'
+  for the CLI app library, which includes all optional dependencies for Typer,
+  especially 'Rich' for better integrated CLI output formatting
+
+## [0.10.0] - 2024-07-11
+
 ### Added
 
 - Adds another SQL script, 'demo.sql' that eventually be a colletion of examples for the user to try when learning the tool and its potential
