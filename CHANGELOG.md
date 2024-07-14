@@ -4,6 +4,25 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## [Unreleased] 
 
+## [0.10.1] - 2024-07-11
+
+### Added
+
+- Adds another SQL script, 'demo.sql' that eventually be a colletion of examples for the user to try when learning the tool and its potential
+
+### Fixed
+
+- Resolves merge conflicts from the 'create-initial-in-terminal-view-of-log-file-2024-07-09' feature branch into 'main'
+
+### Changed
+
+- Updates README.md further with a new Learn More section and better linking to sections where the context makes more sense
+- The New README.md#learn-more- section now links to the 'how-it-works.md' and 'data-structure-notes.md' in the /docs sub-directory for additional useful references for the user and contributor
+
+### Removed
+
+- Updates .gitignore file to not capture '.DS_Store' files in the repository
+
 ## [0.9.0] - 2024-07-09
 
 ### Added

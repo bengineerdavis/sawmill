@@ -1,7 +1,7 @@
 .PHONY: help
 .DEFAULT_GOAL := help
 
-SCRIPT := t3reports
+SCRIPT := sawmill
 PYTHON := $$(pyenv which python)
 PY_VERSION := 3.12.1
 VENV_NAME := sawmill-dev
@@ -41,6 +41,7 @@ clean-venv:  # removes auto-activation of venv and then deletes the venv T3RAP e
 		echo '.python-version not found!'; \
 	fi
 
+
 .PHONY: check
 check:  ## confirms that a pyenv virtual environment is activated
 	@echo "check for successfully created and activated Python venv or stopping make command ..."
@@ -50,6 +51,7 @@ check:  ## confirms that a pyenv virtual environment is activated
 	else \
 		echo 'Confirmed that a pyenv Python virtual environment is activated!'; \
 	fi
+
 
 .PHONY: update
 update: check  ## use to update venv's Python dependencies and auxiliary tools; also updates user-wide pipx installation of t3reports
@@ -62,6 +64,7 @@ update: check  ## use to update venv's Python dependencies and auxiliary tools; 
 	@echo "Updating requirements with poetry"
 	poetry update
 
+
 .PHONY: venv venv-update install
 venv:  ## create a fresh, dedicated venv for the T3RAP local repo and t3report app with pyenv-virtualenv plugin
 	@echo "Making sure that Python version $(PY_VERSION) has been installed by pyenv!"
@@ -72,6 +75,7 @@ venv:  ## create a fresh, dedicated venv for the T3RAP local repo and t3report a
 	
 	@echo "Assigning the $(VENV_NAME) venv to the current directory"
 	pyenv local $(VENV_NAME)
+
 
 install: clean venv  ## fresh developer installation of the t3reports app and Python dependencies
 	@echo installing Python dependencies with poetry
@@ -96,3 +100,10 @@ lint:  ## run ruff to lint the code
 
 .PHONY: check-format-lint
 check-format-lint: format lint  ## run both formatting and linting
+
+.PHONY: demo
+TEST_FILE := 'test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_1_txt.txt'
+demo:  ## run the demo script
+
+	$(SCRIPT) view $(TEST_FILE)
+	
