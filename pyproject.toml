@@ -9,7 +9,7 @@ packages = [{ include = "sawmill", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-typer = { extras = ["all"], version = "^0.12.2" }
+typer = {extras = ["all"], version = "^0.12.3"}
 pandas = "^2.2.1"
 datasette = "^0.64.6"
 sqlalchemy = "^2.0.29"
