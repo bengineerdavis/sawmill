@@ -44,6 +44,63 @@ def view(file_path: str, query: Union[str, None] = None):
     live_logs(logs=logs)
 
 
+@app.command()
+def parse(file_path: str):
+    """
+    Parse the file and convert it to a DataFrame.
+    """
+    # Ingest data from the file
+    restructured_file = RestructuredData(file_path=file_path)
+    return restructured_file.data
+
+
+@app.command()
+def query(dataframe, extract: str = None, filter: list = None):
+    """
+    Apply extraction, filtering, and transformation to the DataFrame.
+    """
+    df_query = DataFrameQuery(dataframe)
+
+    if extract:
+        dataframe = df_query.extract_data(extract)
+
+    if filter:
+        for f in filter:
+            dataframe = df_query.filter_data(f)
+
+    return dataframe
+
+
+@app.command()
+def view(dataframe, format: str):
+    """
+    Create views for the data.
+    """
+    df_viewer = DataFrameViewer(dataframe)
+    return df_viewer.create_view(format)
+
+
+@app.command()
+def export(dataframe, format: str, as_type: str, to: str):
+    """
+    Export the view to the specified format.
+    """
+    df_exporter = DataFrameExporter(dataframe)
+
+    if as_type == "file":
+        if format == "csv":
+            df_exporter.to_csv(to)
+        elif format == "json":
+            df_exporter.to_json(to)
+        # Add more formats as needed
+    elif as_type == "git":
+        df_exporter.to_git(to)
+    elif as_type == "web":
+        df_exporter.to_web(to)
+    elif as_type == "zip":
+        df_exporter.to_zip(to)
+
+
 def main():
     app()
 
