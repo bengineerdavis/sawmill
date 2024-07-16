@@ -1,3 +1,12 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class Config:
+    """A class to represent and manage complex, written configuration values for the
+    Sawmill project"""
+
+
 schema_template = {
     "session": {
         "pk": "int",
