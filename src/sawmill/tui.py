@@ -1,14 +1,14 @@
 # src/sawmill/tui.py
+from typing import Dict
+
 import pandas as pd
 from rich import box
+from rich.align import Align
 from rich.console import Console
 from rich.live import Live
+from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
-from rich.panel import Panel
-from rich.align import Align
-
-from typing import Dict
 
 console = Console()
 
@@ -24,6 +24,7 @@ class LogViewer:
         )
 
     def display_logs(self):
+
         table = Table(**self.table_kwargs)
 
         # make sure all columns are included by default
