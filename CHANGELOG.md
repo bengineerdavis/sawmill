@@ -2,7 +2,7 @@
 
 source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
-## [Unreleased] 
+## [Unreleased]
 
 ## [0.10.1] - 2024-07-11
 
@@ -56,8 +56,8 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 - Introduces Mermaid.js charts into markdown docs
 - New docs directory contains a breakdown of how parts of sawmill are designed
 - A new cli interface allows for the user to read in files from the terminal
-- Refactored the [RestructuredData class](./src/sawmill/restructured.py) with new `Entry` and 
-  `File` objects in [Entry.py](./src/sawmill/entry.py) improve readability in the RestructureData.read() 
+- Refactored the [RestructuredData class](./src/sawmill/restructured.py) with new `Entry` and
+  `File` objects in [Entry.py](./src/sawmill/entry.py) improve readability in the RestructureData.read()
   method for contributors
 - Makefile now automates the user and dev installation process of sawmill and its dependencies
 - Initial cli tests for missing or incorrect file path
@@ -67,7 +67,7 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 - All xdoctests pass for restructured.RestructuredData()
 - All primary and foreign key relations between the df_entries, df_lines, and df_file tables work as intended
-- 
+-
 
 ### Changed
 
