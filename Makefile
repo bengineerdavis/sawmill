@@ -107,3 +107,4 @@ TEST_FILE := 'test_files/1d4c79af_c5c3_4b7c_9347_beb5eda819e8_job_10344_attempt_
 demo:  ## run the demo script
 
 	$(SCRIPT) view $(TEST_FILE)
+
