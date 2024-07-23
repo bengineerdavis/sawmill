@@ -9,7 +9,7 @@
 # local data caching
 data/*
 # disregard MacOS filesystem caching artifacts
-**/.DS_Store 
+**/.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

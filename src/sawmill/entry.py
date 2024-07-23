@@ -44,7 +44,7 @@ class Entry:
 
     def update(self, entries: Dict[str, str]) -> Dict[str, str]:
         entries["id"].append(self.id)
-        
+
         self._entry = "".join(self.lines)
         entries["entry"].append(self._entry)
 

@@ -84,7 +84,7 @@ class Schema(object):
 
     """
 
-    def __init__(self, file_path, template) -> Dict:
+    def __init__(self, file_path, template, build_dict) -> Dict:
         """
         Initializes the RestructuredData object with empty DataFrames for entries and
         data.
@@ -103,7 +103,6 @@ class Schema(object):
             pd.DataFrame: A DataFrame containing log entries and their line numbers.
         """
         if self.self._data is None:
-
             self._schema_dict = self._create_schema(self.file_path, self.entry_pattern)
         return self._data
 

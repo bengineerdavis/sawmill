@@ -29,16 +29,11 @@ from typing import (
     TextIO,
     Union,
 )
-from pathlib import Path
 
 import duckdb
 import pandas as pd
 
 from .entry import Entry, Line
-
-import logging
-import duckdb
-
 
 logger = logging.getLogger(__name__)
 
@@ -78,7 +73,7 @@ class RestructuredData(object):
         WHERE e.log_status in ('ERROR')
         OR e.entry ilike '%exception%'
         ORDER BY e.component ASC, e.log_status ASC"""
-        
+
         self.entries = {
             "id": [],
             "entry": [],
@@ -179,7 +174,6 @@ class RestructuredData(object):
                 self.entries = entry.update(entries=self.entries)
 
     def _read_contents(self) -> str:
-
         with open(self.file_path, "r") as file:
             contents = file.read()
 
@@ -305,7 +299,6 @@ class RestructuredData(object):
         return self.data
 
     def search(self, query: Union[str, None] = None) -> pd.DataFrame:
-
         # Handle 'query' valid param types and edge cases
         if query is None:
             query = self._default_query
@@ -317,7 +310,6 @@ class RestructuredData(object):
 
         # grab data from the tables
         schema = self.read()
-        tables = [tablename for tablename in schema.keys()]
 
         # import the tables
         df_entries, df_lines, df_file = [df for df in schema.values()]
@@ -331,12 +323,5 @@ class RestructuredData(object):
 
         # Print the query result
         results = duckdb.query(query).to_df()
-
-        # make sure any uncallable methods do not fail silently
-        try:
-            # results_with_id_index = results.set_index("id")
-            results is not None
-        except Exception as e:
-            raise e
 
         return results

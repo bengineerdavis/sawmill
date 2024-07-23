@@ -6,7 +6,7 @@ extract the necessary information, such as errors or warnings. However, log file
 notoriously large and difficult to navigate manually, making it challenging to find the
 relevant information quickly.
 
-We already have great tools for data analysis in the Python ecosystem, and we shouldn't 
+We already have great tools for data analysis in the Python ecosystem, and we shouldn't
 have to learn enough grayscale/prometheus/loki infrastructure unique to scale up the
 usage of these tools.
 

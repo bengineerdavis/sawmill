@@ -7,7 +7,6 @@ from rich.table import Table
 from rich.text import Text
 from rich.panel import Panel
 from rich.align import Align
-from rich.text import Text
 
 from typing import Dict
 
@@ -20,16 +19,16 @@ class LogViewer:
         self.table_kwargs: Dict = table_kwargs
         # TODO: Purge any unnecessary commented-out lines from this file and class
         # self.title = "Log_Results" if table_kwargs["title"] is None else table_kwargs["title"]
-        self.columns = [col for col in self.logs.columns.tolist()] if columns is None else columns
+        self.columns = (
+            [col for col in self.logs.columns.tolist()] if columns is None else columns
+        )
 
     def display_logs(self):
-
         table = Table(**self.table_kwargs)
 
         # make sure all columns are included by default
         for col in self.columns:
             table.add_column(col.capitalize())
-
 
         log_level_column_name = "log_status"
         for _, row in self.logs.iterrows():
@@ -44,6 +43,7 @@ class LogViewer:
             )
 
         return table
+
 
 # def load_logs() -> pd.DataFrame:
 #     # Placeholder log data, replace with actual log loading
@@ -65,16 +65,19 @@ columns = [
     "line_numbers",
     "log_status",
     "component",
-    ]
+]
 table_kwargs = dict(
     # title="Logs",
-    show_header=True, 
-    header_style="bold magenta", 
+    show_header=True,
+    header_style="bold magenta",
     box=box.MINIMAL,
 )
+
 
 def live_logs(logs: pd.DataFrame, columns=columns, table_kwargs=table_kwargs):
     viewer = LogViewer(logs, table_kwargs=table_kwargs, columns=columns)
     table = viewer.display_logs()
     with Live(console=console, refresh_per_second=4) as live:
-        live.update(Panel(Align.center(table), title="Sawmill Log Viewer", border_style="green"))
+        live.update(
+            Panel(Align.center(table), title="Sawmill Log Viewer", border_style="green")
+        )

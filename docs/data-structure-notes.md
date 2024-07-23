@@ -2,20 +2,20 @@
 
 This file represents rough notation on how data is stored/represented internally
 
-The structure described here is what results after a file is first read into memory 
-as a log or stack-trace, and then into each of its (multi-line) chunks, and then link 
+The structure described here is what results after a file is first read into memory
+as a log or stack-trace, and then into each of its (multi-line) chunks, and then link
 
 ## Data Flow
 
-This tool operates exactly like grep, except instead of regex, we're using good ol' 
+This tool operates exactly like grep, except instead of regex, we're using good ol'
 fashion SQL to find it.
 
 A file is broken into the following tables, which themselves are represented in-memory
-as Pandas DataFrames: Entries, Lines, Files, Sessions. 
+as Pandas DataFrames: Entries, Lines, Files, Sessions.
 
-Via the sawmill CLI, a user will feed a file, along with a SQL script or string command, which will then return a new 
-DataFrame that has only those rows that match the SQL query. SQL fed into the CLI 
-utility will be pasted on into duckdb, which queries/joins the tables and produces the 
+Via the sawmill CLI, a user will feed a file, along with a SQL script or string command, which will then return a new
+DataFrame that has only those rows that match the SQL query. SQL fed into the CLI
+utility will be pasted on into duckdb, which queries/joins the tables and produces the
 final result, as defined by the user-provided SQL command.
 
 <!-- TODO: come back and fix the flow diagram below -->
@@ -78,4 +78,3 @@ Rules for relationships between tables
 - There can be one or many lines in an entry
 - A file can have both have many entries and lines
 - Files are currently not directly interrelated, but this may change in the future
-

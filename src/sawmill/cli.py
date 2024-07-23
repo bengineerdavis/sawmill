@@ -19,7 +19,7 @@ app = typer.Typer()
 @app.command()
 def find(file_path: str, query: str):
     """Convert an unstructured text file into csv-like (columns, rows) output
-    
+
     Example:
         pass"""
 
@@ -37,7 +37,6 @@ def find(file_path: str, query: str):
 
 @app.command()
 def view(file_path: str, query: Union[str, None] = None):
-
     # ingest data from the file
     restructured_file = RestructuredData(file_path=file_path)
     logs = restructured_file.search(query)

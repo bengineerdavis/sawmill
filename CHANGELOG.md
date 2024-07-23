@@ -4,6 +4,22 @@ source: [keep a changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## [Unreleased]
 
+## [0.11.0] - 2024-07-21
+
+### Added
+
+- Adds initial pre-commit hooks to the project for code formatting and linting
+- Adds initial pre-commit-config.yaml config file
+- Adds pre-commit ruff linter and formatter to the project, via the
+  .pre-commit-config.yaml file for code quality and consistency
+
+### Changed
+
+- Refactors Makefile to include pre-commit hooks for code formatting and linting by
+  consolidating the 'make lint' and 'make format' commands into a single 'make check'
+- Updates CONTRIBUTING.md with instructions on how to install the pre-commit CLI tool to
+  the user's local development environment
+
 ## [0.10.1] - 2024-07-11
 
 ### Changed
@@ -90,14 +106,10 @@ by the sawmill app
 
 ### Added
 
-
 ### Fixed
-
 
 ### Changed
 
-
 ### Removed
-
 
 ### Security

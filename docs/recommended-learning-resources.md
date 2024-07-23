@@ -7,7 +7,7 @@ _Nothing here is required to use this application_
 
 However, picking one resource from each category will help the user to better
 understand the tools and technologies used in this project, along with ideas for more
-advanced usage. 
+advanced usage.
 
 _**NOTE**: As a contributor, it is expected that one has the equivalent
 knowledge of at least one of the courses from each of the following sub-sections._
