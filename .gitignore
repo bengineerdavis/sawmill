@@ -10,6 +10,8 @@
 data/*
 # disregard MacOS filesystem caching artifacts
 **/.DS_Store
+# ignore binary data generated from pytest-testmon plugin
+.testmondata
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
