@@ -26,3 +26,13 @@ repos:
       # Run the formatter.
       - id: ruff-format
         types_or: [python, pyi, jupyter]
+  - repo: local
+    hooks:
+      - id: pytest-testmon
+        name: pytest-testmon
+        types: [python]
+        entry: pytest
+        args: [-v, -n, auto, --xdoctest, --picked=only, --testmon]
+        language: system
+        pass_filenames: false
+        always_run: true
