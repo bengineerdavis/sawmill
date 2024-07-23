@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-azuretools.vscode-docker",
+    "mermaidchart.vscode-mermaid-chart",
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "bierner.markdown-mermaid",
+    "davidanson.vscode-markdownlint",
+    "ms-python.debugpy",
+    "redhat.vscode-yaml",
+    "fnando.linter"
+  ]
+}
