@@ -95,7 +95,7 @@ tests:  ## run all tests for the t3reports app
 # TODO: attempt to move part of these tests into merge pre-commit hooks
 .PHONY: watch
 watch:  ## run all tests for the sawmill app in watch mode; source: https://stackoverflow.com/a/63148860
-	poetry run ptw . --runner "pytest -v -n auto --picked --testmon"
+	poetry run ptw . -v -n auto --xdoctest --picked --testmon
 
 # TODO: add to both pre-commit and pre-merge hooks
 .PHONY: check
