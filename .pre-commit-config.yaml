@@ -30,6 +30,8 @@ repos:
     rev: v0.19.1
     hooks:
       - id: gitlint
+        stages:
+          - commit-msg
   - repo: https://github.com/PyCQA/bandit
     rev: "1.7.9"
     hooks:
