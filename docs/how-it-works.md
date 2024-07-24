@@ -7,17 +7,17 @@
 
 This provides a rough idea behind the structure and design of the application, both for [contributors](../CONTRIBUTING.md) and power users, as well as those who are just curious 😉.
 
-For a better overall idea of this tool and it's project goals, review the [Introduction and Features](../README.md#introduction). 
+For a better overall idea of this tool and it's project goals, review the [Introduction and Features](../README.md#introduction).
 
 ## Concepts
 
-At a high level, there are three levels of abstraction. From the lowest to the highest: 
+At a high level, there are three levels of abstraction. From the lowest to the highest:
 
     Actors > Utilities > Views
 
 Also see the [flow diagram](#logic-and-execution-flow-diagram), for a more in-depth look at the execution flow and component dependencies.
 
-### Logic and Execution Flow diagram 
+### Logic and Execution Flow diagram
 
 ```mermaid
 flowchart LR
@@ -46,7 +46,7 @@ flowchart LR
 
 ### Actors
 
-For our purposes, actors _are single [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) functions or processes done directly to data, or where data is stored_. 
+For our purposes, actors _are single [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) functions or processes done directly to data, or where data is stored_.
 
 These are the catagories of actions that can be defined:
 
@@ -62,15 +62,15 @@ Both Processing and Filtering collective represent actions that change, update, 
     - JSON data based on specific subkey(s)
     - Grabbing a specific piece of data from a index in a list
     - Using a SQL statement to pull specific columns and rows
-- [**IO**](#io)'s focus is to read and write data from a _source_, such as: 
+- [**IO**](#io)'s focus is to read and write data from a _source_, such as:
     - a file
     - an API endpoint on the web
-    - output from another utility in the terminal 
+    - output from another utility in the terminal
 
 
 Each action breaks down further by the data's **_format_** (what kind of data is it?) and the **_source_** (where can it find this data?)
 
-Examples of **_format_**: 
+Examples of **_format_**:
 
 - Python dictionary
 - JSON blob
@@ -92,7 +92,7 @@ Each of these actions may be bundle together into objects based on format, sourc
 
 (Using pseudo-code) Let's say we want to pull out the data at every instance of the "address" key in the json blob, stored in a file, then also calculate the distance of each address from where we live, and print both the addresses and the distances to our terminal:
 
-Overall: 
+Overall:
 
 ```bash
 actors.io.file.read(format="json") | \ | \
@@ -102,12 +102,12 @@ actors.processors.insert_distance_from_my_house(
 actors.io.terminal.write()
 ```
 
-1. `actors.io.file.read(format="json")` 
+1. `actors.io.file.read(format="json")`
 * a. the `file.read()` IO actor opens the file
 * b. this function itself calls another IO actor, `json.read()` to the open file any valid json-formatted data from the file into memory and Python
 * notice because we are now piping between stdout and stdin, and the functions default to this behavior, we no longer need to explicitly describe the source
 
-2. `actors.processors.insert_distance_from_my_house(on_key="address", my_address="564 Ave NW, Washington, DC", into_key="distance")` 
+2. `actors.processors.insert_distance_from_my_house(on_key="address", my_address="564 Ave NW, Washington, DC", into_key="distance")`
 * This processor implies a few smaller processors preconfigured within:
     - an IO actor reads stdout from #1 is read in
     - another processor calculates each "address" key value and injects that value back into the larger import json blob at a new "distance" key, for each new distance calculated
@@ -120,7 +120,7 @@ Actions are combined together to either make more complex actions and/or then be
 
 ### Utilities
 
-Utilities are the lower-level tools that we as users can plug into together with custom parameters to create precise pipelines and processed data. 
+Utilities are the lower-level tools that we as users can plug into together with custom parameters to create precise pipelines and processed data.
 
 Utilities are combinations of [actors](#actors) with sufficient parameters that when combined with other utilities should provide inifinite reusable ability and declarative structure from which the user can create pipelines without programming.
 

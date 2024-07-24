@@ -2,7 +2,7 @@
 
 Just like there is a DataFrame for a single table a, SchemaSet contains data and relationships between tables, and is a searchable, in-memory object that can abstract the work required between them.
 
-All of this work hinges on libraries like DuckDB, Pandas, Polars, and Ibis-framework. 
+All of this work hinges on libraries like DuckDB, Pandas, Polars, and Ibis-framework.
 
 Like Ibis, we want the DataFrames themselves to be engines we can replace as needed.
 
@@ -18,8 +18,8 @@ This is a rough idea of how the API might look.
 
 tables = {
     "table1": {
-        "columns": {"col1": to_str,"col2": to_float},  
-        # all column definitions start with 
+        "columns": {"col1": to_str,"col2": to_float},
+        # all column definitions start with
         "foreign_keys": {
             "fk_table": "table2", # show table to link to table1
             "fk_column": "id", # indicate the foreign key col
